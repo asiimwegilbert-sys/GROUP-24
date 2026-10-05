@@ -19,13 +19,13 @@
 - Direct solvers.
 
 ## AI Use
-- Tool: Manus AI
-- Purpose: Creating the frame, structure and blueprint, and also to organise the workflow of our project.
-- Reason: To provide a structure for the group to review and complete, since we didnt know some of the work required, like the src, and also how to present the frame of the project. It made the layout just like it was needed. 
-- What was changed: We included our CMake file, report status, team assignments, and also edited the workflow to allign with our needs and proposals.
+- **Tool:** Manus AI
+- **Purpose:** Creating the frame, structure and blueprint, and also to organise the workflow of our project.
+- **Reason:** To provide a structure for the group to review and complete, since we didnt know some of the work required, like the src, and also how to present the frame of the project. It made the layout just like it was needed. 
+- **What was changed:** We included our CMake file, report status, team assignments, and also edited the workflow to allign with our needs and proposals.
 
 ## Implementation and Integration Status
-| Area | Status | Notes |
+| **Area** | **Status** | **Notes** |
 |---|---|---|
 | Vector and Matrix foundations | In progress | |
 | Gaussian elimination, determinant, inverse | In progress | |
