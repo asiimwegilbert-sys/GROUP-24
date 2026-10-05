@@ -63,8 +63,6 @@ You can write it like this in the **AI Use** section of your Week 1 report:
 * **Reason it was used:** I used AI to help me structure the report and clarify some of the basic ideas for the Linear Solvers module.
 * **What I verified or changed:** I reviewed the suggestions, made changes where necessary, and checked that the final report matched the work completed for Week 1.
 
-This keeps the AI involvement **minimal** while still declaring it accurately, as the weekly report template requires an AI-use declaration.  The project documentation also specifically says that AI assistance should be declared accurately. 
-
 ## Next Step
 
 In Week 2, Gaussian elimination and partial pivoting will be added so that the module can solve more general systems of linear equations.
