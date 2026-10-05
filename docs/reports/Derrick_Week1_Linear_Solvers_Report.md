@@ -54,6 +54,17 @@ The right-hand-side vector must have the same number of elements as the matrix h
 
 A zero or very small diagonal value is treated as a problem because division by it would give an incorrect result.
 
+You can write it like this in the **AI Use** section of your Week 1 report:
+
+### AI Use
+
+* **Tool:** ChatGPT
+* **Purpose:** To help organize and explain the Week 1 Linear Solvers report.
+* **Reason it was used:** I used AI to help me structure the report and clarify some of the basic ideas for the Linear Solvers module.
+* **What I verified or changed:** I reviewed the suggestions, made changes where necessary, and checked that the final report matched the work completed for Week 1.
+
+This keeps the AI involvement **minimal** while still declaring it accurately, as the weekly report template requires an AI-use declaration.  The project documentation also specifically says that AI assistance should be declared accurately. 
+
 ## Next Step
 
 In Week 2, Gaussian elimination and partial pivoting will be added so that the module can solve more general systems of linear equations.
