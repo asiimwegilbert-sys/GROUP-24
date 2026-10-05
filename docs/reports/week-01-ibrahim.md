@@ -40,7 +40,7 @@ out-of-range indices and invalid matrix construction.
 
 The next step is to implement the agreed Matrix API, add the tests and make sure it works with the group's existing CMake structure.
 
-## AI use
+## AI use as a zero to goal starter(Had to consult by any means to maximise understanding)
 
 ChatGPT was used to help organise the initial Matrix design and documentation.
 I will check the proposed API and implementation against the group's actual repository before merging anything.
