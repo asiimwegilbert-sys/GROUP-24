@@ -1,55 +1,47 @@
 # Week 1 — Ibrahim Matrix Module
-
-## Member
-
-Ibrahim
-
-## Assigned Responsibility
+## Assigned part
 
 Matrix module
 
-## Completed This Week
+## What I worked on this week
 
-Prepared the initial design for the Matrix module, including:
+For Week 1, I worked on the initial design of the Matrix module. I mainly focused on the Matrix API, how the matrix data will be stored, and the rules for working with different matrix dimensions.
 
-- Proposed Matrix public API.
-- Matrix storage layout.
-- Matrix dimension rules.
-- Matrix indexing convention.
-- Invalid-input behaviour.
-- Validation and testing requirements.
-- Integration considerations for future numerical methods.
+## Completed
+
+- Proposed the main Matrix class interface.
+- Decided on row-major storage using `std::vector<double>`.
+- Defined zero-based indexing.
+- Defined the dimension rules for addition, subtraction and multiplication.
+- Defined how transpose and square matrices will work.
+- Listed the invalid inputs that should be checked.
+- Listed some questions that need to be agreed on by the group.
+- Prepared the validation cases that I will use when implementing and testing.
 
 ## Branch
 
-feature/ibrahim-matrix
+`feature/ibrahim-matrix`
 
 ## Commit
-docs: define matrix API and dimension rules
 
-## Pull Request
+`docs: define matrix API and dimension rules`
 
-To be created after the Week 1 design commit.
+## Questions / things to confirm
 
-## Reviewer
+I still need the group to agree on the common numerical tolerance and the error-handling convention. We also need to decide where operations such as determinant and inverse should be placed.
 
-To be assigned during pull request review.
+## Validation plan
 
-## Design Summary
+I plan to test both normal and invalid cases, including matrices with
+different dimensions, valid and invalid multiplication, transpose,
+out-of-range indices and invalid matrix construction.
 
-The proposed Matrix class will use std::vector<double> with row-major
-storage. Matrix elements will be accessed using zero-based (row, column)
-indexing.
+## Next step
 
-The API will support construction, dimension queries, element access,
-addition, subtraction, multiplication, scalar multiplication, transpose,
-square-matrix checking, and approximate comparison.
+The next step is to implement the agreed Matrix API, add the tests and make sure it works with the group's existing CMake structure.
 
-## Dimension Rules
+## AI use
 
-Matrix addition and subtraction require equal dimensions.
+ChatGPT was used to help organise the initial Matrix design and documentation.
+I will check the proposed API and implementation against the group's actual repository before merging anything.
 
-Matrix multiplication requires:
-
-***text
-A(m x n) × B(n x p) = C(m x p)
