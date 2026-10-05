@@ -86,10 +86,3 @@ g++ build/linear_solvers.o build/linear_solvers_impl.o build/test_linear_solvers
 ```text
 All Linear Solvers tests passed.
 ```
-
-## Beginner notes
-
-This implementation is intentionally kept simple so that the main algorithms can be
-understood by a first-year or second-year undergraduate student. The code uses basic
-loops, vectors, functions, exceptions and simple numerical calculations rather than
-advanced C++ techniques.
