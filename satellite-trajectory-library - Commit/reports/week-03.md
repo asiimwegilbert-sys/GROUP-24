@@ -9,6 +9,6 @@
 ## Next Week
 
 ## AI Use
-- Tool:
-- Purpose:
-- Reason:
+- **Tool:**
+- **Purpose:**
+- **Reason:**
