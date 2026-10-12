@@ -28,6 +28,3 @@ The Matrix API and the team's CMake setup should be checked together before merg
 
 ## Next step
 Integrate the Matrix files with the current repository, run the full test suite, and address any comments from the reviewer.
-
-## AI use
-ChatGPT was used to help prepare a starting implementation and tests. I need to compile and run the code in the group's repository, check that it matches the shared API, and update this report with the actual test and review results.
