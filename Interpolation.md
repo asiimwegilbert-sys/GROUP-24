@@ -22,4 +22,4 @@ Divided-difference coefficients; efficient evaluation and easy to add new points
 c) Polynomial
 Finds the coefficients of the unique degree n-1 polynomial through n points.
 
-All three describe the same unique polynomial, so their results must agree. That is a key test of correctness.
+All three describe the same unique polynomial, so their results must all agree. That is a key test of correctness.
