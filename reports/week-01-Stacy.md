@@ -43,7 +43,7 @@ Build and test: CMake and CTest
 
 Error Handling
 std::invalid_argument: non-square matrix (LU, Cholesky), non-symmetric matrix (Cholesky), or fewer rows than columns (QR, Gram-Schmidt)
-std::runtime_error: singular matrix (LU), not positive definite (Cholesky), or rank-deficient (QR, Gram-Schmidt)
+std::runtime_error: singular matrix (LU), not positive definite (Cholesky), or rank-deficient (QR, Gram-Schmidt).
 
 Numerical Assumptions
 Default tolerance is 1e-10. A pivot or diagonal value at or below it is treated as zero.
