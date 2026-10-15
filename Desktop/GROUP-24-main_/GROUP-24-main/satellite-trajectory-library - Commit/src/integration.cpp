@@ -5,25 +5,25 @@
 
 namespace sat::num {
 
-// 1. Base Class (Parent) - Stores basic simulation configurations
+
 class TrajectorySolver {
 protected:
     double time_step; // dt
 
 public:
-    // Simple constructor to set our step size
+    
     TrajectorySolver(double dt) {
         time_step = dt;
     }
 
-    // Basic helper check using simple if-statements
+    
     bool validate_inputs(const std::vector<double>& state) {
         if (state.empty()) {
-            std::cout << "Warning: No state data!" << std::endl;
+            std::cout << "Error: Empty state!" << std::endl;
             return false;
         }
         if (time_step <= 0.0) {
-            std::cout << "Warning: Bad time step!" << std::endl;
+            std::cout << "Error: Bad dt!" << std::endl;
             return false;
         }
         return true;
@@ -32,10 +32,9 @@ public:
 
 class MidpointSolver : public TrajectorySolver {
 public:
-    // Constructor calling the parent configuration
+    
     MidpointSolver(double dt) : TrajectorySolver(dt) {}
 
-    // Simple implementation of the RK2 logic inside a class method
     State compute_rk2_step(const ODEFunction& f, double t, const State& y) {
         State k1 = f(t, y);
         
@@ -62,7 +61,7 @@ State rk2_step(const ODEFunction& f, double t, const State& y, double dt) {
     return solver.compute_rk2_step(f, t, y);
 }
 
-// (The remaining advanced functions are routed here to be converted to classes in Week 4)
+
 State rk4_step(const ODEFunction& f, double t, const State& y, double dt) {
     return y; 
 }
@@ -73,4 +72,4 @@ double romberg_integrate(const ScalarFunction& f, double lower, double upper) {
     return 0.0; 
 }
 
-} // namespace sat::num
+} 
