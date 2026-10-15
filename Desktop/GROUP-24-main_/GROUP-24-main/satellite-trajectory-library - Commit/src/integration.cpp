@@ -5,7 +5,6 @@
 
 namespace sat::num {
 
-// Simple input validation check for week 2
 bool validate_simulation_inputs(const std::vector<double>& state, double dt) {
     if (state.empty()) {
         std::cout << "Warning: State vector has no data!" << std::endl;
@@ -19,7 +18,7 @@ bool validate_simulation_inputs(const std::vector<double>& state, double dt) {
     return true;
 }
 
-// 1. Runge-Kutta 2nd Order (RK2 Midpoint Method Step)
+
 State rk2_step(const ODEFunction& f, double t, const State& y, double dt) {
     State k1 = f(t, y);
     
@@ -37,7 +36,7 @@ State rk2_step(const ODEFunction& f, double t, const State& y, double dt) {
     return next_state;
 }
 
-// 2. Runge-Kutta 4th Order (RK4 Classical Step Engine)
+
 State rk4_step(const ODEFunction& f, double t, const State& y, double dt) {
     size_t n = y.size();
     State k1 = f(t, y);
@@ -61,7 +60,7 @@ State rk4_step(const ODEFunction& f, double t, const State& y, double dt) {
     return next_state;
 }
 
-// 3. Gaussian Quadrature (2-Point Rule)
+
 double gaussian_quadrature(const ScalarFunction& f, double lower, double upper) {
     double c1 = 0.5 * (upper - lower);
     double c2 = 0.5 * (upper + lower);
@@ -70,7 +69,6 @@ double gaussian_quadrature(const ScalarFunction& f, double lower, double upper) 
     return c1 * (f(c1 * x1 + c2) + f(c1 * x2 + c2));
 }
 
-// 4. Romberg Integration (Richardson Extrapolation)
 double romberg_integrate(const ScalarFunction& f, double lower, double upper) {
     int max_steps = 5;
     std::vector<double> R1(max_steps, 0.0);
@@ -99,4 +97,4 @@ double romberg_integrate(const ScalarFunction& f, double lower, double upper) {
     return R1[max_steps - 1];
 }
 
-} // namespace sat::num
+} 
