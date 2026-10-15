@@ -9,7 +9,7 @@ ROLE: Lead for Interpolation Methods
 1. Understanding My Role
 
 I am responsible for the interpolation module, which lets the library estimate values between known data points. 
-In the satellite context, this means estimating a satellite's position at times the RK4 propagator did not directly compute.
+In this satellite context, this means estimating a satellite's position at times the RK4 propagator did not directly compute.
 
 I am to implement and test three methods:
 
