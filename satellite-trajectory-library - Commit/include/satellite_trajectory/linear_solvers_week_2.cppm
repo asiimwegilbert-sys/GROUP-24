@@ -1,4 +1,4 @@
-module;
+ module;
 #include <vector>
 
 export module sat_trajectory.linear_solvers;
