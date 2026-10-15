@@ -1,30 +1,11 @@
-# Week 2 - Ibrahim
-
-## Assigned part
-Matrix module
-
-## Work completed
-- Implemented the basic Matrix class using the interface planned in Week 1.
-- Added row and column size functions and zero-based element access.
-- Added transpose, addition, subtraction, matrix multiplication and scalar multiplication.
-- Added checks for incompatible dimensions and invalid element indices.
-- Added tests for normal operations and some invalid inputs.
-- Kept the matrix data private and used row-major storage with `std::vector<double>`.
-
-## Branch
-`feature/ibrahim-matrix`
-
-## Commit
-Add the actual commit hash after committing.
-
-## Pull request
-Add the actual pull request link after opening it.
-
-## Testing
-The test file covers arithmetic, transpose, rectangular matrices, mismatched dimensions, invalid indices, and invalid construction. Run the project build and tests before marking them as passed.
-
-## Issues / things to confirm
-The Matrix API and the team's CMake setup should be checked together before merging. The group should also agree on the numerical tolerance and any extra functions that should be included in the Matrix class.
-
-## Next step
-Integrate the Matrix files with the current repository, run the full test suite, and address any comments from the reviewer.
+This week, I focused on building out the Matrix module, sticking 
+closely to the interface architecture we mapped out in Week 1.
+Inside the Matrix class, I implemented the core structural 
+functions—like tracking row/column sizes and setting up zero-based 
+element access. From there, I built out the primary math operations, 
+including transpose, matrix addition, subtraction, matrix 
+multiplication, and scalar multiplication. To make the class robust, I 
+added strict error-checking to catch incompatible dimensions and 
+out-of-bounds indices early.
+Under the hood, I chose to keep the raw matrix data completely private, 
+structuring it with row-major storage using std::vector<double>.
