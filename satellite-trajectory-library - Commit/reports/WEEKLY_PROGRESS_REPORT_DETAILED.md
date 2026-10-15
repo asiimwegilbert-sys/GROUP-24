@@ -1,6 +1,6 @@
 # Week __ Progress Report
 
-**First Submition:**
+**First Submision:**
 **Project:** Satellite Trajectory Numerical Computing Library  
 **Submitted Work:** Reports and structure of the project.
 
