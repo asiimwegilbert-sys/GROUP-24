@@ -32,4 +32,4 @@ Suggested branch: feature/derrick-residual-validation. Suggested commit: feat: a
 
 BackSubstitutionSolver expects an upper-triangular matrix. A small residual does not guarantee a well-conditioned matrix. Compile and run the tests with the team's C++23 named-module setup. Week 4 adds iterative refinement as another solver implementation.
 
-![Alt text](IMG_20261019_151523_007.jpg)
+<img width="3010" height="2660" alt="IMG_20261019_151523_007" src="https://github.com/user-attachments/assets/550b394c-cbc7-4f0e-a9a9-9e705137885b" />
