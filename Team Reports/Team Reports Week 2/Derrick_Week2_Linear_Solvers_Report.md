@@ -42,4 +42,4 @@ Suggested branch: feature/derrick-week2-class-based-solvers. Suggested commit: r
 
 ## 10. AI-use declaration
 
-Tool: ChatGPT. Purpose: help organize the report and explain the class structure. Reason: to communicate how the solver classes are organized and used. What I verified or changed: the report describes the classes and members in the included source files. The team should review, compile, and run the tests before merging.
+Tool: ChatGPT. Purpose: help organize the report and explain the class structure. Reason: to communicate how the solver classes are organized and used.
