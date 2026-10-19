@@ -5,24 +5,15 @@
 
 namespace sat::num {
 
-
-class TrajectorySolver {
-protected:
-    double time_step; // dt
-
+// 1. Grandparent Class - Handles baseline data verification (Week 2 Logic)
+class BaseSolver {
 public:
-    
-    TrajectorySolver(double dt) {
-        time_step = dt;
-    }
-
-    
-    bool validate_inputs(const std::vector<double>& state) {
+    bool validate_inputs(const std::vector<double>& state, double dt) {
         if (state.empty()) {
             std::cout << "Error: Empty state!" << std::endl;
             return false;
         }
-        if (time_step <= 0.0) {
+        if (dt <= 0.0) {
             std::cout << "Error: Bad dt!" << std::endl;
             return false;
         }
@@ -30,12 +21,30 @@ public:
     }
 };
 
-class MidpointSolver : public TrajectorySolver {
-public:
-    
-    MidpointSolver(double dt) : TrajectorySolver(dt) {}
+// 2. Parent Class - Demonstrates Multilevel Inheritance & Polymorphism Setup
+class NumericalIntegrator : public BaseSolver {
+protected:
+    double time_step;
 
-    State compute_rk2_step(const ODEFunction& f, double t, const State& y) {
+public:
+    NumericalIntegrator(double dt) {
+        time_step = dt;
+    }
+
+    // Virtual function to enable runtime polymorphism
+    virtual State compute_step(const ODEFunction& f, double t, const State& y) {
+        return y; 
+    }
+};
+
+// 3. Child Class - Completes Multilevel Inheritance tree and Overrides the step
+class MidpointSolver : public NumericalIntegrator {
+public:
+    // Simple constructor passing dt up to the parent
+    MidpointSolver(double dt) : NumericalIntegrator(dt) {}
+
+    // Polymorphism in action: Overriding the base execution function for RK2
+    State compute_step(const ODEFunction& f, double t, const State& y) override {
         State k1 = f(t, y);
         
         State y_mid(y.size());
@@ -53,23 +62,24 @@ public:
     }
 };
 
+// --- Group Compatibility Wrapper
 State rk2_step(const ODEFunction& f, double t, const State& y, double dt) {
-    MidpointSolver solver(dt);
-    if (!solver.validate_inputs(y)) {
+    // Demonstrating polymorphism via a base class pointer
+    MidpointSolver concrete_solver(dt);
+    NumericalIntegrator* solver_ptr = &concrete_solver;
+
+    // Call validation inherited from Grandparent class
+    if (!solver_ptr->validate_inputs(y, dt)) {
         return y;
     }
-    return solver.compute_rk2_step(f, t, y);
+
+    // Call overridden algorithm dynamically via polymorphism pointer
+    return solver_ptr->compute_step(f, t, y);
 }
 
+// (Remaining slots temporarily bypassed to be structured into the OOP tree during Week 4)
+State rk4_step(const ODEFunction& f, double t, const State& y, double dt) { return y; }
+double gaussian_quadrature(const ScalarFunction& f, double lower, double upper) { return 0.0; }
+double romberg_integrate(const ScalarFunction& f, double lower, double upper) { return 0.0; }
 
-State rk4_step(const ODEFunction& f, double t, const State& y, double dt) {
-    return y; 
-}
-double gaussian_quadrature(const ScalarFunction& f, double lower, double upper) {
-    return 0.0; 
-}
-double romberg_integrate(const ScalarFunction& f, double lower, double upper) {
-    return 0.0; 
-}
-
-} 
+} // namespace sat::num
