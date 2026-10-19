@@ -1,5 +1,5 @@
 Matrix Decompositions
-This is a module design note for Lead, Matrix Decompositions being handled my Stacy, branch name; feature/stacy-decompositions. The module provides the matrix factorisations
+This is a module design note for Lead, Matrix Decompositions being handled my Stacy, branch name; feature/stacy-decompositions. The module provides the matrix factorizations
 used by the Satellite Trajectory Numerical Computing Library: LU, Cholesky, QR and Gram-Schmidt.
 
 Files included are;
