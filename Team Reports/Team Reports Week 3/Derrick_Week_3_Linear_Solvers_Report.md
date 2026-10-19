@@ -32,6 +32,3 @@ Suggested branch: feature/derrick-residual-validation. Suggested commit: feat: a
 
 BackSubstitutionSolver expects an upper-triangular matrix. A small residual does not guarantee a well-conditioned matrix. Compile and run the tests with the team's C++23 named-module setup. Week 4 adds iterative refinement as another solver implementation.
 
-## 8. AI-use declaration
-
-Tool: ChatGPT. Purpose: help organize the report and explain residual validation, inheritance, and polymorphism. Reason: to describe the implementation clearly.
