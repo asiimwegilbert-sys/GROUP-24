@@ -34,4 +34,4 @@ BackSubstitutionSolver expects an upper-triangular matrix. A small residual does
 
 ## 8. AI-use declaration
 
-Tool: ChatGPT. Purpose: help organize the report and explain residual validation, inheritance, and polymorphism. Reason: to describe the implementation clearly. What I verified or changed: the report was aligned with the included code and notes its limitations; the team should review and test before merging.
+Tool: ChatGPT. Purpose: help organize the report and explain residual validation, inheritance, and polymorphism. Reason: to describe the implementation clearly.
