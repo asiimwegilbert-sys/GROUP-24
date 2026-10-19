@@ -1,25 +1,37 @@
 # Week 3 Individual Progress Report — Linear Solvers
 
-**Student/member:** Derrick
-**Assigned responsibility:** Linear Solvers module
+**Student/member:** Derrick  
+**Assigned responsibility:** Linear Solvers module  
 **Language standard:** C++23
 
 ## 1. Work completed
-I extended the Week 2 solver with residual and solution-validation functions. `calculateResidual` calculates r = b − A*x, `residualNorm` calculates the Euclidean norm, and `isSolutionAccurate` compares that norm with a tolerance.
 
-## 2. Implementation
-The module keeps back substitution and Gaussian elimination with partial pivoting. I added checks for invalid dimensions and tests for a known solution, a deliberately inaccurate solution, and invalid matrix dimensions.
+In Week 3, I added residual validation and introduced an object-oriented design for the linear solver. The module retains back substitution and Gaussian elimination, and adds functions to calculate the residual vector, its Euclidean norm, and whether a solution is within a tolerance.
 
-## 3. Testing and evidence
-Test source is included for these cases. This package does not claim a successful compiler run because C++23 named-module support and build commands depend on the compiler used.
+## 2. Inheritance in the code
 
-## 4. Git workflow
-Suggested branch: `feature/derrick-residual-validation`
-Suggested commit: `feat: add residual validation helpers`
-Create the branch and commit in the team repository and request teammate review.
+I created an abstract base class named LinearSolver. It declares a pure virtual solve function. GaussianSolver and BackSubstitutionSolver inherit from LinearSolver and override solve, each calling its own solver function.
 
-## 5. Limitations and next steps
-A small residual is useful but does not guarantee that a matrix is well-conditioned. Next week I plan to add iterative refinement and integration checks.
+## 3. Polymorphism in the code
 
-## 6. AI-use declaration
-Tool: ChatGPT. Purpose: help organize the report and clarify residual validation. Reason: present the work clearly. What I verified or changed: reviewed the function descriptions and test examples and kept the report focused on this week's work.
+The tests store derived solver objects using std::unique_ptr<LinearSolver> and call solve through a base-class pointer. The actual object determines which override runs. GaussianSolver handles a general square system, while BackSubstitutionSolver is for an upper-triangular system.
+
+## 4. Residual validation
+
+calculateResidual computes r = b - A*x. residualNorm measures the size of the residual, and isSolutionAccurate checks it against a tolerance. This helps assess whether the solution satisfies the original equations.
+
+## 5. Testing and evidence
+
+The test source covers known answers for both solvers, polymorphic calls, residual checks, and an inaccurate solution. Tests are included as source; successful compilation or execution is not claimed.
+
+## 6. Git workflow
+
+Suggested branch: feature/derrick-residual-validation. Suggested commit: feat: add residual validation and solver polymorphism. Create the branch and commit in the team repository and request teammate review.
+
+## 7. Limitations and next steps
+
+BackSubstitutionSolver expects an upper-triangular matrix. A small residual does not guarantee a well-conditioned matrix. Compile and run the tests with the team's C++23 named-module setup. Week 4 adds iterative refinement as another solver implementation.
+
+## 8. AI-use declaration
+
+Tool: ChatGPT. Purpose: help organize the report and explain residual validation, inheritance, and polymorphism. Reason: to describe the implementation clearly.
