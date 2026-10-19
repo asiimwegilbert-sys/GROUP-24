@@ -1,6 +1,6 @@
 Week 3 Progress Report
 Name: Nakibinge Jeremiah
-Component: Multilevel Inheritance and Polymorphism Refactor
+Component: Numerical Integration Module
 
 For week 3, I adjusted our codebase structure to actively incorporate the newly taught object-oriented programming concepts. I structured our numerical integration engine using three distinct architectural layers to implement multilevel inheritance:
 
