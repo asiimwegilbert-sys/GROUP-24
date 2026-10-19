@@ -1,98 +1,45 @@
-# Week 2 — Derrick Linear Solvers Module
+# Week 2 Individual Progress Report — Class-Based Linear Solvers
 
-## Member
+**Student/member:** Derrick  
+**Responsibility:** Linear Solvers module  
+**Language standard:** C++23
 
-Derrick
+## 1. What class did I create?
 
-## Assigned Responsibility
+I organized the Week 2 code around two classes: GaussianSolver and BackSubstitutionSolver. GaussianSolver performs Gaussian elimination with partial pivoting. BackSubstitutionSolver solves an upper-triangular system. I also used SolverOptions to store the pivot tolerance, and Matrix and Vector aliases to make declarations easier to read.
 
-Linear Solvers module
+## 2. Why did I create these classes?
 
-## Completed This Week
+The classes group each solver's operations and settings in one place. This makes the code easier to follow and lets the tests create a solver object and call its solve function instead of placing all the work inside main().
 
-Built on the Week 1 back-substitution work by adding:
+## 3. What data does each class hold?
 
-- Gaussian elimination.
-- Partial pivoting.
-- Row swapping.
-- Singular and nearly singular pivot checking.
-- Tests for a normal system.
-- A test where row swapping is required.
-- A singular matrix test.
-- Reuse of back substitution after elimination.
+Both solver classes hold one private member, options_, of type SolverOptions. SolverOptions contains the public double pivot_tolerance, used to decide when a pivot is too small. The matrix and right-hand-side vector are passed to solve() and are not stored as class members.
 
-## Branch
+## 4. What member functions operate on that data?
 
-`feature/derrick-linear-solvers`
+GaussianSolver has a public constructor and solve(const Matrix& A, const Vector& b) const. It copies the system, chooses the largest pivot in each column, swaps rows when needed, eliminates entries below the pivot, and finishes with back substitution. BackSubstitutionSolver has a public constructor and solve(const Matrix& U, const Vector& b) const, which solves from the last row upward.
 
-## Commit
+## 5. Which members are private and which are public?
 
-`feat: add gaussian elimination with pivoting`
+The options_ member is private in both classes so outside code cannot directly change the stored settings. Constructors and solve() are public so other parts of the program can create and use solver objects. SolverOptions is a struct, so pivot_tolerance is public by default. No protected members or inheritance relationship are used in this Week 2 design.
 
-## Pull Request
+## 6. How are the classes designed and used?
 
-To be created after the Week 2 implementation and tests are checked.
+The tests create a GaussianSolver object and call gaussian.solve(A, b) for a general square system. Another test system needs a row swap and checks partial pivoting. The tests also create a BackSubstitutionSolver object and call back.solve(U, rhs). A singular matrix case checks that GaussianSolver reports an error.
 
-## Reviewer
+## 7. Testing and evidence
 
-To be assigned during pull request review.
+The source tests cover known answers for both methods, a pivoting case, and a singular matrix. The test source is included, but successful compilation or execution is not claimed. Run it with the team's C++23 compiler and named-module build configuration.
 
-## Design Summary
+## 8. Class layout drawing
 
-The Week 2 solver changes a general square system into an upper triangular system using Gaussian elimination. After that, the back-substitution function from Week 1 is used to get the answer.
+The package includes docs/class_layout_guide.txt. Copy the two class boxes onto paper, showing class names, private options_, public constructors and solve() functions, and public pivot_tolerance in SolverOptions. Take a clear photo of your handwritten drawing and upload it alongside the report.
 
-Partial pivoting was added by looking for the largest absolute value in the current column and swapping rows when necessary.
+## 9. Git workflow
 
-## Test 1 — Normal System
+Suggested branch: feature/derrick-week2-class-based-solvers. Suggested commit: refactor: organize linear solvers into classes. Create the branch and commit in the team repository, then request teammate review.
 
-The system used was:
+## 10. AI-use declaration
 
-`2x + y = 5`
-
-`x + 3y = 6`
-
-The expected answer is:
-
-`x = 1.8`
-
-`y = 1.4`
-
-## Test 2 — Partial Pivoting
-
-The system used was:
-
-`y = 2`
-
-`2x + y = 4`
-
-The first pivot is zero, so the rows have to be swapped.
-
-The expected answer is:
-
-`x = 1`
-
-`y = 2`
-
-## Test 3 — Singular Matrix
-
-The system used was:
-
-`x + 2y = 3`
-
-`2x + 4y = 6`
-
-The second equation is a multiple of the first one, so the matrix is singular. The program detects this and throws an error.
-
-## AI Use
-
-**Tool:** ChatGPT
-
-**Purpose:** To help organize the Week 2 report and explain the steps of Gaussian elimination and partial pivoting.
-
-**Reason it was used:** It helped me understand how the Week 2 work builds on the Week 1 back-substitution function.
-
-**What I verified or changed:** I checked the example systems, reviewed the code logic, and kept the report focused on the work completed in Week 2.
-
-## Next Week
-
-In Week 3, I plan to improve input validation and add residual calculations and more edge-case tests.
+Tool: ChatGPT. Purpose: help organize the report and explain the class structure. Reason: to communicate how the solver classes are organized and used.
