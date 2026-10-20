@@ -24,11 +24,7 @@ calculateResidual computes r = b - A*x. residualNorm measures the size of the re
 
 The test source covers known answers for both solvers, polymorphic calls, residual checks, and an inaccurate solution. Tests are included as source; successful compilation or execution is not claimed.
 
-## 6. Git workflow
-
-Suggested branch: feature/derrick-residual-validation. Suggested commit: feat: add residual validation and solver polymorphism. Create the branch and commit in the team repository and request teammate review.
-
-## 7. Limitations and next steps
+## 6. Limitations and next steps
 
 BackSubstitutionSolver expects an upper-triangular matrix. A small residual does not guarantee a well-conditioned matrix. Compile and run the tests with the team's C++23 named-module setup. Week 4 adds iterative refinement as another solver implementation.
 
