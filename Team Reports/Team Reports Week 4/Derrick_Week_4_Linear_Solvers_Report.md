@@ -34,4 +34,4 @@ Iterative refinement may not improve every matrix. Compile with the team's C++23
 
 ## 8. AI-use declaration
 
-Tool: ChatGPT. Purpose: help organize the report and explain iterative refinement with inheritance and polymorphism. Reason: to describe the code and tests clearly. What I verified or changed: the report describes the included design; the team should compile, run, and review it before submission.
+Tool: ChatGPT. Purpose: help organize the report and explain iterative refinement with inheritance and polymorphism. Reason: to describe the code and tests clearly.
