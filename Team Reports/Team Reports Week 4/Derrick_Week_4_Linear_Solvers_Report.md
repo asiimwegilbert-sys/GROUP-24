@@ -24,14 +24,10 @@ The refinement function reuses solveGaussian for the initial solution and correc
 
 The test source compares direct and refined answers, checks residual accuracy, and rejects a negative iteration count. These are prepared tests; successful compilation or execution is not claimed.
 
-## 6. Git workflow
+## 6. Limitations and integration checklist
 
-Suggested branch: feature/derrick-iterative-refinement. Suggested commit: feat: add refinement solver and polymorphic integration. Create the branch and commit in the team repository and request teammate review.
+Iterative refinement may not improve every matrix.
 
-## 7. Limitations and integration checklist
-
-Iterative refinement may not improve every matrix. Compile with the team's C++23 compiler, run Week 1–4 tests, review tolerances, and confirm BackSubstitutionSolver receives an upper-triangular matrix.
-
-## 8. AI-use declaration
+## 7.  AI-use declaration
 
 Tool: ChatGPT. Purpose: help organize the report and explain iterative refinement with inheritance and polymorphism. Reason: to describe the code and tests clearly.
