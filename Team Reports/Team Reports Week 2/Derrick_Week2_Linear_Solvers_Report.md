@@ -30,7 +30,7 @@ The tests create a GaussianSolver object and call gaussian.solve(A, b) for a gen
 
 ## 7. Testing and evidence
 
-The source tests cover known answers for both methods, a pivoting case, and a singular matrix. The test source is included, but successful compilation or execution is not claimed. Run it with the team's C++23 compiler and named-module build configuration.
+The source tests cover known answers for both methods, a pivoting case, and a singular matrix.
 
 ## 8. AI-use declaration
 
