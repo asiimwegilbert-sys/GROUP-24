@@ -1,6 +1,17 @@
 
-During Week 2, I expanded our linear solvers module by successfully implementing the Gauss-Seidel iterative method in our source file . This method provides a faster, more efficient way to solve linear equation systems compared to the Jacobi method.
+During Week 2, I expanded our linear solvers module by successfully implementing the Gauss-Seidel iterative method in our source file . This method provides a faster, more efficient way to solve linear equation systems compared to the Jacobi method by using newly calculated numbers immediately..
 
+
+To adhere to our project's object-oriented design, our module utilizes structured configuration and result types to organize data cleanly:
+We created two main structures to manage our data: IterationOptions (for configuration settings) and IterationResult (for holding the output data).
+This is because instead of passing many separate variables back and forth through our functions, grouping them into structures makes the code much cleaner, easier to read, and safer to maintain.
+
+IterationOptions holds data members for configuration: tolerance (to control precision) and max_iterations (to limit loop steps).
+IterationResult holds data members for output: solution (a Vector containing the final answer), iterations (how many steps it took), and converged (a boolean flag showing if it successfully finished).
+
+The global-scoped solver functions like gauss_seidel(...) and jacobi(...) take IterationOptions as input parameters to configure how they run, and they process data through custom Matrix and Vector classes. They then construct and return an IterationResult object containing the computed findings
+
+In our IterationOptions and IterationResult structs, the data members are public by design. This allows the main program, the unit tests, and our solver functions to easily read and write configuration settings and results directly without unnecessary boilerplate getter/setter code.
 
 I wrote the step-by-step math logic for Gauss-Seidel with key improvements:
 
