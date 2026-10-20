@@ -13,7 +13,7 @@ I wrote "tests/test_interpolation.cpp" (48 lines) with 2 test cases. It uses onl
 
  I also compiled the test file with '-Wall -Wextra' and ran it against a temporary reference implementation to confirm the tests are correct: 2/2 tests passed, 0 failures.
 
-Full build and test output is attached to the pull request: [PR link here]
+Full build and test output is attached to the pull request.
 
 In progress
 
