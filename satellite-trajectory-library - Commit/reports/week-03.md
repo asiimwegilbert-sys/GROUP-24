@@ -40,4 +40,5 @@
 - Members' own AI use is declared in their individual reports (for example, Erick used ChatGPT).
 
 ## Reports received
-Delvin, Ibrahim, Derrick, Jeremiah, Erick. Not yet received: Gilbert, Stacy, Praise, Deogratius.
+Delvin, Ibrahim, Derrick, Jeremiah, Erick. 
+Not yet received: Stacy, Praise, Deogratius.
