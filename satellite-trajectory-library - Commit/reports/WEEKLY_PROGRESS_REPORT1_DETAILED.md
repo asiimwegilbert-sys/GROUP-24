@@ -1,6 +1,6 @@
 # Week __ Progress Report
 
-**First Submition:**
+**First Submision:**
 **Project:** Satellite Trajectory Numerical Computing Library  
 **Submitted Work:** Reports and structure of the project.
 
@@ -59,7 +59,7 @@ The folowing are the copies of some of the reports the group members did about t
 
 #### AI Use
 
-If AI tools were used, complete every field:
+ 
 
 - **Tool:** Chatgpt 
 - **Purpose:** Had to consult by any means to maximise understanding
@@ -93,7 +93,7 @@ If AI tools were used, complete every field:
 
 #### AI Use
 
-If AI tools were used, complete every field:
+ 
 
 - **Tool:** None
 - **Purpose:** NOne
@@ -129,7 +129,7 @@ If AI tools were used, complete every field:
 
 #### AI Use
 
-If AI tools were used, complete every field:
+ 
 
 - **Tool:** None
 - **Purpose:** NOne
@@ -151,7 +151,7 @@ If AI tools were used, complete every field:
 
 #### AI Use
 
-If AI tools were used, complete every field:
+ 
 
 - **Tool:** None
 - **Purpose:** NOne
@@ -173,7 +173,7 @@ If AI tools were used, complete every field:
 
 #### AI Use
 
-If AI tools were used, complete every field:
+ 
 
 - **Tool:** None
 - **Purpose:** NOne
@@ -195,7 +195,7 @@ If AI tools were used, complete every field:
 
 #### AI Use
 
-If AI tools were used, complete every field:
+ 
 
 - **Tool:** None
 - **Purpose:** NOne
@@ -217,7 +217,7 @@ If AI tools were used, complete every field:
 
 #### AI Use
 
-If AI tools were used, complete every field:
+ 
 
 - **Tool:** None
 - **Purpose:** NOne
@@ -239,7 +239,7 @@ If AI tools were used, complete every field:
 
 #### AI Use
 
-If AI tools were used, complete every field:
+ 
 
 - **Tool:** None
 - **Purpose:** NOne
@@ -249,8 +249,6 @@ If AI tools were used, complete every field:
 > No AI tools were used this week.
 
 ## 5. Decisions Made This Week
-
-Record technical decisions that affect more than one module. Include the reason and affected members.
 
 | Decision | Reason | Affected modules/members |
 |---|---|---|
