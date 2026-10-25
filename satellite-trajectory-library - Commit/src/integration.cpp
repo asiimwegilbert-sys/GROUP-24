@@ -105,7 +105,7 @@ public:
     }
 };
 
-// 7. Concrete Subclass - Romberg Integration Engine
+// 7. Concrete Subclass - Romberg Integration Engin
 class RombergSolver : public QuadratureIntegrator {
 public:
     double integrate(const ScalarFunction& f, double lower, double upper) override {
@@ -132,7 +132,7 @@ public:
     }
 };
 
-// --- Group Compatibility Linker Interfaces ---
+// --- Group Compatibility Linker Interfaces --
 State rk2_step(const ODEFunction& f, double t, const State& y, double dt) {
     MidpointSolver m_solver(dt);
     TrajectorySolver* ptr = &m_solver;
