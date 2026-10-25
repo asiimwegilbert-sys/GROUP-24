@@ -5,7 +5,7 @@
 
 namespace sat::num {
 
-// 1. Grandparent Base Class - Handles Data Validation.
+// 1. Grandparent Base Class - Handles Data Validation
 class BaseSolver {
 public:
     bool validate_inputs(const std::vector<double>& state, double dt) {
