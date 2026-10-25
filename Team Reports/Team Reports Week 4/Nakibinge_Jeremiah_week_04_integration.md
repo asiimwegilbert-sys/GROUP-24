@@ -1,4 +1,4 @@
-Week 3 & 4 Final Progress Report.
+Week 3 & 4 Final Progress Report
 Name: Nakibinge Jeremiah
 Component: Numerical Integration Module
 
