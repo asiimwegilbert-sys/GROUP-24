@@ -1,27 +1,4 @@
-#include "satellite_trajectory/integration.hpp"
-#include <cmath>
-#include <vector>
-#include <iostream>
-
-namespace sat::num {
-
-// 1. Grandparent Class - Handles baseline data verification (Week 2 Logic)
-class BaseSolver {
-public:
-    bool validate_inputs(const std::vector<double>& state, double dt) {
-        if (state.empty()) {
-            std::cout << "Error: Empty state!" << std::endl;
-            return false;
-        }
-        if (dt <= 0.0) {
-            std::cout << "Error: Bad dt!" << std::endl;
-            return false;
-        }
-        return true;
-    }
-};
-
-// 2. Parent Class - Demonstrates Multilevel Inheritance & Polymorphism Setup
+t Class - Demonstrates Multilevel Inheritance & Polymorphism Setup
 class NumericalIntegrator : public BaseSolver {
 protected:
     double time_step;
