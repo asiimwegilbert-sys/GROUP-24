@@ -1,5 +1,5 @@
-Progress report for Week 03..
-Instead, this stage identifies how the remaining algorithms fit into the overall plan and what needs to be checked once coding begins.
+Progress report for Week 03
+This stage identifies how the remaining algorithms fit into the overall plan and what needs to be checked once coding begins.
 
 Cholesky decomposition expresses a suitable symmetric positive-definite matrix as a product of a lower-triangular matrix and its transpose.
 QR decomposition represents a matrix as the product of an orthogonal matrix and an upper-triangular matrix. The planned QR approach uses
