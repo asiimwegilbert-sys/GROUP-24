@@ -1,7 +1,7 @@
 # Week 2 Progress Report
 
-> DRAFT for the team lead (Gilbert) to review and edit. Member summaries come from the individual reports in
-> `Team Reports/Team Reports Week 2/` (plus Delvin's `report 2.md` and Ibrahim's Week 2 draft in the Week 1 folder).
+> Report for the team lead, Gilbert after review and edit. Member summaries come from the individual reports in
+> `Team Reports/Team Reports Week 2/`.
 
 ## Completed
 | Member | Module | Completed this week |
@@ -36,7 +36,6 @@
 ## AI Use
 - **Tool:** Claude (Anthropic)
 - **Purpose:** Summarising the members' individual Week 2 reports into this team report.
-- **What was changed:** 
 - Members' own AI use is declared in their individual reports (for example, Erick used ChatGPT).
 
 ## Reports received

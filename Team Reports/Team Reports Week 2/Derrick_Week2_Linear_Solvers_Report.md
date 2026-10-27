@@ -30,16 +30,8 @@ The tests create a GaussianSolver object and call gaussian.solve(A, b) for a gen
 
 ## 7. Testing and evidence
 
-The source tests cover known answers for both methods, a pivoting case, and a singular matrix. The test source is included, but successful compilation or execution is not claimed. Run it with the team's C++23 compiler and named-module build configuration.
+The source tests cover known answers for both methods, a pivoting case, and a singular matrix.
 
-## 8. Class layout drawing
-
-The package includes docs/class_layout_guide.txt. Copy the two class boxes onto paper, showing class names, private options_, public constructors and solve() functions, and public pivot_tolerance in SolverOptions. Take a clear photo of your handwritten drawing and upload it alongside the report.
-
-## 9. Git workflow
-
-Suggested branch: feature/derrick-week2-class-based-solvers. Suggested commit: refactor: organize linear solvers into classes. Create the branch and commit in the team repository, then request teammate review.
-
-## 10. AI-use declaration
+## 8. AI-use declaration
 
 Tool: ChatGPT. Purpose: help organize the report and explain the class structure. Reason: to communicate how the solver classes are organized and used.
