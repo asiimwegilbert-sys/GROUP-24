@@ -132,7 +132,7 @@ public:
     }
 };
 
-// --- Group Compatibility Linker Interfaces ---
+// --- Group Compatibility Linker Interfaces --
 State rk2_step(const ODEFunction& f, double t, const State& y, double dt) {
     MidpointSolver m_solver(dt);
     TrajectorySolver* ptr = &m_solver;
