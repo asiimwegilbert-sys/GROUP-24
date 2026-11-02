@@ -23,10 +23,10 @@ LUResult lu_decompose(const Matrix& matrix, double tol = 1e-10);
 
 LUResult cholesky_decompose(const Matrix& matrix, double tol = 1e-10);
 //householder QR decomposition, returned in thin form
-QRResult qr_decompose(const Matrix& matrix, double tol = 1e-10)
+QRResult qr_decompose(const Matrix& matrix, double tol = 1e-10);
 
 //modified Gram-schmidt QR decomposition, returned in thin form
-QRResult qr_decompose(const Matrix& matrix, double tol = 1e-10 );
+QRResult  qr_gram_schmidt(const Matrix& matrix, double tol = 1e-10 );
 
 //convenience function returning only the orthogonal Q factor.
 Matrix gram_schmidt(const Matrix& matrix, double tol = 1e-10);
