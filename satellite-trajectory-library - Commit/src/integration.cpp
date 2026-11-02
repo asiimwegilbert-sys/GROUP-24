@@ -139,19 +139,19 @@ public:
     }
 };
 
-// --- Group Compatibility Linker Interfaces (Explicitly Instantiated for double) ---
-State rk2_step(const ODEFunction& f, double t, const State& y, double dt) {
-    MidpointSolver<double> m_solver(dt);
+// --- Group Compatibility Linker Interfaces--
+State rk2_step(const ODEFunction& f, double time, const State& state, double step) {
+    MidpointSolver<double> m_solver(step);
     TrajectorySolver<double>* ptr = &m_solver;
-    if (!ptr->validate_inputs(y, dt)) return y;
-    return ptr->compute_step(f, t, y);
+    if (!ptr->validate_inputs(state, step)) return state;
+    return ptr->compute_step(f, time, state);
 }
 
-State rk4_step(const ODEFunction& f, double t, const State& y, double dt) {
-    ClassicalRK4Solver<double> rk4_solver(dt);
+State rk4_step(const ODEFunction& f, double time, const State& state, double step) {
+    ClassicalRK4Solver<double> rk4_solver(step);
     TrajectorySolver<double>* ptr = &rk4_solver;
-    if (!ptr->validate_inputs(y, dt)) return y;
-    return ptr->compute_step(f, t, y);
+    if (!ptr->validate_inputs(state, step)) return state;
+    return ptr->compute_step(f, time, state);
 }
 
 double gaussian_quadrature(const ScalarFunction& f, double lower, double upper) {
