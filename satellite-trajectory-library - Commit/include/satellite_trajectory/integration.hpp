@@ -6,9 +6,11 @@
 
 namespace sat::num {
 
+
 using State = std::vector<double>;
 using ScalarFunction = std::function<double(double)>;
 using ODEFunction = std::function<State(double, const State&)>;
+
 
 State rk2_step(
     const ODEFunction& f,
