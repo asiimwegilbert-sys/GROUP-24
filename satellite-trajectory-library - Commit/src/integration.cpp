@@ -105,14 +105,14 @@ public:
     }
 };
 
-// 7. Concrete Subclass - Romberg Integration Engin
+// 7. Concrete Subclass - Romberg Integration Engine
 class RombergSolver : public QuadratureIntegrator {
 public:
     double integrate(const ScalarFunction& f, double lower, double upper) override {
         int max_steps = 5;
         std::vector<double> R1(max_steps, 0.0), R2(max_steps, 0.0);
         double h = upper - lower;
-        R1[0] = 0.5 * h * (f(lower) + f(upper));
+        R1 = 0.5 * h * (f(lower) + f(upper));
 
         for (int i = 1; i < max_steps; ++i) {
             h /= 2.0;
@@ -121,7 +121,7 @@ public:
             for (int k = 1; k <= points; ++k) {
                 sum += f(lower + (2 * k - 1) * h);
             }
-            R2[0] = 0.5 * R1[0] + h * sum;
+            R2 = 0.5 * R1 + h * sum;
             for (int j = 1; j <= i; ++j) {
                 double factor = std::pow(4.0, j);
                 R2[j] = (factor * R2[j - 1] - R1[j - 1]) / (factor - 1.0);
@@ -132,7 +132,7 @@ public:
     }
 };
 
-// --- Group Compatibility Linker Interfaces --
+// --- Group Compatibility Linker Interfaces ---
 State rk2_step(const ODEFunction& f, double t, const State& y, double dt) {
     MidpointSolver m_solver(dt);
     TrajectorySolver* ptr = &m_solver;
