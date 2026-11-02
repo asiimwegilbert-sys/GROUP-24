@@ -26,7 +26,7 @@ The system utilizes 'protected' specifiers to encapsulate state size loops and s
 4. Why are some members protected and others public?
 Member parameters are protected so that specialized child classes can pull parameters implicitly from their parent context without manual instantiation, while wrapper function configurations remain public to allow the group's global main driver routine to access them cleanly.
 
-### Part 3: Template Integration & Design Verification
+### Part 3: Template Integration & Design Verification.
 
 1. Why are templates used in these modules?
 Templates are implemented to transform our calculation routines into fully generic data managers. This allows the core algorithm tree to accept any standard arithmetic numeric type (float, double, int, short) seamlessly without duplicating code signatures.
