@@ -22,7 +22,7 @@ The refinement function reuses solveGaussian for the initial solution and correc
 
 ## 5. Testing and evidence
 
-The test source compares direct and refined answers, checks residual accuracy, and rejects a negative iteration count. These are prepared tests; successful compilation or execution is not claimed.
+The test source compares direct and refined answers, checks residual accuracy, and rejects a negative iteration count.
 
 ## 6. Limitations and integration checklist
 

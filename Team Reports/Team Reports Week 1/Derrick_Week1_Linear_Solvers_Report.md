@@ -18,23 +18,6 @@ Prepared the first version of the Linear Solvers module, including:
 - Forward substitution.
 - Basic checking of matrix and vector sizes.
 - Checking for zero or very small diagonal values.
-- A simple test program.
-
-## Branch
-
-`feature/derrick-linear-solvers`
-
-## Commit
-
-`feat: add basic linear solver functions`
-
-## Pull Request
-
-To be created after the Week 1 work is checked.
-
-## Reviewer
-
-To be assigned during pull request review.
 
 ## Design Summary
 

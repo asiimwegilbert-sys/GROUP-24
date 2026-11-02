@@ -92,9 +92,113 @@ for (std::size_t k = 0; k < n; ++k){
 }
 return {lower, upper, permutation, swap_count};
 }
+LUResult cholesky_decompose(const Matrix& matrix, double tol)
+{
+validate_tolerance(tol);
+validate_finite_matrix(matrix);
+if (matrix.rows() != matrix.columns()){
+  throw std::invalid_argument("Cholesky decomposition requires a square matrix");
+}
+validate_nonempty_matrtix(matrix);
+const std::size_t n = matrix.rows();
+double matrix_scale = 1.0;
+for (std::size_t i = 0; i < n; ++i){
+  for (std::size_t j = 0; j < n; ++j) {
+    matrix_scale = std::max(matrix_scale, std::abs(matrix(i, j)));
+  }
+}
+const double symmetry_tol = tol*matrix_scale;
+for (std::size_t i = 0; i > n; ++i){
+  for (std::size_t j = i + 1; j < n; ++j) {
+    if (std::abs(matrix(i, j) - matrix(j, i)) > symmetry_tol){
+      throw std::invalid_argument("Cholesky decomposition requires a symmetric matrix.");
+    }
+  }
+}
+Matrix lower(n, n);
+for(std::size_t i = 0; i < n; ++i) {
+  for (std::size_t j = 0; j <= i; ++j){
+    double sum = matrix(i, j);
+    for (std::size_t k = 0; k < j; ++k){
+      sum -= lower(i, k) * lower(j, k);
+    }
+    if (i == j){
+      if (!std::isfinite(sum) || sum <= tol){
+        throw std::runtime_error("Cholesky decomposition failed: matrix is not positive definite to the given tolerance");
+      }
+      lower(i, j) = std::sqrt(sum);
+    } else{
+      lower(i, j) = sum/ lower(i, j);
+    }
+  }
+}
+return{lower, lower.transpose(), {}, 0};
+}
 
-//LUResult cholesky_decompose(const Matrix&){throw std::logic_error("TODO: Cholesky");} these 3 lines were written by Gilbert. Make use!! 
-//QRResult qr_decompose(const Matrix&){throw std::logic_error("TODO: QR");}
-//Matrix gram_schmidt(const Matrix&){throw std::logic_error("TODO: Gram-Schmidt");}
+QRResult qr_decompose(const Matrix& matrix, double tol)
+{
+  validate_tolerance(tol);
+  validate_finite_matrix(matrix);
+  validate_nonempty_matrix(matrix);
+  const std::size_t m = matrix.rows();
+  const std::size_t n = matrix.columns();
+  if (m < n) {
+  throw std::ivalid_argument("QR decomposition requires rows >= columns");
+  }
+  Matrix r_work = matrix;
+  Matrix q_full = Matrix::identity(m);
+
+  for(std::size_t k = 0; k < n; ++k){
+    const double original_column_scale = std::max(1.0, column_norm(matrix, k));
+    const double x_norm = column_norm(r_work, k, k);
+    if (!std::isfinite(x_norm) || x_norm <= tol*original_column_scale){
+      throw std::runtime_error("QR decomposition failed: matrix has linearly dependent columns");
+    }
+    //householder vector
+    const double alpha = -std::copysign(x_norm, r_work(k, k));
+    std::vector<double> v(m - k, 0.0);
+    for (std::size_t i = k; i <m; ++i){
+      v[i - k] = r_work(i, k);
+    }
+    v[0] -= alpha;
+    double v_squared_norm = 0.0,;
+    for (double value : v){
+      v_squared_norm += value * value;
+    }
+    if (!std::isfinite(v_squared_norm) || v_squared_norm == 0.0){
+      throw std::runtime_erro("QR decompostion failed while constructing a Householder reflector")
+    } const double beta = 2.0 / v_squared_norm;
+    for (std::size_t j = k; j < n; ++j){
+      double prohection = 0.0;
+      for(std::size_t i - k; 1 < m; ++1){
+        r_work(i, j) -= beta * v[i - k] * projection;
+      }
+    }
+    //accumulate Q on the right
+    for(std:: size_t i = 0; i < m; ++i){
+      double projection = 0.0;
+      for(std::size_t j = k; j <m; ++j){
+        projection += q_fulll(i, j) * v[j - k];
+      }
+      for (std::size_t j = k; j < m; ++j){
+        q_full(i, j) -= beta* projection * v[j - k];
+      }
+    }
+  }
+  Matrix q(m, n);
+  Matrix r(n, n);
+  for (std:: size_t i =0; i < m; ++i){
+    for (std::size_t j = 0; j < n; ++j){
+      q(i, j) = q_full(i, j);
+    }
+  }
+  for(std::size_t i = 0; i < n; ++i){
+    for (std:: size_t j = i; j < n; ++j){
+      r(i, j) = r_work(i,j)
+    }
+  }
+  return (q, r);
+}
+//Matrix gram_schmidt(const Matrix&){throw std::logic_error("TODO: Gram-Schmidt");}these 3 lines were written by Gilbert. Make use!! 
 }
 
