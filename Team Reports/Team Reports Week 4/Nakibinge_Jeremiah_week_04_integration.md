@@ -13,7 +13,7 @@ For Week 4, I completed the encapsulation of our entire numerical simulation sui
 - Introduced a separate base class called QuadratureIntegrator defining a generalized virtual interface for area integrations.
 - Implemented GaussLegendreSolver (Child A) and RombergSolver (Child B) as derived classes overriding the 'integrate(...)' method.
 
-### Part 2: Program Deconstruction & Design Goals
+### Part 2: Program Deconstruction & Design Goals.
 1. What classes did you create?
 We finalized two distinct family structures: an ODE tracking sequence (BaseSolver -> TrajectorySolver -> MidpointSolver / ClassicalRK4Solver) and an area evaluation tree (QuadratureIntegrator -> GaussLegendreSolver / RombergSolver).
 
