@@ -1,8 +1,8 @@
 # Week 3 Progress Report
 
 > DRAFT for the team lead (Gilbert) to review and edit. Member summaries come from the individual reports in
-> `Team Reports/Team Reports Week 3/` (plus Ibrahim's `Week 3 rpt Ibrahim-matrices.md`). Next Week items also
-> follow `TEAM_ASSIGNMENTS_AND_WEEKLY_PLAN.md`.
+> `Team Reports/Team Reports Week 3/`. 
+> Next Week items also follow `TEAM_ASSIGNMENTS_AND_WEEKLY_PLAN.md`.
 
 ## Completed
 | Member | Module | Completed this week (object-oriented work and implementation) |
@@ -28,6 +28,9 @@
 - Derrick's tests need the team's C++23 named-module setup, which differs from the C++17 CMake build; his report does not claim the tests were compiled or run.
 - The vector operators are still placeholders, so anything that adds or scales vectors cannot work yet.
 
+## Solved.
+- The team lead was told to edit the CMake file so as to be able to handle C++17 and above
+
 ## Next Week
 - Implement the vector operators and `Matrix * Vector`.
 - Finish RK2/RK4 for vector states, then the two-body model and satellite propagation (Erick, Jeremiah).
@@ -35,8 +38,7 @@
 
 ## AI Use
 - **Tool:** Claude (Anthropic)
-- **Purpose:** Summarising the members' individual Week 3 reports into this team report.
-- **What was changed:** 
+- **Purpose:** Was used to show how to create and implement the CMake files.
 - Members' own AI use is declared in their individual reports (for example, Erick used ChatGPT).
 
 ## Reports received
