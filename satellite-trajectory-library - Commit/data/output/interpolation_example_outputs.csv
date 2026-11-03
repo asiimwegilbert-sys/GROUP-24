@@ -1,0 +1,18 @@
+example,output,value
+1,lagrange_at_x_1.5,4.7500
+1,newton_at_x_1.5,4.7500
+1,newton_coefficient_c0,1.0000
+1,newton_coefficient_c1,2.0000
+1,newton_coefficient_c2,1.0000
+1,polynomial_a0,1.0000
+1,polynomial_a1,1.0000
+1,polynomial_a2,1.0000
+1,exact_value,4.7500
+2,x_at_t_0_min_km,7000.0000
+2,x_at_t_8_min_km,6062.1778
+2,x_at_t_16_min_km,3500.0000
+2,x_at_t_24_min_km,0.0000
+2,interpolated_x_at_t_12_min_km,4941.2250
+2,exact_x_at_t_12_min_km,4949.7475
+2,error_km,8.5224
+3,caught_error,duplicate x-values are not allowed
