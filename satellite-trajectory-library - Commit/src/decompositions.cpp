@@ -302,10 +302,9 @@ QRResult qr_gram_schmidt(const Matrix& matrix,double tol){
     return {q,r};
 }
 
-
 // Return only orthogonal Q matrix
 Matrix gram_schmidt(const Matrix& matrix,double tol){
     return qr_gram_schmidt(matrix,tol).q;
 }
 
-}
+}//namespace sat::num
