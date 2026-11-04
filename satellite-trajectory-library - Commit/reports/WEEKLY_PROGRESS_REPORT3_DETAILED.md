@@ -75,7 +75,7 @@ The Week 3 work, the lead integrates and merges modules and remaining/ resolving
 **Assigned responsibility:** Matrix
 **Branch:** -
 **Commits:** -
-**Reviewer(s):** Gilbert, Derrick, Deogratiuos
+**Reviewer(s):** Gilbert, Derrick.
 
 #### Completed
 
