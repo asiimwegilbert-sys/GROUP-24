@@ -7,7 +7,6 @@ option(BUILD_TESTS "Build tests" ON)
 option(BUILD_EXAMPLES "Build examples" ON)
 add_library(satellite_trajectory
     src/vector.cpp
-    src/matrix.cpp
     src/Matrix3.cpp
     src/interpolation.cpp
     src/integration.cpp
