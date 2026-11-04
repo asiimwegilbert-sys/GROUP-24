@@ -2,7 +2,7 @@
 #include <iostream>
 #include <iomanip>
 
-// Mock circular orbit tracking derivative function
+// Mock circular orbit tracking derivative function.
 sat::num::State satellite_circular_ode(double t, const sat::num::State& pos) {
     sat::num::State dpos(2);
     dpos[0] = -std::sin(t); // Mock X-velocity
