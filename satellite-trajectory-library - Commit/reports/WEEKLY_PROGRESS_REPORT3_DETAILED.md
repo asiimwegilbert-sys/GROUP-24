@@ -4,14 +4,15 @@
 **Project:** Satellite Trajectory Numerical Computing Library
 **Submitted work:** Reports and structure of the project.
 
-> DRAFT for the team lead (Gilbert) to review. The member sections are taken from the individual reports in
-> `Team Reports/`. Where a report says nothing, this document says so instead of guessing.
+> DRAFT for the team lead (Gilbert) to review. The member sections come from the individual reports in
+> `Team Reports/`; "Repository check" lines come from the lead's review of the Git history and the code.
+> Where a report says nothing, this document says so instead of guessing.
 
 ## 1. Weekly Summary
 
 Week 3 added the object-oriented concepts (classes, access specifiers, inheritance, polymorphism) to the project. Jeremiah built a three-level inheritance chain for the integration module, Derrick added an abstract solver base class with two derived solvers and residual checks, Ibrahim implemented the Matrix class with 41 tests, and Delvin declared the vector operators with placeholder bodies. Erick defined the satellite state and added propagation input checks.
 The main blockers are that `integration.hpp` and `integration.cpp` are not aligned, RK4 for vector states is incomplete, the vector operators are placeholders, and Derrick's tests need the C++23 module setup.
-No Week 3 report was received from Gilbert, Stacy, Praise or Deogratius.
+Stacy, Deogratius and Praise have now also submitted Week 3 reports (Praise's is on an unmerged branch). Only the team lead's individual report and integration note are still missing.
 
 ## 2. Team Status Overview
 
@@ -21,9 +22,9 @@ No Week 3 report was received from Gilbert, Stacy, Praise or Deogratius.
 | Delvin | Vector | Operator overloads declared (`+`, `-`, scalar `*`, `dot`); placeholder bodies | Implementation | - | - |
 | Ibrahim | Matrix | Matrix class implemented; `+`, `-`, `*`, scalar `*`; `test_matrix.cpp` (41 checks) | `Matrix * Vector` | Waits on the Vector class | - |
 | Derrick | Linear solvers | Residual validation; `LinearSolver` base with two derived solvers; polymorphism tests | Iterative refinement (Week 4) | Needs C++23 module setup | suggested `feature/derrick-residual-validation` |
-| Stacy | Decompositions | No individual report received | - | - | - |
-| Praise | Iterative solvers | No individual report received | - | - | - |
-| Deogratius | Interpolation | No individual report received (`test_interpolation3.cpp` is in the repo root) | - | - | - |
+| Stacy | Decompositions | Report written (planned Cholesky, QR, Gram-Schmidt); Cholesky and QR committed 26 Oct | Compile fixes (done by Erick, 2 Nov) | Report says not yet implemented when written | `stacy-lead-matrix-decompositions` |
+| Praise | Iterative solvers | Week 3 report on branch `asingwirepraise-iterative` (not merged); claims power iteration | - | Code not in any branch | - |
+| Deogratius | Interpolation | Week 3 report: tests rewritten with classes (`test_interpolation3.cpp`) | - | - | `arindadeogratius-interpolation` |
 | Jeremiah | Integration/RK methods | `BaseSolver` -> `NumericalIntegrator` -> `MidpointSolver`; polymorphism | RK4, Romberg and quadrature (Week 4) | - | - |
 | Erick | Least squares, eigenvalues, satellite trajectory | Satellite state and propagation input checks; tests updated | Two-body dynamics; trajectory tests | RK header and source not aligned | - |
 
@@ -59,6 +60,10 @@ No individual report or integration note received. The Week 3 plan asks the lead
 
 - Not stated in the individual report.
 
+#### Repository check (lead review of the repository, 3 Nov)
+
+- The operators were still `TODO` in `src/vector.cpp` on `main` (the finished versions came later, in `tests/`).
+
 #### AI Use
 
 - **Tool:** None declared in the individual report (member to confirm)
@@ -91,6 +96,10 @@ No individual report or integration note received. The Week 3 plan asks the lead
 #### Next Week
 
 - Implement `Matrix * Vector`.
+
+#### Repository check (lead review of the repository, 3 Nov)
+
+- Nothing further to note.
 
 #### AI Use
 
@@ -125,6 +134,10 @@ No individual report or integration note received. The Week 3 plan asks the lead
 
 - Week 4: iterative refinement as another solver implementation.
 
+#### Repository check (lead review of the repository, 3 Nov)
+
+- Nothing further to note.
+
 #### AI Use
 
 - **Tool:** None declared in the individual report (member to confirm)
@@ -134,15 +147,110 @@ No individual report or integration note received. The Week 3 plan asks the lead
 
 ### Stacy:
 
-No individual report received.
+**Assigned responsibility:** Matrix decompositions
+**Branch:** `Stacy-Elizabeth-Namuleme-patch-3` (merged), then `stacy-lead-matrix-decompositions` (PR #46, #53)
+**Commits:** `Add Week 03 progress report for matrix algorithms`; `Implement Cholesky and QR decomposition functions` (26 Oct)
+**Reviewer(s):** To be confirmed
+
+#### Completed
+
+- Report describing how the remaining algorithms fit the plan: Cholesky (A = L·Lᵀ for symmetric positive-definite matrices), QR by Householder transformations, and modified Gram-Schmidt as another way to build an orthogonal basis.
+- Explained what the tests need to check: reconstruction, orthogonality of Q, invalid inputs, and dependent columns for Gram-Schmidt.
+
+#### In Progress
+
+- The report says the routines were not yet implemented when it was written; it lists LU first, then Cholesky, Householder QR and modified Gram-Schmidt, each with tests.
+
+#### Challenges / Blockers
+
+- Numerical correctness and compatibility with the full project were still unverified when the report was written.
+
+#### Next Week
+
+- Implement the methods in small reviewable steps and add tests for reconstruction, orthogonality and invalid inputs.
+
+#### Repository check (lead review of the repository, 3 Nov)
+
+- Cholesky and QR were committed on 26 Oct (`e393157`). The first version had compile errors; Erick corrected them on 2 Nov (merged in PR #53).
+- On the latest `origin/main` the decomposition file compiles and passes 15 checks written during this review (LU, Cholesky, QR, Gram-Schmidt).
+
+#### AI Use
+
+- **Tool:** None declared in the individual report (member to confirm)
+- **Purpose:** -
+- **Reason it was used:** -
+- **What the team verified or changed:** -
 
 ### Praise:
 
-No individual report received.
+**Assigned responsibility:** Iterative solvers
+**Branch:** `asingwirepraise-iterative` (not merged into `main`)
+**Commits:** `report for week 3` (24 Oct)
+**Reviewer(s):** To be confirmed
+
+#### Completed
+
+- Week 3 report on power iteration and OOP: the report says power iteration was added to `src/iterative_solvers.cpp`.
+- OOP part: `IterationOptions` and `IterationResult` are structs with public members; `Matrix` and `Vector` keep their data private; the three solver functions share the same input and result style.
+
+#### In Progress
+
+- Not stated in the individual report.
+
+#### Challenges / Blockers
+
+- Not stated in the individual report.
+
+#### Next Week
+
+- Not stated in the individual report.
+
+#### Repository check (lead review of the repository, 3 Nov)
+
+- The branch contains only the report file. Power iteration and Gauss-Seidel are still `TODO` on `main` and on every branch.
+- `iterative_solvers` has free functions and structs, no class hierarchy or virtual functions, so the report's inheritance and polymorphism points need to refer to code that exists.
+- The report contains leftover `[cite: 8]` markers and no AI-use declaration.
+
+#### AI Use
+
+- **Tool:** None declared in the individual report (member to confirm)
+- **Purpose:** -
+- **Reason it was used:** -
+- **What the team verified or changed:** -
 
 ### Deogratius:
 
-No individual report received. A file `test_interpolation3.cpp` (classes `TestResult` and `InterpolationTester`) is in the repository root and may be his Week 3 work.
+**Assigned responsibility:** Interpolation (tests)
+**Branch:** `arindadeogratius-interpolation`
+**Commits:** `Create InterpolationWk3.md` (26 Oct)
+**Reviewer(s):** To be confirmed
+
+#### Completed
+
+- Edited and updated `test_interpolation.cpp` from Week 2 so that it uses classes with data members and member functions, as taught that week.
+
+#### In Progress
+
+- Not stated in the individual report.
+
+#### Challenges / Blockers
+
+- Not stated in the individual report.
+
+#### Next Week
+
+- Not stated in the individual report.
+
+#### Repository check (lead review of the repository, 3 Nov)
+
+- The class-based tests are in `test_interpolation3.cpp` (`TestResult`, `InterpolationTester`); `tests/test_interpolation.cpp` on `main` is still a 5-line placeholder, and neither file was in the CMake test list.
+
+#### AI Use
+
+- **Tool:** None declared in the individual report (member to confirm)
+- **Purpose:** -
+- **Reason it was used:** -
+- **What the team verified or changed:** -
 
 ### Jeremiah:
 
@@ -167,6 +275,10 @@ No individual report received. A file `test_interpolation3.cpp` (classes `TestRe
 #### Next Week
 
 - Add RK4, Romberg and Gaussian quadrature into the inheritance tree in Week 4.
+
+#### Repository check (lead review of the repository, 3 Nov)
+
+- Nothing further to note.
 
 #### AI Use
 
@@ -202,6 +314,10 @@ No individual report received. A file `test_interpolation3.cpp` (classes `TestRe
 
 - Finalize integration with the RK2/RK4 vector interface; implement the two-body gravity model; complete propagation with RK2 and RK4; run accuracy and circular-orbit tests.
 
+#### Repository check (lead review of the repository, 3 Nov)
+
+- Nothing further to note.
+
 #### AI Use
 
 - **Tool:** ChatGPT
@@ -225,7 +341,9 @@ No individual report received. A file `test_interpolation3.cpp` (classes `TestRe
 | `integration.hpp` and `integration.cpp` do not match; RK4 for vector states is incomplete | Jeremiah, Erick | Satellite propagation cannot be finished | Agree one RK interface and align header and source |
 | Derrick's tests need the C++23 named-module setup, but the project builds as C++17 | Derrick, Gilbert | Solver tests cannot run with the project | Port to the main `sat::num` types and C++17 |
 | Vector operators are placeholders; `Matrix * Vector` waits on them | Delvin, Ibrahim | Vector and matrix arithmetic unusable | Implement the operators, then `Matrix * Vector` |
-| No Week 3 report from Gilbert, Stacy, Praise, Deogratius; integration note missing | Gilbert, Stacy, Praise, Deogratius | Incomplete submission | Submit before the deadline |
+| Stacy's report says the decompositions were not started; the code was committed on 26 Oct and fixed on 2 Nov | Stacy, Erick | Report and code disagree | Update the report to match what was done |
+| Praise's Week 3 report is on an unmerged branch and describes power iteration that is not in any branch | Praise | Report claims code that cannot be checked | Push the code or correct the report; remove `[cite: 8]` leftovers |
+| No Week 3 report from Gilbert; integration note missing | Gilbert | Incomplete submission | Submit before the deadline |
 
 ## 6. Next Week's Shared Goals
 
@@ -236,4 +354,4 @@ No individual report received. A file `test_interpolation3.cpp` (classes `TestRe
 
 ## 7. Conclusion
 
-Week 3 introduced inheritance and polymorphism in the integration and linear-solver modules and produced a tested Matrix class. The remaining work is mostly integration: aligning the RK interface, implementing the vector operators and moving the solver classes onto the main library types. Four members have not yet submitted Week 3 reports.
+Week 3 introduced inheritance and polymorphism in the integration and linear-solver modules and produced a tested Matrix class. All members except the team lead have now submitted a Week 3 report. The remaining work is integration: aligning the RK interface, moving the vector operators into `src/vector.cpp`, and moving the solver classes onto the main library types.
