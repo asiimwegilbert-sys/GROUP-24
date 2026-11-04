@@ -13,7 +13,7 @@ template <typename T>
 class BaseSolver {
 public:
     // Boolean validator method checking configuration safety limits.
-    // This inspcts if incoming matrix structures are empty or if the time delta
+    // This inspcts if incoming matrix structures are empty or if the time delta.
     // dropped below zero, protecting the simulation from undefined runtime segmentation faults.
     bool validate_inputs(const std::vector<T>& state, T dt) {
         // Enforces structural array constraints prior to vector indexing operations.
