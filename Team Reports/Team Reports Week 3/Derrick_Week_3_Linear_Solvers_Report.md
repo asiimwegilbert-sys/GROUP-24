@@ -2,7 +2,6 @@
 
 **Student/member:** Derrick  
 **Assigned responsibility:** Linear Solvers module  
-**Language standard:** C++23
 
 ## 1. Work completed
 

@@ -1,4 +1,4 @@
-// include/sat_trajectory/interpolation.hpp
+// include/satellite_trajectory/interpolation.hpp
 
 #pragma once   // stops this file from being included twice
 
