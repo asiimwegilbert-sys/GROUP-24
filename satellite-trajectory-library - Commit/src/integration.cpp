@@ -5,15 +5,15 @@
 
 namespace sat::num {
 
-// 1. Grandparent Base Class - Handles Templated Input Data Validation
+// 1. Grandparent Base Class - Handles Templted Input Data Validation
 // This top-tier abstraction establishes our baseline defensive programming guard rails.
-// It uses generic programming parameters to validate state array bounds and system step sizes
+// It uses generic programming parametrs to validate state array bounds and system step sizes
 // before allocating dynamic memory pools or triggering the math calculation loops.
 template <typename T>
 class BaseSolver {
 public:
     // Boolean validator method checking configuration safety limits.
-    // This inspects if incoming matrix structures are empty or if the time delta
+    // This inspcts if incoming matrix structures are empty or if the time delta
     // dropped below zero, protecting the simulation from undefined runtime segmentation faults.
     bool validate_inputs(const std::vector<T>& state, T dt) {
         // Enforces structural array constraints prior to vector indexing operations.
