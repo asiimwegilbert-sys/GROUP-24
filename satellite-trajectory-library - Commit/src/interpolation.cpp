@@ -1,6 +1,6 @@
 // src/interpolation.cpp
 
-#include "sat_trajectory/interpolation.hpp"
+#include "satellite_trajectory/interpolation.hpp"
 #include <stdexcept>   // for std::invalid_argument
 using std::vector;
 
