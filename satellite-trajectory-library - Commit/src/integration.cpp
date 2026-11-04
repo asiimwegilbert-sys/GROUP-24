@@ -38,7 +38,7 @@ template <typename T>
 class TrajectorySolver : public BaseSolver<T> {
 protected:
     // Encapsulated data member restricting variable visibility fields.
-    // Using protected scope isolates the raw time step parameters from external file
+    // Using protected scope isolates the raw time step parametrs from external file
     // modifications, fully protecting internal module state while keeping it accessible to children.
     T time_step;
 
