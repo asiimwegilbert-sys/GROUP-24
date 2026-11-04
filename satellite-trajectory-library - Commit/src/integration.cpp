@@ -5,7 +5,7 @@
 
 namespace sat::num {
 
-// 1. Grandparent Base Class - Handles Templted Input Data Validation
+// 1. Grandparent Base Class - Handles Templted Input Data Validation.
 // This top-tier abstraction establishes our baseline defensive programming guard rails.
 // It uses generic programming parametrs to validate state array bounds and system step sizes
 // before allocating dynamic memory pools or triggering the math calculation loops.
