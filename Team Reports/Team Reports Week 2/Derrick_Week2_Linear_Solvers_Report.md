@@ -2,7 +2,6 @@
 
 **Student/member:** Derrick  
 **Responsibility:** Linear Solvers module  
-**Language standard:** C++23
 
 ## 1. What class did I create?
 
