@@ -1,6 +1,6 @@
 // src/interpolation.cpp
 
-#include "sat_trajectory/interpolation.hpp"
+#include "satellite_trajectory/interpolation.hpp"
 #include <stdexcept>   // for std::invalid_argument
 using std::vector;
 
@@ -90,3 +90,6 @@ vector<double> polynomialFit(const vector<double>& x,
     p.push_back(c[n - 1]);
 
     for (int i = n - 2;
+
+return p; 
+}

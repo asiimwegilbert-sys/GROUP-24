@@ -13,7 +13,6 @@ Linear Solvers module
 Prepared the first version of the Linear Solvers module, including:
 
 - Basic design of the Linear Solvers functions.
-- C++23 named module setup.
 - Back substitution.
 - Forward substitution.
 - Basic checking of matrix and vector sizes.
