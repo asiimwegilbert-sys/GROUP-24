@@ -1,12 +1,11 @@
 # Week 3 Progress Report
 
-**Submission:** First submission
+**Submission:** Third submission
 **Project:** Satellite Trajectory Numerical Computing Library
 **Submitted work:** Reports and structure of the project.
 
-> DRAFT for the team lead (Gilbert) to review. The member sections come from the individual reports in
+> Report from the team lead, Gilbert after review. The member sections come from the individual reports in
 > `Team Reports/`; "Repository check" lines come from the lead's review of the Git history and the code.
-> Where a report says nothing, this document says so instead of guessing.
 
 ## 1. Weekly Summary
 
@@ -18,7 +17,7 @@ Stacy, Deogratius and Praise have now also submitted Week 3 reports (Praise's is
 
 | Member | Assigned module | Completed this week | In progress | Blocker | Commit/PR link |
 |---|---|---|---|---|---|
-| Gilbert (team lead) | Integration/CMake | No individual report or integration note received | Integration of the commits and review | - | - |
+| Gilbert (team lead) | Integration/CMake | Editing, checking, creating and generating the csv files. | Integration of the commits and review | Some of the tests files had been named wrongly, so had to rename them. | - |
 | Delvin | Vector | Operator overloads declared (`+`, `-`, scalar `*`, `dot`); placeholder bodies | Implementation | - | - |
 | Ibrahim | Matrix | Matrix class implemented; `+`, `-`, `*`, scalar `*`; `test_matrix.cpp` (41 checks) | `Matrix * Vector` | Waits on the Vector class | - |
 | Derrick | Linear solvers | Residual validation; `LinearSolver` base with two derived solvers; polymorphism tests | Iterative refinement (Week 4) | Needs C++23 module setup | suggested `feature/derrick-residual-validation` |
@@ -33,14 +32,14 @@ The following are the member reports for their assigned modules, summarised from
 
 ### Gilbert (team lead):
 
-No individual report or integration note received. The Week 3 plan asks the lead for a short integration note on merged modules and remaining conflicts.
+The Week 3 work, the lead integrates and merges modules and remaining/ resolving conflicts.
 
 ### Delvin:
 
 **Assigned responsibility:** Vectors (operator overloads)
 **Branch:** -
 **Commits:** -
-**Reviewer(s):** To be confirmed
+**Reviewer(s):** Gilbert, Ibrahim
 
 #### Completed
 
@@ -66,7 +65,7 @@ No individual report or integration note received. The Week 3 plan asks the lead
 
 #### AI Use
 
-- **Tool:** None declared in the individual report (member to confirm)
+- **Tool:** None declared in the individual report.
 - **Purpose:** -
 - **Reason it was used:** -
 - **What the team verified or changed:** -
@@ -76,7 +75,7 @@ No individual report or integration note received. The Week 3 plan asks the lead
 **Assigned responsibility:** Matrix
 **Branch:** -
 **Commits:** -
-**Reviewer(s):** To be confirmed
+**Reviewer(s):** Gilbert, Derrick, Deogratiuos
 
 #### Completed
 
@@ -103,7 +102,7 @@ No individual report or integration note received. The Week 3 plan asks the lead
 
 #### AI Use
 
-- **Tool:** None declared in the individual report (member to confirm)
+- **Tool:** None declared in the individual report.
 - **Purpose:** -
 - **Reason it was used:** -
 - **What the team verified or changed:** -
@@ -111,9 +110,9 @@ No individual report or integration note received. The Week 3 plan asks the lead
 ### Derrick:
 
 **Assigned responsibility:** Linear solvers
-**Branch:** Suggested: `feature/derrick-residual-validation` (not confirmed created)
+**Branch:** Suggested: `feature/derrick-residual-validation`.
 **Commits:** Suggested: `feat: add residual validation and solver polymorphism`
-**Reviewer(s):** To be confirmed
+**Reviewer(s):** Gilbert, Delvin.
 
 #### Completed
 
@@ -150,7 +149,7 @@ No individual report or integration note received. The Week 3 plan asks the lead
 **Assigned responsibility:** Matrix decompositions
 **Branch:** `Stacy-Elizabeth-Namuleme-patch-3` (merged), then `stacy-lead-matrix-decompositions` (PR #46, #53)
 **Commits:** `Add Week 03 progress report for matrix algorithms`; `Implement Cholesky and QR decomposition functions` (26 Oct)
-**Reviewer(s):** To be confirmed
+**Reviewer(s):** Gilbert, Ibrahim.
 
 #### Completed
 
@@ -186,7 +185,7 @@ No individual report or integration note received. The Week 3 plan asks the lead
 **Assigned responsibility:** Iterative solvers
 **Branch:** `asingwirepraise-iterative` (not merged into `main`)
 **Commits:** `report for week 3` (24 Oct)
-**Reviewer(s):** To be confirmed
+**Reviewer(s):** Gilbert, Ibrahim.
 
 #### Completed
 
@@ -199,11 +198,11 @@ No individual report or integration note received. The Week 3 plan asks the lead
 
 #### Challenges / Blockers
 
-- Not stated in the individual report.
+-not sated.
 
 #### Next Week
 
-- Not stated in the individual report.
+- Not stated in the report.
 
 #### Repository check (lead review of the repository, 3 Nov)
 
@@ -257,7 +256,7 @@ No individual report or integration note received. The Week 3 plan asks the lead
 **Assigned responsibility:** Numerical integration
 **Branch:** -
 **Commits:** -
-**Reviewer(s):** To be confirmed
+**Reviewer(s):** Gilbert, Ibrahim.
 
 #### Completed
 
@@ -292,7 +291,7 @@ No individual report or integration note received. The Week 3 plan asks the lead
 **Assigned responsibility:** Least squares, eigenvalues and satellite trajectory
 **Branch:** -
 **Commits:** -
-**Reviewer(s):** To be confirmed
+**Reviewer(s):** Gilbert, Ibrahim.
 
 #### Completed
 
@@ -354,4 +353,4 @@ No individual report or integration note received. The Week 3 plan asks the lead
 
 ## 7. Conclusion
 
-Week 3 introduced inheritance and polymorphism in the integration and linear-solver modules and produced a tested Matrix class. All members except the team lead have now submitted a Week 3 report. The remaining work is integration: aligning the RK interface, moving the vector operators into `src/vector.cpp`, and moving the solver classes onto the main library types.
+Week 3 introduced inheritance and polymorphism in the integration and linear-solver modules and produced a tested Matrix class. All members have now submitted a Week 3 report. The remaining work is integration: aligning the RK interface, moving the vector operators into `src/vector.cpp`, and moving the solver classes onto the main library types.
