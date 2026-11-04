@@ -90,3 +90,6 @@ vector<double> polynomialFit(const vector<double>& x,
     p.push_back(c[n - 1]);
 
     for (int i = n - 2;
+
+return p; 
+}
