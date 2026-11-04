@@ -22,7 +22,7 @@ Stacy, Deogratius and Praise have now also submitted Week 3 reports (Praise's is
 | Ibrahim | Matrix | Matrix class implemented; `+`, `-`, `*`, scalar `*`; `test_matrix.cpp` (41 checks) | `Matrix * Vector` | Waits on the Vector class | - |
 | Derrick | Linear solvers | Residual validation; `LinearSolver` base with two derived solvers; polymorphism tests | Iterative refinement (Week 4) | Needs C++23 module setup | suggested `feature/derrick-residual-validation` |
 | Stacy | Decompositions | Report written (planned Cholesky, QR, Gram-Schmidt); Cholesky and QR committed 26 Oct | Compile fixes (done by Erick, 2 Nov) | Report says not yet implemented when written | `stacy-lead-matrix-decompositions` |
-| Praise | Iterative solvers | Week 3 report on branch `asingwirepraise-iterative` (not merged); claims power iteration | - | Code not in any branch | - |
+| Praise | Iterative solvers | Week 3 report on branch `asingwirepraise-iterative`; claims power iteration | - | Code not in any branch | - |
 | Deogratius | Interpolation | Week 3 report: tests rewritten with classes (`test_interpolation3.cpp`) | - | - | `arindadeogratius-interpolation` |
 | Jeremiah | Integration/RK methods | `BaseSolver` -> `NumericalIntegrator` -> `MidpointSolver`; polymorphism | RK4, Romberg and quadrature (Week 4) | - | - |
 | Erick | Least squares, eigenvalues, satellite trajectory | Satellite state and propagation input checks; tests updated | Two-body dynamics; trajectory tests | RK header and source not aligned | - |
