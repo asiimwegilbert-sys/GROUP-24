@@ -1,7 +1,9 @@
-#include "satellite_trajectory/linear_solvers.hpp"
-#include <stdexcept>
-namespace sat::num {
-Vector gaussian_elimination(const Matrix&,const Vector&){throw std::logic_error("TODO: Gaussian elimination");}
-Matrix inverse(const Matrix&){throw std::logic_error("TODO: inverse");}
-double determinant(const Matrix&){throw std::logic_error("TODO: determinant");}
+// Explicit instantiations for the commonly used double type.
+// Template definitions remain in the public header for other numeric types.
+#include "sat_trajectory/linear_solvers.hpp"
+namespace sat_trajectory {
+template class ForwardSubstitutionSolver<double>;
+template class BackSubstitutionSolver<double>;
+template class GaussianSolver<double>;
+template class IterativeRefinementSolver<double>;
 }
