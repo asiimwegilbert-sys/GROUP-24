@@ -3,7 +3,7 @@
 #include <cassert>
 #include <cmath>
 
-// A basic mock differential equation representing simple linear acceleration
+// A basic mock differential equation representing simple linear acceleration.
 sat::num::State mock_orbit_ode(double t, const sat::num::State& state) {
     sat::num::State derivatives(state.size());
     derivatives[0] = state[1];  // Velocity change

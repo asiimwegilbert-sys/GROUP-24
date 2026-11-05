@@ -1,13 +1,13 @@
 # Week 3 Progress Report
 
-> DRAFT for the team lead (Gilbert) to review and edit. Member summaries come from the individual reports in
+> The team lead's report after review and edit. Member summaries come from the individual reports in
 > `Team Reports/Team Reports Week 3/`. 
 > Next Week items also follow `TEAM_ASSIGNMENTS_AND_WEEKLY_PLAN.md`.
 
 ## Completed
 | Member | Module | Completed this week (object-oriented work and implementation) |
 |---|---|---|
-| Gilbert (lead) | Integration, CMake | No individual report or integration note received yet |
+| Gilbert (lead) | Integration, CMake | DId the merging and reviewing |
 | Delvin | Vector | Declared operator overloads for vector `+`, `-`, scalar `*` and `dot`; placeholder bodies throw `std::logic_error`; pseudocode drafted |
 | Ibrahim | Matrix | Implemented the `Matrix` class (three constructors, `rows`, `columns`, checked access, `transpose`, `identity`) and the operators `+`, `-`, matrix `*` and scalar `*`; `std::invalid_argument` and `std::out_of_range` errors; `tests/test_matrix.cpp` with 41 checks |
 | Derrick | Linear solvers | Residual validation (`calculateResidual`, `residualNorm`, `isSolutionAccurate`); abstract base class `LinearSolver` with pure virtual `solve`; `GaussianSolver` and `BackSubstitutionSolver` derived from it; polymorphism tested through `std::unique_ptr<LinearSolver>` |
