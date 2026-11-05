@@ -1,7 +1,7 @@
 #include "satellite_trajectory/integration.hpp"
 #include <cmath>
 #include <vector>
-#include <iostream>
+#include <stdexcept>
 
 namespace sat::num {
 
@@ -11,11 +11,9 @@ class BaseSolver {
 public:
     bool validate_inputs(const std::vector<T>& state, T dt) {
         if (state.empty()) {
-            std::cout << "Error: Empty state!" << std::endl;
-            return false;
+            return false;   // the public rk2_step / rk4_step turn this into std::invalid_argument
         }
-        if (dt <= static_cast<T>(0.0)) {
-            std::cout << "Error: Bad dt!" << std::endl;
+        if (!(dt > static_cast<T>(0.0))) {
             return false;
         }
         return true;
@@ -33,7 +31,7 @@ public:
         time_step = dt;
     }
 
-    virtual std::vector<T> compute_step(const ODEFunction& f, T t, const std::vector<T>& y) {
+    virtual std::vector<T> compute_step(const ODEFunction&, T, const std::vector<T>& y) {
         return y;
     }
 };
@@ -93,7 +91,7 @@ public:
 template <typename T>
 class QuadratureIntegrator {
 public:
-    virtual T integrate(const ScalarFunction& f, T lower, T upper) {
+    virtual T integrate(const ScalarFunction&, T, T) {
         return static_cast<T>(0.0);
     }
 };
@@ -143,14 +141,18 @@ public:
 State rk2_step(const ODEFunction& f, double time, const State& state, double step) {
     MidpointSolver<double> m_solver(step);
     TrajectorySolver<double>* ptr = &m_solver;
-    if (!ptr->validate_inputs(state, step)) return state;
+    if (!ptr->validate_inputs(state, step)) {
+        throw std::invalid_argument("rk2_step: state must not be empty and step must be positive");
+    }
     return ptr->compute_step(f, time, state);
 }
 
 State rk4_step(const ODEFunction& f, double time, const State& state, double step) {
     ClassicalRK4Solver<double> rk4_solver(step);
     TrajectorySolver<double>* ptr = &rk4_solver;
-    if (!ptr->validate_inputs(state, step)) return state;
+    if (!ptr->validate_inputs(state, step)) {
+        throw std::invalid_argument("rk4_step: state must not be empty and step must be positive");
+    }
     return ptr->compute_step(f, time, state);
 }
 
