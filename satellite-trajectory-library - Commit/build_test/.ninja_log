@@ -1,0 +1,24 @@
+# ninja log v6
+1860	5573	8156061288270858	CMakeFiles/test_linear_solvers.dir/tests/test_linear_solvers.cpp.obj	5b78842619346187
+4989	5340	8156061319567072	test_interpolation_legacy.exe	a57336aa4890dd4d
+5030	5357	8156061319973559	test_integration.exe	55e7f0f72ae41696
+4944	5284	8156061319111554	test_matrix.exe	a24f4d4b96d51d80
+4580	5076	8156061315479073	test_trajectory.exe	8c47e4da265d35eb
+2293	4989	8156061292611114	CMakeFiles/test_interpolation_legacy.dir/tests/test_interpolation_(1).cpp.obj	95e400cb974a2662
+2182	5030	8156061291493094	CMakeFiles/test_integration.dir/tests/test_integration.cpp.obj	f3a6756ba368f877
+1848	4944	8156061288159018	CMakeFiles/test_matrix.dir/tests/test_matrix.cpp.obj	485c769b3f349340
+63	1842	8156061270295974	CMakeFiles/satellite_trajectory.dir/src/vector.cpp.obj	5bc3d64d9013f071
+85	1860	8156061270524043	CMakeFiles/satellite_trajectory.dir/src/interpolation.cpp.obj	8ce05570b0369bfb
+167	3068	8156061271342854	CMakeFiles/satellite_trajectory.dir/src/trajectory_solver.cpp.obj	de3a2cce31d03351
+2243	4579	8156061292096671	CMakeFiles/test_trajectory.dir/tests/test_trajectory.cpp.obj	1ba046bf8ed5e1b9
+5573	5859	8156061325408693	test_linear_solvers.exe	a6f48865256af19e
+4337	4901	8156061313036314	test_eigenvalues.exe	ee8ade87271e1df6
+138	2182	8156061271047167	CMakeFiles/satellite_trajectory.dir/src/least_squares.cpp.obj	a33d42b5172bac9e
+106	2242	8156061270732269	CMakeFiles/satellite_trajectory.dir/src/iterative_solvers.cpp.obj	1105e789ef20b944
+149	2537	8156061271161266	CMakeFiles/satellite_trajectory.dir/src/eigenvalues.cpp.obj	fafd16054d33d6e3
+95	2291	8156061270630459	CMakeFiles/satellite_trajectory.dir/src/integration.cpp.obj	dda3e92846c691ed
+74	2045	8156061270419296	CMakeFiles/satellite_trajectory.dir/src/Matrix3.cpp.obj	6fbf7e2480d95aa6
+117	3131	8156061270839994	CMakeFiles/satellite_trajectory.dir/src/linear_solvers.cpp.obj	cc531561671308e3
+2045	4224	8156061290125164	CMakeFiles/test_eigenvalues.dir/tests/test_eigenvalues.cpp.obj	2de66f9a3bf36530
+126	2972	8156061270938410	CMakeFiles/satellite_trajectory.dir/src/decompositions.cpp.obj	f8b269b2004314ab
+3132	4337	8156061300988978	libsatellite_trajectory.a	9476b5b1d507348c
