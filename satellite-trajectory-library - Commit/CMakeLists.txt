@@ -46,8 +46,6 @@ if(BUILD_TESTS)
   integration 
   interpolation 
   least_squares 
-  linear_solvers_week_1 
-  linear_solvers_week_2 
   operator_overloads_week_3 
   operator_overloads_week_4 
   solvers 
