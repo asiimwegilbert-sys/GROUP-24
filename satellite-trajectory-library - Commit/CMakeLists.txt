@@ -13,8 +13,6 @@ add_library(satellite_trajectory
     src/integration.cpp
     src/iterative_solvers.cpp
     src/linear_solvers.cpp
-    src/linear_solvers_week_1.cpp
-    src/linear_solvers_week_2.cpp
     src/decompositions.cpp
     src/least_squares.cpp
     src/eigenvalues.cpp
