@@ -43,7 +43,7 @@ My CMake-related history includes the October CMake edit and the November organi
 
 - Extended `examples/satellite_trajectory_example.cpp` to make the simulated orbit viewable from the console and to export trajectory data as CSV and an SVG image.
 - Added and updated the generated orbit assets in `data/`, including `orbit_trajectory.csv`, `orbit_trajectory.svg`, `orbit_trajectory_cpp.csv`, and `orbit_trajectory_cpp.svg`. The SVG labels the RK4 two-body simulation and plots its orbit, start, end, and Earth reference.
-- Added `examples/plot_trajectory.py` as an additional workflow for turning trajectory CSV data into an SVG.
+
 - Added `examples/orbit_live_demo.html`, a local browser-based visualization with playback, reset, speed, and drag controls. It is an educational simulation; its visual scale and drag controls are not calibrated flight predictions.
 - Updated the README with build commands, orbit-demo instructions, and guidance for opening or generating the visuals.
 
@@ -55,4 +55,4 @@ The build and tests establish that the configured targets pass in the available 
 
 ## AI Use
 
-This report was prepared with AI assistance to summarize repository history and verified project evidence. The team should review it and ensure the final submission reflects its own account of the work.
+This report was prepared with AI assistance to summarize repository history and verified project evidence. 

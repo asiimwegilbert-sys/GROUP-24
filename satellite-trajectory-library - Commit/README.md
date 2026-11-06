@@ -78,9 +78,6 @@ the SVG and CSV in one run:
 .\build\satellite_trajectory_example.exe --svg data\orbit_trajectory.svg --csv data\orbit_trajectory.csv
 ```
 
-The optional `examples\plot_trajectory.py` script can still create an SVG from
-the simulation output if you prefer the Python workflow.
-
 For an animated browser demo with play/pause, reset, simulation-speed, and
 orbital-drag controls, open `examples\orbit_live_demo.html` in a browser. It
 runs locally without a web server or external packages. The live page performs
