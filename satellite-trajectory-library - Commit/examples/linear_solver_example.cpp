@@ -1,4 +1,4 @@
-#include "sat_trajectory/linear_solvers.hpp"
+#include "satellite_trajectory/linear_solvers.hpp"
 #include <iomanip>
 #include <iostream>
 #include <memory>

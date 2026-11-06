@@ -12,13 +12,11 @@ add_library(satellite_trajectory
     src/integration.cpp
     src/iterative_solvers.cpp
     src/linear_solvers.cpp
-    src/linear_solvers_week_1.cpp
-    src/linear_solvers_week_2.cpp
     src/decompositions.cpp
     src/least_squares.cpp
     src/eigenvalues.cpp
     src/trajectory_solver.cpp
-    )
+)
 target_include_directories(satellite_trajectory PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
 target_compile_features(satellite_trajectory PUBLIC cxx_std_17)
 #Compiler Warnings 
@@ -30,11 +28,12 @@ endif()
 
 # Build examples and tests
 if(BUILD_EXAMPLES)
-  foreach(name interpolation integration linear_algebra satellite_trajectory)
+  foreach(name IN ITEMS interpolation integration linear_algebra satellite_trajectory)
     add_executable(${name}_example examples/${name}_example.cpp)
     target_link_libraries(${name}_example PRIVATE satellite_trajectory)
   endforeach()
 endif()
+
 # Build tests
 if(BUILD_TESTS)
   enable_testing()
@@ -47,8 +46,6 @@ if(BUILD_TESTS)
   integration 
   interpolation 
   least_squares 
-  linear_solvers_week_1 
-  linear_solvers_week_2 
   operator_overloads_week_3 
   operator_overloads_week_4 
   solvers 
@@ -58,4 +55,9 @@ if(BUILD_TESTS)
     target_link_libraries(test_${name} PRIVATE satellite_trajectory)
     add_test(NAME ${name}_tests COMMAND test_${name})
   endforeach()
+
+  # The interpolation test source has a space in its filename and is not a standard "test_interpolation.cpp" entry.
+  add_executable(test_interpolation_legacy "tests/test_interpolation (1).cpp")
+  target_link_libraries(test_interpolation_legacy PRIVATE satellite_trajectory)
+  add_test(NAME interpolation_legacy_tests COMMAND test_interpolation_legacy)
 endif()
