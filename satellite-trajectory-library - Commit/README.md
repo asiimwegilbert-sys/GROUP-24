@@ -71,6 +71,15 @@ the SVG and CSV in one run:
 The optional `examples\plot_trajectory.py` script can still create an SVG from
 the simulation output if you prefer the Python workflow.
 
+For an animated browser demo with play/pause, reset, simulation-speed, and
+orbital-drag controls, open `examples\orbit_live_demo.html` in a browser. It
+runs locally without a web server or external packages. The live page performs
+RK4 propagation in the browser using the same two-body gravity and exponential
+atmospheric-drag model with adaptive step sizing and stops when the satellite
+reaches Earth's surface. Its orbit altitude is visually exaggerated, and its
+drag multiplier is an educational visualization aid rather than a calibrated
+flight prediction.
+
 ## Structure
 - `include/`: public interfaces
 - `src/`: implementations
