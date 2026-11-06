@@ -1,85 +1,212 @@
+
 #include "satellite_trajectory/integration.hpp"
 #include <cmath>
 #include <vector>
-#include <iostream>
+#include <stdexcept>
 
 namespace sat::num {
 
-// 1. Grandparent Class - Handles baseline data verification (Week 2 Logic)
+// 1. Grandparent Base Class
+template <typename T>
 class BaseSolver {
 public:
-    bool validate_inputs(const std::vector<double>& state, double dt) {
-        if (state.empty()) {
-            std::cout << "Error: Empty state!" << std::endl;
-            return false;
-        }
-        if (dt <= 0.0) {
-            std::cout << "Error: Bad dt!" << std::endl;
-            return false;
-        }
+    bool validate_inputs(const std::vector<T>& state, T dt) {
+        if (state.empty()) return false;
+        if (!(dt > static_cast<T>(0.0))) return false;
         return true;
     }
 };
 
-// 2. Parent Class - Demonstrates Multilevel Inheritance & Polymorphism Setup
-class NumericalIntegrator : public BaseSolver {
+// 2. Parent Class
+template <typename T>
+class TrajectorySolver : public BaseSolver<T> {
 protected:
-    double time_step;
+    T time_step;
 
 public:
-    NumericalIntegrator(double dt) {
+    TrajectorySolver(T dt) {
         time_step = dt;
     }
 
-    // Virtual function to enable runtime polymorphism
-    virtual State compute_step(const ODEFunction& f, double t, const State& y) {
-        return y; 
+    virtual std::vector<T> compute_step(
+        const ODEFunction&, T, const std::vector<T>& y) {
+        return y;
     }
 };
 
-// 3. Child Class - Completes Multilevel Inheritance tree and Overrides the step
-class MidpointSolver : public NumericalIntegrator {
+// 3. Runge-Kutta 2nd Order Midpoint Solver
+template <typename T>
+class MidpointSolver : public TrajectorySolver<T> {
 public:
-    // Simple constructor passing dt up to the parent
-    MidpointSolver(double dt) : NumericalIntegrator(dt) {}
+    MidpointSolver(T dt) : TrajectorySolver<T>(dt) {}
 
-    // Polymorphism in action: Overriding the base execution function for RK2
-    State compute_step(const ODEFunction& f, double t, const State& y) override {
-        State k1 = f(t, y);
-        
-        State y_mid(y.size());
-        for (size_t i = 0; i < y.size(); ++i) {
-            y_mid[i] = y[i] + 0.5 * time_step * k1[i];
-        }
-        
-        State k2 = f(t + 0.5 * time_step, y_mid);
-        
-        State next_state(y.size());
-        for (size_t i = 0; i < y.size(); ++i) {
-            next_state[i] = y[i] + time_step * k2[i];
-        }
+    std::vector<T> compute_step(
+        const ODEFunction& f, T t,
+        const std::vector<T>& y) override {
+
+        std::vector<T> k1 = f(t, y);
+        std::vector<T> y_mid(y.size());
+
+        for (size_t i = 0; i < y.size(); ++i)
+            y_mid[i] = y[i] + static_cast<T>(0.5)
+                * this->time_step * k1[i];
+
+        std::vector<T> k2 = f(
+            t + static_cast<T>(0.5) * this->time_step,
+            y_mid);
+
+        std::vector<T> next_state(y.size());
+
+        for (size_t i = 0; i < y.size(); ++i)
+            next_state[i] = y[i] + this->time_step * k2[i];
+
         return next_state;
     }
 };
 
-// --- Group Compatibility Wrapper
-State rk2_step(const ODEFunction& f, double t, const State& y, double dt) {
-    // Demonstrating polymorphism via a base class pointer
-    MidpointSolver concrete_solver(dt);
-    NumericalIntegrator* solver_ptr = &concrete_solver;
+// 4. Classical Runge-Kutta 4th Order Solver
+template <typename T>
+class ClassicalRK4Solver : public TrajectorySolver<T> {
+public:
+    ClassicalRK4Solver(T dt) : TrajectorySolver<T>(dt) {}
 
-    // Call validation inherited from Grandparent class
-    if (!solver_ptr->validate_inputs(y, dt)) {
-        return y;
+    std::vector<T> compute_step(
+        const ODEFunction& f, T t,
+        const std::vector<T>& y) override {
+
+        size_t n = y.size();
+        std::vector<T> k1 = f(t, y);
+
+        std::vector<T> y2(n);
+        for (size_t i = 0; i < n; ++i)
+            y2[i] = y[i] + static_cast<T>(0.5)
+                * this->time_step * k1[i];
+
+        std::vector<T> k2 = f(
+            t + static_cast<T>(0.5) * this->time_step, y2);
+
+        std::vector<T> y3(n);
+        for (size_t i = 0; i < n; ++i)
+            y3[i] = y[i] + static_cast<T>(0.5)
+                * this->time_step * k2[i];
+
+        std::vector<T> k3 = f(
+            t + static_cast<T>(0.5) * this->time_step, y3);
+
+        std::vector<T> y4(n);
+        for (size_t i = 0; i < n; ++i)
+            y4[i] = y[i] + this->time_step * k3[i];
+
+        std::vector<T> k4 = f(t + this->time_step, y4);
+
+        std::vector<T> next_state(n);
+
+        for (size_t i = 0; i < n; ++i) {
+            next_state[i] = y[i] +
+                (this->time_step / static_cast<T>(6.0)) *
+                (k1[i] + static_cast<T>(2.0) * k2[i]
+                + static_cast<T>(2.0) * k3[i] + k4[i]);
+        }
+
+        return next_state;
     }
+};
 
-    // Call overridden algorithm dynamically via polymorphism pointer
-    return solver_ptr->compute_step(f, t, y);
+// 5. Scalar Quadrature Base Class
+template <typename T>
+class QuadratureIntegrator {
+public:
+    virtual T integrate(const ScalarFunction&, T, T) {
+        return static_cast<T>(0.0);
+    }
+};
+
+// 6. Gaussian Quadrature Solver
+template <typename T>
+class GaussLegendreSolver : public QuadratureIntegrator<T> {
+public:
+    T integrate(const ScalarFunction& f, T lower, T upper) override {
+        T c1 = static_cast<T>(0.5) * (upper - lower);
+        T c2 = static_cast<T>(0.5) * (upper + lower);
+
+        T x1 = static_cast<T>(-1.0 / std::sqrt(3.0));
+        T x2 = static_cast<T>(1.0 / std::sqrt(3.0));
+
+        return c1 * (f(c1 * x1 + c2) + f(c1 * x2 + c2));
+    }
+};
+
+// 7. Romberg Integration Engine
+template <typename T>
+class RombergSolver : public QuadratureIntegrator<T> {
+public:
+    T integrate(const ScalarFunction& f, T lower, T upper) override {
+        int max_steps = 5;
+
+        std::vector<T> R1(max_steps, static_cast<T>(0.0));
+        std::vector<T> R2(max_steps, static_cast<T>(0.0));
+
+        T h = upper - lower;
+        R1[0] = static_cast<T>(0.5) * h * (f(lower) + f(upper));
+
+        for (int i = 1; i < max_steps; ++i) {
+            h /= static_cast<T>(2.0);
+            T sum = static_cast<T>(0.0);
+            int points = 1 << (i - 1);
+
+            for (int k = 1; k <= points; ++k)
+                sum += f(lower + (2 * k - 1) * h);
+
+            R2[0] = static_cast<T>(0.5) * R1[0] + h * sum;
+
+            for (int j = 1; j <= i; ++j) {
+                T factor = static_cast<T>(std::pow(4.0, j));
+                R2[j] = (factor * R2[j - 1] - R1[j - 1])
+                    / (factor - static_cast<T>(1.0));
+            }
+
+            R1 = R2;
+        }
+
+        return R1[max_steps - 1];
+    }
+};
+
+// Public integration functions
+State rk2_step(const ODEFunction& f, double time,
+               const State& state, double step) {
+    MidpointSolver<double> solver(step);
+    TrajectorySolver<double>* ptr = &solver;
+
+    if (!ptr->validate_inputs(state, step))
+        throw std::invalid_argument("Invalid RK2 inputs");
+
+    return ptr->compute_step(f, time, state);
 }
 
-// (Remaining slots temporarily bypassed to be structured into the OOP tree during Week 4)
-State rk4_step(const ODEFunction& f, double t, const State& y, double dt) { return y; }
-double gaussian_quadrature(const ScalarFunction& f, double lower, double upper) { return 0.0; }
-double romberg_integrate(const ScalarFunction& f, double lower, double upper) { return 0.0; }
+State rk4_step(const ODEFunction& f, double time,
+               const State& state, double step) {
+    ClassicalRK4Solver<double> solver(step);
+    TrajectorySolver<double>* ptr = &solver;
+
+    if (!ptr->validate_inputs(state, step))
+        throw std::invalid_argument("Invalid RK4 inputs");
+
+    return ptr->compute_step(f, time, state);
+}
+
+double gaussian_quadrature(
+    const ScalarFunction& f, double lower, double upper) {
+    GaussLegendreSolver<double> solver;
+    QuadratureIntegrator<double>* ptr = &solver;
+    return ptr->integrate(f, lower, upper);
+}
+
+double romberg_integrate(
+    const ScalarFunction& f, double lower, double upper) {
+    RombergSolver<double> solver;
+    QuadratureIntegrator<double>* ptr = &solver;
+    return ptr->integrate(f, lower, upper);
+}
 
 } // namespace sat::num

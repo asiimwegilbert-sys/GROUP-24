@@ -17,7 +17,7 @@ No Week 2 report was received from Gilbert or Stacy.
 
 | Member | Assigned module | Completed this week | In progress | Blocker | Commit/PR link |
 |---|---|---|---|---|---|
-| Gilbert (team lead) | Integration/CMake | No individual report received | Integration of the commits and review | - | - |
+| Gilbert (team lead) | Integration/CMake | No individual report needed, Did the detailed report. | Integration of the commits and review | Some people had not yet pushed there code and report. | - |
 | Delvin | Vector | `size()`, bounds-checked `operator[]`, `norm()`; tested | - | - | - |
 | Ibrahim | Matrix | Sizes, zero-based access, transpose, `+`, `-`, `*`, scalar `*`; error checks | - | - | commit 5645c3c |
 | Derrick | Linear solvers | `GaussianSolver` and `BackSubstitutionSolver` classes with options struct; tests written | - | Needs the C++23 named-module build to run | suggested `feature/derrick-week2-class-based-solvers` |
@@ -289,4 +289,4 @@ No individual report received.
 
 ## 7. Conclusion
 
-Week 2 gave the group a usable Vector and Matrix and first versions of the solver, interpolation tests and RK checks. The next step is integration: the solver, the interpolation API and Gauss-Seidel are not yet connected to the main `sat::num` library. Gilbert and Stacy have not submitted individual reports.
+Week 2 gave the group a usable Vector and Matrix and first versions of the solver, interpolation tests and RK checks. The next step is integration: the solver, the interpolation API and Gauss-Seidel are not yet connected to the main `sat::num` library. Stacy have not submitted individual reports.
