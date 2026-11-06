@@ -12,13 +12,13 @@ Bug Fixes & Refactoring: Resolved method resolution issues (such as matrix dimen
 
 Pull Request Management: Submitted all work under Pull Request #35, resolved branch sync requirements, and requested formal review from our group leader (asiimwegilbert-sys).
 
-3. Summary of OOP Architecture & Visual Diagrams
+3. Summary of OOP Architecture 
 
 As part of our final project requirements:
 
 Object-Oriented Design: Encapsulation, inheritance structures, and polymorphic function signatures were verified across all modules.
 
-Architectural Diagram: A complete hand-drawn class layout—detailing member variables, functions, access specifiers (public, private, protected), and inheritance relationships—was drawn on paper and uploaded to the repository documentation folder.
+
 
 4. Final Status
 
