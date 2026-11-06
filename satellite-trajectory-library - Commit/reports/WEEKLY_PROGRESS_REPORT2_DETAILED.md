@@ -4,7 +4,7 @@
 **Project:** Satellite Trajectory Numerical Computing Library
 **Submitted work:** Reports and structure of the project.
 
-> Team report for the lead (Gilbert) after review. Member summaries are based on individual reports where available; Gilbert's section summarizes team-recorded lead work because no separate individual Week 2 report was identified.
+> Team report for the lead (Gilbert) after review. Member summaries are based on individual reports where available; Gilbert's section summarizes team-recorded lead work.
 
 ## 1. Weekly Summary
 
