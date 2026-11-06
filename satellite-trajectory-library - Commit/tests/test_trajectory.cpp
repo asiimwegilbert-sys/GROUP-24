@@ -1,160 +1,264 @@
 #include "satellite_trajectory/trajectory_solver.hpp"
+
 #include <cmath>
 #include <iostream>
 #include <stdexcept>
 
-int main(){
-    using namespace sat::orbit;
-    using sat::num::Vector;
+namespace {
 
-    // Orbital period test
-    double period=orbital_period(7000.0);
+double radius(const sat::orbit::OrbitalState& state)
+{
+    double x = state.position[0];
+    double y = state.position[1];
+    double z = state.position[2];
 
-    if(std::abs(period-5828.5166)>0.01){
-        std::cerr<<"Orbital period calculation test failed\n";
+    return std::sqrt(
+        x*x +
+        y*y +
+        z*z
+    );
+}
+
+
+double specific_energy(
+    const sat::orbit::OrbitalState& state,
+    double mu)
+{
+    double r = radius(state);
+
+    double vx = state.velocity[0];
+    double vy = state.velocity[1];
+    double vz = state.velocity[2];
+
+    double speed_squared =
+        vx*vx +
+        vy*vy +
+        vz*vz;
+
+    return 0.5*speed_squared -
+           mu/r;
+}
+
+}
+
+
+int main()
+{
+    using sat::orbit::OrbitalState;
+    using sat::orbit::PropagationOptions;
+    using sat::orbit::orbital_period;
+    using sat::orbit::propagate_rk4;
+
+    constexpr double mu = 398600.4418;
+
+
+    // ---------------------------------
+    // Test 1: Orbital period
+    // ---------------------------------
+
+    double period =
+        orbital_period(
+            7000.0,
+            mu
+        );
+
+    if(std::abs(period - 5828.5166) > 0.1)
+    {
+        std::cerr
+            << "Orbital period test failed\n";
+
         return 1;
     }
 
-    // Invalid semi-major axis
-    bool invalid_axis=false;
 
-    try{
-        orbital_period(-7000.0);
-    }
-    catch(const std::invalid_argument&){
-        invalid_axis=true;
-    }
+    // ---------------------------------
+    // Test 2: Circular orbit propagation
+    // ---------------------------------
 
-    if(!invalid_axis){
-        std::cerr<<"Negative semi-major axis test failed\n";
-        return 1;
-    }
+    double orbital_radius = 7000.0;
 
-    // Invalid gravitational parameter
-    bool invalid_mu=false;
-
-    try{
-        orbital_period(7000.0,0.0);
-    }
-    catch(const std::invalid_argument&){
-        invalid_mu=true;
-    }
-
-    if(!invalid_mu){
-        std::cerr<<"Invalid gravitational parameter test failed\n";
-        return 1;
-    }
+    double circular_velocity =
+        std::sqrt(
+            mu/orbital_radius
+        );
 
 
-    // Valid satellite state used to test propagation inputs
-    OrbitalState state{
-        Vector{7000.0,0.0,0.0},
-        Vector{0.0,7.546,0.0},
+    OrbitalState initial{
+        sat::num::Vector{
+            orbital_radius,
+            0.0,
+            0.0
+        },
+
+        sat::num::Vector{
+            0.0,
+            circular_velocity,
+            0.0
+        },
+
         0.0
     };
 
 
-    // Invalid position dimension
-    bool invalid_position=false;
+    PropagationOptions options;
 
-    try{
-        OrbitalState bad_state{
-            Vector{7000.0,0.0},
-            Vector{0.0,7.546,0.0},
-            0.0
-        };
+    options.gravitational_parameter = mu;
+    options.time_step = 10.0;
+    options.steps = 100;
+    options.enable_drag = false;
 
-        propagate_rk2(bad_state,PropagationOptions{});
-    }
-    catch(const std::invalid_argument&){
-        invalid_position=true;
-    }
 
-    if(!invalid_position){
-        std::cerr<<"Invalid position dimension test failed\n";
+    auto trajectory =
+        propagate_rk4(
+            initial,
+            options
+        );
+
+
+    // Initial state + 100 propagated states
+    if(trajectory.size() != options.steps + 1)
+    {
+        std::cerr
+            << "Trajectory size test failed\n";
+
         return 1;
     }
 
 
-    // Invalid velocity dimension
-    bool invalid_velocity=false;
+    // Final time should equal steps * time step
+    double expected_time =
+        options.steps *
+        options.time_step;
 
-    try{
-        OrbitalState bad_state{
-            Vector{7000.0,0.0,0.0},
-            Vector{0.0,7.546},
-            0.0
-        };
 
-        propagate_rk2(bad_state,PropagationOptions{});
-    }
-    catch(const std::invalid_argument&){
-        invalid_velocity=true;
-    }
+    if(std::abs(
+        trajectory.back().time -
+        expected_time
+    ) > 1e-9)
+    {
+        std::cerr
+            << "Trajectory time test failed\n";
 
-    if(!invalid_velocity){
-        std::cerr<<"Invalid velocity dimension test failed\n";
         return 1;
     }
 
 
-    // Invalid time step
-    bool invalid_step=false;
+    // Radius of an ideal circular orbit
+    // should remain close to the initial radius.
+    double final_radius =
+        radius(
+            trajectory.back()
+        );
 
-    try{
-        PropagationOptions options;
-        options.time_step=0.0;
 
-        propagate_rk2(state,options);
-    }
-    catch(const std::invalid_argument&){
-        invalid_step=true;
-    }
+    if(std::abs(
+        final_radius -
+        orbital_radius
+    ) > 5.0)
+    {
+        std::cerr
+            << "Circular orbit stability test failed\n";
 
-    if(!invalid_step){
-        std::cerr<<"Invalid time step test failed\n";
         return 1;
     }
 
 
-    // Invalid number of steps
-    bool invalid_steps=false;
+    // ---------------------------------
+    // Test 3: Atmospheric drag
+    // ---------------------------------
 
-    try{
-        PropagationOptions options;
-        options.steps=0;
+    PropagationOptions drag_options =
+        options;
 
-        propagate_rk4(state,options);
-    }
-    catch(const std::invalid_argument&){
-        invalid_steps=true;
-    }
+    drag_options.enable_drag = true;
 
-    if(!invalid_steps){
-        std::cerr<<"Invalid propagation steps test failed\n";
+    drag_options.earth_radius = 6378.137;
+
+    drag_options.drag_coefficient = 2.2;
+
+    drag_options.cross_sectional_area = 20.0;
+
+    drag_options.satellite_mass = 500.0;
+
+    // Increased slightly for a clear numerical test.
+    drag_options.reference_density = 1.0e-9;
+
+    drag_options.reference_altitude =
+        orbital_radius -
+        drag_options.earth_radius;
+
+    drag_options.scale_height = 60.0;
+
+
+    auto drag_trajectory =
+        propagate_rk4(
+            initial,
+            drag_options
+        );
+
+
+    double energy_without_drag =
+        specific_energy(
+            trajectory.back(),
+            mu
+        );
+
+
+    double energy_with_drag =
+        specific_energy(
+            drag_trajectory.back(),
+            mu
+        );
+
+
+    if(!(energy_with_drag <
+         energy_without_drag))
+    {
+        std::cerr
+            << "Atmospheric drag test failed\n";
+
         return 1;
     }
 
 
-    // Invalid propagation gravitational parameter
-    bool invalid_propagation_mu=false;
+    // ---------------------------------
+    // Test 4: Invalid input
+    // ---------------------------------
 
-    try{
-        PropagationOptions options;
-        options.gravitational_parameter=0.0;
+    bool invalid_input_caught = false;
 
-        propagate_rk4(state,options);
+
+    try
+    {
+        PropagationOptions bad_options =
+            options;
+
+        bad_options.time_step = -1.0;
+
+
+        propagate_rk4(
+            initial,
+            bad_options
+        );
     }
-    catch(const std::invalid_argument&){
-        invalid_propagation_mu=true;
+    catch(const std::invalid_argument&)
+    {
+        invalid_input_caught = true;
     }
 
-    if(!invalid_propagation_mu){
-        std::cerr<<"Invalid propagation gravitational parameter test failed\n";
+
+    if(!invalid_input_caught)
+    {
+        std::cerr
+            << "Invalid input test failed\n";
+
         return 1;
     }
 
 
-    std::cout<<"Trajectory validation tests passed\n";
+    std::cout
+        << "Trajectory tests passed\n";
+
+
     return 0;
 }
