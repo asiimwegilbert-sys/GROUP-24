@@ -1,4 +1,7 @@
+#include "satellite_trajectory/vector.hpp"
+
 #include <cassert>
+#include <cmath>
 #include <iostream>
 
 int main()
