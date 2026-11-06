@@ -101,6 +101,23 @@ Matrix operator*(const Matrix& a, const Matrix& b) {
                 sum += a(i, k) * b(k, j);   }
             result(i, j) = sum;
         } }    return result;}
+Vector operator*(const Matrix& matrix, const Vector& vector) {
+    if (matrix.rows() == 0 || matrix.columns() == 0) {
+        throw std::invalid_argument("Matrix * Vector: the matrix is empty");
+    }
+    if (matrix.columns() != vector.size()) {
+        throw std::invalid_argument(
+            "Matrix * Vector: columns of the matrix must equal the size of the vector");
+    }
+
+    Vector result(matrix.rows(), 0.0);
+    for (std::size_t i = 0; i < matrix.rows(); ++i) {
+        for (std::size_t j = 0; j < matrix.columns(); ++j) {
+            result[i] += matrix(i, j) * vector[j];
+        }
+    }
+    return result;
+}
 // number * matrix: every element is multiplied by the number.
 Matrix operator*(double scalar, const Matrix& m) {
     Matrix result(m.rows(), m.columns());

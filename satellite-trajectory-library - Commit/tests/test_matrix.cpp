@@ -140,6 +140,19 @@ int main() {
     Matrix col{{4}, {5}, {6}};
     check((row * col)(0, 0) == 32, "row * column = dot product (32)");
 
+    // Matrix-vector multiplication
+    const Matrix rectangular{{1, 2, 3}, {4, 5, 6}};
+    const auto vector_product = rectangular * sat::num::Vector{1, 0, -1};
+    check(vector_product.size() == 2 &&
+              vector_product[0] == -2 && vector_product[1] == -2,
+          "matrix-vector multiplication computes each row dot product");
+    check((Matrix::identity(3) * sat::num::Vector{2, 3, 4})[2] == 4,
+          "identity matrix preserves a vector");
+    check(throwsInvalidArgument([&] {
+              (void)(rectangular * sat::num::Vector{1, 2});
+          }),
+          "matrix-vector multiplication rejects mismatched dimensions");
+
     // Column times row gives a 3x3 matrix
     Matrix outer = col * row;
     check(outer.rows() == 3 && outer.columns() == 3 && outer(2, 1) == 12,

@@ -1,4 +1,4 @@
-// tests/test_interpolation.cpp - Week 3 (ARINDA DEOGRATIUS KEVIN)
+// Week 3 interpolation tests (Arinda Deogratius Kevin).
 // Assumes interpolation.hpp provides: lagrangeInterpolate,
 // newtonDividedDifferences, newtonEvaluate, polynomialFit
 //

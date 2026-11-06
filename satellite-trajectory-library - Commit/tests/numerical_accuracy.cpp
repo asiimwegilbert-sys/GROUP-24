@@ -2,7 +2,7 @@
 #include <iostream>
 #include <vector>
 #include <cmath>
-#include <cassert>
+#include <stdexcept>
 
 // A known orbital test problem: Simple Harmonic Satellite Oscillation (u'' = -u)
 sat::num::State harmonic_orbit_ode(double t, const sat::num::State& state) {
@@ -42,14 +42,23 @@ int main() {
     std::cout << "RK4 Classical Position   : " << rk4_state[0] << " (Absolute Error: " << rk4_error << ")" << std::endl;
 
     // Verify RK4 accuracy constraint
-    assert(rk4_error < rk2_error);
+    if (!(rk4_error < rk2_error)) {
+        std::cerr << "RK4 should be more accurate than RK2 for this case.\n";
+        return 1;
+    }
     std::cout << "\n[EDGE CASE CHECK]: Testing empty vector error boundaries..." << std::endl;
 
+    bool rejected_empty_state = false;
     try {
         sat::num::State empty_vector;
         sat::num::rk4_step(harmonic_orbit_ode, 0.0, empty_vector, dt);
     } catch (const std::invalid_argument& e) {
+        rejected_empty_state = true;
         std::cout << "Success: System gracefully handled edge case! Caught exception: " << e.what() << std::endl;
+    }
+    if (!rejected_empty_state) {
+        std::cerr << "RK4 did not reject an empty state.\n";
+        return 1;
     }
 
     std::cout << "==================================================================" << std::endl;

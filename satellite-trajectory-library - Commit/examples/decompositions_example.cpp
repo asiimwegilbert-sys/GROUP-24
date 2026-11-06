@@ -47,7 +47,7 @@ int main()
     print_matrix("Householder Q:", qr.q);
     print_matrix("Householder R:", qr.r);
 
-    const auto gs = sat::num::gram_schmidt_qr(rectangular);
+    const auto gs = sat::num::qr_gram_schmidt(rectangular);
     print_matrix("Modified Gram-Schmidt Q:", gs.q);
     print_matrix("Modified Gram-Schmidt R:", gs.r);
     return 0;

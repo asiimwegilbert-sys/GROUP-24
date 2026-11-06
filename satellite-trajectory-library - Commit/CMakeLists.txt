@@ -28,7 +28,7 @@ endif()
 
 # Build examples and tests
 if(BUILD_EXAMPLES)
-  foreach(name IN ITEMS interpolation integration linear_algebra satellite_trajectory)
+  foreach(name IN ITEMS interpolation integration linear_algebra satellite_trajectory trajectory_interpolation decompositions linear_solver)
     add_executable(${name}_example examples/${name}_example.cpp)
     target_link_libraries(${name}_example PRIVATE satellite_trajectory)
   endforeach()
@@ -38,12 +38,15 @@ endif()
 if(BUILD_TESTS)
   enable_testing()
 
-  # Only include the test sources that correspond to real, compilable tests.
-  # Several legacy files in tests/ are placeholders or misnamed and are intentionally excluded
-  # until they are restored or renamed to a stable, valid target name.
   foreach(name IN ITEMS
+      interpolation
+      interpolation3
       matrix
       vector
+      vector_operations
+      vector_foundations_week_1
+      core_functionality_week_2
+      operator_overloads_week_4
       linear_solvers
       decompositions
       eigenvalues
@@ -58,4 +61,12 @@ if(BUILD_TESTS)
       add_test(NAME ${name}_tests COMMAND test_${name})
     endif()
   endforeach()
+
+  add_executable(test_matrix_week4 tests/test_matrix-4.cpp)
+  target_link_libraries(test_matrix_week4 PRIVATE satellite_trajectory)
+  add_test(NAME matrix_week4_tests COMMAND test_matrix_week4)
+
+  add_executable(test_numerical_accuracy tests/numerical_accuracy.cpp)
+  target_link_libraries(test_numerical_accuracy PRIVATE satellite_trajectory)
+  add_test(NAME numerical_accuracy_tests COMMAND test_numerical_accuracy)
 endif()

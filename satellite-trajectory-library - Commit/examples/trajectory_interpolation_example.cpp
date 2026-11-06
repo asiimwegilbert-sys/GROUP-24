@@ -1,4 +1,4 @@
-// examples/trajectory_interpolation_example.cpp
+// Interpolate satellite positions between RK4 sample times.
 // Week 5 demo: use interpolation to estimate a satellite's position
 // BETWEEN the time steps computed by the RK4 propagator.
 
