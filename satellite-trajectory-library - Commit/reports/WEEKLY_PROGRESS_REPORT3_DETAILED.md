@@ -4,8 +4,7 @@
 **Project:** Satellite Trajectory Numerical Computing Library
 **Submitted work:** Reports and structure of the project.
 
-> Report from the team lead, Gilbert after review. The member sections come from the individual reports in
-> `Team Reports/`; "Repository check" lines come from the lead's review of the Git history and the code.
+> Team report from lead Gilbert after review. Member sections come from individual reports where available; Gilbert's section summarizes the lead work recorded in the team report. "Repository check" lines are attributed to the lead's review of Git history and code.
 
 ## 1. Weekly Summary
 
@@ -32,7 +31,21 @@ The following are the member reports for their assigned modules, summarised from
 
 ### Gilbert (team lead):
 
-The Week 3 work, the lead integrates and merges modules and remaining/ resolving conflicts.
+**Assigned responsibility:** Integration, CMake and team coordination
+**Source:** Week 3 team report; no separate individual Week 3 report was identified.
+
+#### Completed
+
+- Coordinated integration, merging and review of member modules.
+- Checked, created and generated CSV files, as recorded in the Week 3 team status.
+- Renamed incorrectly named test files that were preventing the project build from finding them.
+- Followed up on the CMake requirement to support the project's C++17 build; the team report marks this issue as resolved but does not include a separate build log.
+
+#### In Progress
+
+- Resolve remaining integration conflicts and align member code with the shared build.
+
+This is a summary of work attributed to Gilbert in the team report, not a separately submitted individual report.
 
 ### Delvin:
 

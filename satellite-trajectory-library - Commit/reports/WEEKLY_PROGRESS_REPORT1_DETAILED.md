@@ -1,6 +1,6 @@
 # Week 1 Progress Report
 
-**First Submision:**
+**First Submission:**
 **Project:** Satellite Trajectory Numerical Computing Library  
 **Submitted Work:** Reports and structure of the project.
 
@@ -27,7 +27,27 @@
 | Erick | Least squares/eigenvalues/satellite trajectory | Implemented and tested orbital-period calculation; reports 8 registered tests passed | Resolve module dependencies and the vector-state RK interface | Decomposition/solver and integration APIs still developing | PR #8 |
 
 ## 3. Individual Member Reports
-The folowing are the copies of some of the reports the group members did about their assigned modules
+The member summaries are based on individual reports where available. Gilbert's lead-work summary is based on the Week 1 team notes; no separate individual report from him was identified.
+
+### Gilbert (team lead):
+
+**Assigned responsibility:** Project coordination, integration and CMake
+**Source:** Week 1 team notes; no separate individual Week 1 report was identified.
+
+#### Completed
+
+- Helped establish the project scaffold and initial CMake setup.
+- Assigned module responsibilities and organized supporting members.
+- Drafted the project plan and workflow after the group selected the satellite trajectory library.
+
+#### In Progress
+
+- Establishing the build and review workflow and preparing to integrate member branches.
+
+#### Challenges / Blockers
+
+- The team notes say the group was still learning CMake and had limited time after changing project assignments.
+- This is a summary of lead work recorded in the team notes, not a separately submitted personal report.
 
 ### Ibrahim:
 
@@ -93,14 +113,8 @@ The folowing are the copies of some of the reports the group members did about t
 
 #### AI Use
 
- 
-
-- **Tool:** None
-- **Purpose:** NOne
-- **Reason it was used:** None
-- **What the team verified or changed:** None
-
-> No AI tools were used this week.
+- **Tool:** None.
+- Jeremiah's report states that no AI tools were used this week.
 
 ### Deogratius:
 
@@ -131,14 +145,7 @@ The folowing are the copies of some of the reports the group members did about t
 
 #### AI Use
 
- 
-
-- **Tool:** None
-- **Purpose:** NOne
-- **Reason it was used:** None
-- **What the team verified or changed:** None
-
-> No AI tools were used this week.
+- No AI-use statement is included in this individual report.
 
 ### Delvin:
 
@@ -158,14 +165,7 @@ The folowing are the copies of some of the reports the group members did about t
 
 #### AI Use
 
- 
-
-- **Tool:** None
-- **Purpose:** NOne
-- **Reason it was used:** None
-- **What the team verified or changed:** None
-
-> No AI tools were used this week.
+- No AI-use statement is included in this individual report.
 
 ### Derrick:
 
@@ -186,9 +186,7 @@ The folowing are the copies of some of the reports the group members did about t
 
 #### AI Use
 
-- **Tool:** ChatGPT
-- **Purpose:** Organize and explain the Week 1 linear-solvers report.
-- **Verification:** Derrick's report says he reviewed and edited suggestions to match the work completed.
+- The report includes suggested ChatGPT disclosure text.
 
 ### Praise:
 
@@ -209,14 +207,7 @@ The folowing are the copies of some of the reports the group members did about t
 
 #### AI Use
 
- 
-
-- **Tool:** None
-- **Purpose:** NOne
-- **Reason it was used:** None
-- **What the team verified or changed:** None
-
-> No AI tools were used this week.
+- No AI-use statement is included in this individual report.
 
 ### Stacy:
 
@@ -236,14 +227,7 @@ The folowing are the copies of some of the reports the group members did about t
 
 #### AI Use
 
- 
-
-- **Tool:** None
-- **Purpose:** NOne
-- **Reason it was used:** None
-- **What the team verified or changed:** None
-
-> No AI tools were used this week.
+- No AI-use statement is included in this individual report.
 
 ### Erick:
 
@@ -268,34 +252,25 @@ The folowing are the copies of some of the reports the group members did about t
 - **Purpose:** Clarify requirements and dependencies, troubleshoot the CMake/MinGW setup, and assist with test design.
 - **Verification:** Erick's report says AI suggestions were reviewed before use.
 
-#### AI Use
-
- 
-
-- **Tool:** None
-- **Purpose:** NOne
-- **Reason it was used:** None
-- **What the team verified or changed:** None
-
-> No AI tools were used this week.
-
-## 5. Decisions Made This Week
+## 4. Decisions Made This Week
 
 | Decision | Reason | Affected modules/members |
 |---|---|---|
-|  | | |
 | None at the moment | | |
 
-## 6. Issues and Blockers Requiring Team Action
+## 5. Issues and Blockers Requiring Team Action
 
 | Issue | Owner | Impact | Action before next Monday |
 |---|---|---|---|
-| | | | |
-| | | | 
+| Matrix and Vector APIs still need implementation and alignment | Ibrahim, Delvin | Matrix operations and downstream modules depend on stable interfaces | Agree the public APIs, implement the classes and add focused tests |
+| Scalar RK state does not match the satellite position/velocity state | Jeremiah, Erick | Satellite propagation cannot be finalized against the current interface | Agree on a vector-valued state interface before implementing propagation |
+| Build tooling and CMake setup are still being established | Gilbert, Erick | Members need a repeatable way to build and run tests | Document and verify the CMake/MinGW workflow |
 
-## 7. Next Week's Shared Goals
+## 6. Next Week's Shared Goals
 
 1. Complete the matrix and vector module
 2. Run some tests and examples 
 
- ## 8. Conclusion.
+## 7. Conclusion
+
+Week 1 established the project scope, team responsibilities, initial repository structure and module designs. Some initial code and tests were reported, including the orbital-period calculation, but most modules still needed implementation, integration and verification.

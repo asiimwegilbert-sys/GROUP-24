@@ -4,14 +4,13 @@
 **Project:** Satellite Trajectory Numerical Computing Library
 **Submitted work:** Reports and project Code.
 
-> Report from the team lead, Gilbert after review. The member sections come from the individual reports in
-> `Team Reports/`; "Repository check" lines come from the lead's review of the Git history and the code.
+> Team report from lead Gilbert after review. Member sections come from individual reports where available; Gilbert's section summarizes the lead work recorded in the team report. "Repository check" lines are attributed to the lead's review of Git history and code.
 
 ## 1. Weekly Summary
 
 Week 4 was meant to finish interpolation, integration, fitting and eigenvalues. Jeremiah finished RK4, Gaussian quadrature and Romberg as two class families, and Erick connected the RK2/RK4 steps to a two-body satellite propagation. Ibrahim added Matrix * Vector with 10 new tests, Delvin reported the vector operators, Derrick added iterative refinement, and Deogratius updated the interpolation header.
 A review of the repository on 2 November found that the project did not build from `main` (test file names with spaces, two matrix files compiled together, module-style solver files in a C++17 build) and that several required methods were still `TODO`: Gaussian elimination, determinant, inverse, Gauss-Seidel, power iteration, the interpolation functions, least squares and eigenvalues. The lead's patch fixes the build and fills these in.
-No separate Week 4 individual report from Gilbert is identified. Individual Week 4 reports are present for Stacy and Praise; their statements and the repository review are summarized below.
+No separate Week 4 individual report from Gilbert is identified. His repository-review and integration work is summarized below from the team report. Individual Week 4 reports are present for Stacy and Praise; their statements and the repository review are also summarized below.
 
 ## 2. Team Status Overview
 
@@ -32,7 +31,19 @@ The following are the member reports for their assigned modules, summarised from
 
 ### Gilbert (team lead):
 
-Repository evidence of the lead's work is in `GILBERT_LEAD_EVIDENCE_AND_OUTLINE.md`.
+**Assigned responsibility:** Integration, CMake and release coordination
+**Source:** Week 4 team report and its repository-review notes; no separate individual Week 4 report was identified.
+
+#### Completed
+
+- Reviewed the `main` branch on 2 November and identified build blockers, including incorrectly named test files, duplicate Matrix sources and module-style solver files in a C++17 build.
+- Identified unfinished methods recorded as TODO in the reviewed repository, including Gaussian elimination, determinant, inverse, Gauss-Seidel, power iteration, interpolation, least squares and eigenvalues.
+- The team report attributes the integration patch that fixed the build and filled these gaps to the lead. This weekly summary records that attribution; it does not claim that member-owned methods were Gilbert's original implementations.
+
+#### In Progress / Limitations
+
+- The report did not document a clean-machine build or a coverage checklist at that review point.
+- Week 5's separate contribution report provides the subsequent merge, CMake, demonstration and visual evidence: `Team Reports/Team Reports Week 5/Gilbert_week_05.md`.
 
 ### Delvin:
 

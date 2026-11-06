@@ -4,8 +4,7 @@
 **Project:** Satellite Trajectory Numerical Computing Library
 **Submitted work:** Reports and structure of the project.
 
-> Report for the team lead (Gilbert) after review. The member sections are taken from the individual reports in
-> `Team Reports/`.
+> Team report for the lead (Gilbert) after review. Member summaries are based on individual reports where available; Gilbert's section summarizes team-recorded lead work because no separate individual Week 2 report was identified.
 
 ## 1. Weekly Summary
 
@@ -17,7 +16,7 @@ An individual Week 2 report is present for Stacy; it records that decomposition 
 
 | Member | Assigned module | Completed this week | In progress | Blocker | Commit/PR link |
 |---|---|---|---|---|---|
-| Gilbert (team lead) | Integration/CMake | No individual report needed, Did the detailed report. | Integration of the commits and review | Some people had not yet pushed there code and report. | - |
+| Gilbert (team lead) | Integration/CMake | Coordinated branch merging and prepared the team report | Integration and review | Some members had not yet pushed their code and reports | - |
 | Delvin | Vector | `size()`, bounds-checked `operator[]`, `norm()`; tested | - | - | - |
 | Ibrahim | Matrix | Sizes, zero-based access, transpose, `+`, `-`, `*`, scalar `*`; error checks | - | - | commit 5645c3c |
 | Derrick | Linear solvers | `GaussianSolver` and `BackSubstitutionSolver` classes with options struct; tests written | - | Needs the C++23 named-module build to run | suggested `feature/derrick-week2-class-based-solvers` |
@@ -32,7 +31,24 @@ The following are the member reports for their assigned modules, summarised from
 
 ### Gilbert (team lead):
 
-General and weekly progress report in details.
+**Assigned responsibility:** Integration, CMake and team coordination
+**Source:** Week 2 team report; no separate individual Week 2 report was identified.
+
+#### Completed
+
+- Coordinated merging of the group branches and reviewed the submitted work, as recorded in the Week 2 team status.
+- Prepared the detailed weekly progress report from team and member updates.
+
+#### In Progress
+
+- Integrating member changes and following up on code and reports that had not yet been pushed.
+- Connecting the interpolation tests to the project CMake build.
+
+#### Challenges / Blockers
+
+- The Week 2 review found incompatibilities between some member work and the integrated project, including solver module types that did not match the library API and tests not yet registered with CMake.
+
+This section summarizes the team record and is not a separately submitted Gilbert report.
 
 ### Delvin:
 
