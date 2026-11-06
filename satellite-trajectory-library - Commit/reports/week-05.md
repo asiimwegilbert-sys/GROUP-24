@@ -22,9 +22,9 @@ The November 6 repository verification found that several existing tests and exa
 | Deogratius | Interpolation | No Week 5 individual report was supplied. No personal work is inferred here. |
 | Jeremiah | Integration | The individual report describes integration and edge-case verification. The registered integration and trajectory tests pass. |
 | Erick | Least squares, eigenvalues, trajectory | The individual report describes least-squares fitting, eigenvalue work, drag support, and trajectory tests. The registered least-squares, eigenvalue, and trajectory tests pass. |
-| Gilbert | Team integration | No Week 5 individual report was supplied. Repository build and test results are recorded below; they are not presented as a personal contribution report. |
+| Gilbert | Team integration, CMake, release coordination | See [Gilbert's Week 5 report](../../Team%20Reports/Team%20Reports%20Week%205/Gilbert_week_05.md) for merged PRs, CMake organization, demonstrations, and visual assets. |
 
-Individual reports are present in `Team Reports/Team Reports Week 5/` for Delvin, Ibrahim, Praise, Stacy, Jeremiah, and Erick. Derrick's and Deogratius's individual reports have not been created or edited.
+Individual reports are present in `Team Reports/Team Reports Week 5/` for Gilbert, Delvin, Ibrahim, Praise, Stacy, Jeremiah, and Erick. Derrick's and Deogratius's individual reports have not been created or edited.
 
 ## Integration Fixes in This Verification Update
 
@@ -52,7 +52,6 @@ The example smoke run covered interpolation, integration, linear algebra, satell
 
 - The successful build and tests verify the configured targets on this Windows/MinGW environment; a separate clean-machine build was not performed.
 - `src/` and `include/` contain no explicit TODO or placeholder markers. All 17 C++ test source files in `tests/` are now registered with CMake. Some targets intentionally retain overlapping historical coverage.
-- Individual status reports for Gilbert, Derrick, and Deogratius were not supplied. Their personal contributions should be confirmed by the group rather than reconstructed from assumptions.
 
 ## AI Use
 

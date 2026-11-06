@@ -52,7 +52,7 @@ The Week 5 individual reports describe work in the following areas:
 
 | Member | Assigned area | Report status |
 |---|---|---|
-| Gilbert | Team integration and CMake | No Week 5 individual report supplied; personal activity is not inferred here. |
+| Gilbert | Team integration, CMake, release coordination | Week 5 contribution report supplied, including Git-history evidence for merges, build organization, demonstrations, and visuals. |
 | Delvin | Vector | Week 5 report supplied. |
 | Ibrahim | Matrix | Week 5 report supplied. |
 | Derrick | Direct linear solvers | No Week 5 individual report supplied; no report was created as part of this update. |
@@ -62,7 +62,6 @@ The Week 5 individual reports describe work in the following areas:
 | Jeremiah | Numerical integration | Week 5 report supplied. |
 | Erick | Least squares, eigenvalues, and satellite application | Week 5 report supplied. |
 
-This table records submitted-report status and assigned areas; it is not a substitute for confirming each member's commits, reviews, and final contribution statement.
 
 ## AI-Use Declaration
 

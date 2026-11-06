@@ -6,7 +6,7 @@
 ## Completed
 | Member | Module | Completed this week |
 |---|---|---|
-| Gilbert (lead) | Integration, CMake | No individual report received yet |
+| Gilbert (lead) | Integration, CMake | Merging of the group branches |
 | Delvin | Vector | Core members: `size()`, bounds-checked `operator[]`, `norm()`; tested size, safe access with exceptions, and norms of velocity vectors |
 | Ibrahim | Matrix | Row and column sizes, zero-based access, transpose, `+`, `-`, `*` and scalar `*`; dimension and index checks; data kept private as row-major `std::vector<double>` |
 | Derrick | Linear solvers | Classes `GaussianSolver` (elimination with partial pivoting) and `BackSubstitutionSolver`; private `options_`, public `SolverOptions` with `pivot_tolerance`; C++23 |

@@ -1,7 +1,7 @@
 # Week 1 Progress Report
 
 > Report for the team lead, Gilbert after review and edit. Member summaries come from the individual reports in
-> `Team Reports/Team Reports Week 2/` and the team's existing Week 1 notes.
+> `Team Reports/Team Reports Week 1/` and the team's existing Week 1 notes.
 
 ## Completed
 - Created the initial library scaffold.
@@ -17,7 +17,7 @@
 | Derrick | Linear solvers | First version of the module (C++23 named module): back substitution, forward substitution, size checks, small-diagonal check, simple test program | `feature/derrick-linear-solvers`; `feat: add basic linear solver functions` |
 | Stacy | Decompositions | Design note: LU with partial pivoting, Cholesky, Modified Gram-Schmidt, Householder QR; API, error handling, test plan | `feature/stacy-decompositions` |
 | Praise | Iterative solvers | Header and source split; result type (solution, iterations, convergence, residual); Jacobi method implemented with size and zero-diagonal checks; iteration limit and tolerance | - |
-| Deogratius | Interpolation | No Week 1 report received yet | - |
+| Deogratius | Interpolation | Researched linear, Lagrange, Newton, and polynomial interpolation; mapped the module files and how interpolation can estimate positions between trajectory samples | Turn the research into a test plan and function requirements |
 | Jeremiah | Integration (RK) | Designed `integration.hpp`: RK2, RK4, Gaussian quadrature and Romberg signatures; folders and namespace set up | - |
 | Erick | Least squares, eigenvalues, trajectory | Reviewed module interfaces and dependencies; implemented the orbital period `T = 2π√(a³/μ)` with input validation; 3 tests in `tests/test_trajectory.cpp`; MinGW build set up; all 8 registered tests passed | `feature/erick-least-squares-trajectory`; PR #8; `feat: implement orbital period calculation` |
 
@@ -59,7 +59,7 @@
 | Gaussian elimination, determinant, inverse | In progress | Back and forward substitution started (Derrick) |
 | LU, Cholesky, QR, Gram-Schmidt | Design done | Design note and API written; no code yet (Stacy) |
 | Jacobi, Gauss-Seidel, power iteration | In progress | Jacobi implemented; the other two planned (Praise) |
-| Interpolation methods | Not started | No Week 1 report received |
+| Interpolation methods | Design/research | Deogratius researched the methods and outlined the module; implementation had not started |
 | RK2, RK4, Gaussian quadrature, Romberg | In progress | Header signatures designed (Jeremiah) |
 | Least-squares methods | Not started | Dependencies identified (Erick) |
 | Eigenvalue computation | Not started | Expected to depend on QR (Erick) |
@@ -67,3 +67,7 @@
 | Examples and data | Not started | |
 | README and documentation | Not started | |
 | Full build and test suite | In progress | Erick's local build ran 8 registered tests, all passing |
+
+## Reports received
+
+Individual Week 1 reports are present for the module owners, including Deogratius's research report (`Team Reports/Team Reports Week 1/Deo_week1_report`). His Week 1 work was research and planning, not an interpolation implementation. Gilbert's contribution is summarized from the team lead's project notes; no separate Gilbert individual Week 1 report is identified.
