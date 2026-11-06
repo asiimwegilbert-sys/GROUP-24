@@ -1,0 +1,10 @@
+matrix_tests 1 0.132741
+vector_tests 1 0.0910849
+linear_solvers_tests 1 0.105955
+decompositions_tests 1 0.0726603
+eigenvalues_tests 1 0.127853
+integration_tests 1 0.12589
+least_squares_tests 1 0.127522
+solvers_tests 1 0.135447
+trajectory_tests 1 0.117397
+---
