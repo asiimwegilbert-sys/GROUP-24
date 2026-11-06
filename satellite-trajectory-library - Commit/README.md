@@ -30,13 +30,23 @@ The program uses the following methods to track the satellite trajhectory, predi
 Lagrange interpolation; Newton interpolation; polynomial interpolation; Jacobi; Gauss-Seidel; RK2; RK4; Gaussian quadrature; least-squares polynomial fitting; Romberg integration; Gaussian elimination; LU; Cholesky; QR; Gram-Schmidt; matrix inversion; determinant; power iteration; eigenvalue computation; least-squares solution.
 
 ## Build
-The project is configured to build with tests enabled by default.
+The project is configured to build with tests enabled by default and uses C++17 unless another standard is selected. CMake 3.20 or newer is required for C++23 support.
 
 ```bash
 cmake -S . -B build
 cmake --build build
 ctest --test-dir build --output-on-failure
 ```
+
+To configure a separate C++23 build, use:
+
+```bash
+cmake -S . -B build-cxx23 -DCMAKE_CXX_STANDARD=23
+cmake --build build-cxx23
+ctest --test-dir build-cxx23 --output-on-failure
+```
+
+Other C++ standards can be selected by setting `CMAKE_CXX_STANDARD` to a value supported by both the installed CMake version and compiler.
 
 If you want to build only the library and examples without tests:
 

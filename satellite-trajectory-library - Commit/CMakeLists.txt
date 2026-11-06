@@ -1,6 +1,6 @@
-cmake_minimum_required(VERSION 3.16)
+cmake_minimum_required(VERSION 3.20)
 project(satellite_trajectory_library VERSION 0.1.0 LANGUAGES CXX)
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 17 CACHE STRING "C++ standard used to build the project")
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 option(BUILD_TESTS "Build tests" ON)
@@ -18,7 +18,7 @@ add_library(satellite_trajectory
     src/trajectory_solver.cpp
 )
 target_include_directories(satellite_trajectory PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
-target_compile_features(satellite_trajectory PUBLIC cxx_std_17)
+target_compile_features(satellite_trajectory PUBLIC cxx_std_${CMAKE_CXX_STANDARD})
 #Compiler Warnings 
 if(MSVC)
   target_compile_options(satellite_trajectory PRIVATE /W4)
