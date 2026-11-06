@@ -1,3 +1,6 @@
+Member: Asingwire Praise Hannah
+Registration number: 25/U/08696/PS
+
 Introduction
 This report explains how I design and planned the iterative solvers part of our satellite trajectory project. I am going to use three tools namely, Jacobi, Gauss-Seidel and Power Iteration. They are going to help solve big equation systems and find important numbers that is Eigen values, quickly and safely.
 Architecture Design

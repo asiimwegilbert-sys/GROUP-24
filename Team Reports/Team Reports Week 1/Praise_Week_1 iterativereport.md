@@ -1,4 +1,7 @@
 
+Member: Asingwire Praise Hannah
+Registration number: 25/U/08696/PS
+
 This report explains how I planned and started the iterative solvers module for our satellite trajectory project. For Week 1, my focus was on setting up our project files, designing the public interface menu, and implementing the first core math tool: the Jacobi Method. This tool helps us solve big linear equation systems as we work toward predicting satellite paths.
 
 I split the work into two files. First, a header file  acts like a menu listing our tools and result structures. Second, the source file  holds the step-by-step math instructions.

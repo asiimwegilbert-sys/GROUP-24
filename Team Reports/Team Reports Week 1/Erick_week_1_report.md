@@ -1,5 +1,8 @@
 # Week 1 Progress Report – Erick
 
+**Full name:** Ashaba Erick
+**Registration number:** `25/U/08693/PS`
+
 ## Assigned Module
 Least Squares, Eigenvalue Computation, and Satellite Trajectory
 

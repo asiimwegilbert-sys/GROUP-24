@@ -16,6 +16,22 @@
 | Jeremiah |Lead-Numerical integration | `integration.hpp/.cpp`, integration tests | RK2, RK4, Gaussian quadrature, Romberg integration |
 | Erick |Lead- Least squares, eigenvalues, and satellite application | `least_squares`, `eigenvalues`, `trajectory_solver`, `examples/` | Fitting, eigenvalues, two-body propagation, examples |
 
+### Team roster
+
+Registration numbers of members below.
+
+| Member | Registration number |
+|---|---|
+| Asimwe Gilbert | `25/U/08694/PS` |
+| Ainebyoona Delvin | `25/U/08680/PS` |
+| Nakibinge Jeremiah | `25/U/08762/PS` |
+| Lubangakene Derrick | `25/U/0837` |
+| Ssempijja Ibrahim | `25/U/0859` |
+| Namuleme Stacy Elizabeth | `25/U/08768/PS` |
+| Asingwire Praise Hannah | `25/U/08696/PS` |
+| Ashaba Erick | `25/U/08693/PS` |
+| Arinda Deogratius Kevin |  |
+
 ### Shared responsibilities
 
 - **All members:** review at least one other member's code each week.

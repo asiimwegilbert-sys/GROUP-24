@@ -4,6 +4,22 @@
 **Project:** Satellite Trajectory Numerical Computing Library  
 **Submitted Work:** Reports and structure of the project.
 
+## Team roster
+
+Registration numbers of members
+
+| Member | Registration number as supplied |
+|---|---|
+| Asimwe Gilbert | `25/U/08694/PS` |
+| Ainebyoona Delvin | `25/U/08680/PS` |
+| Nakibinge Jeremiah | `25/U/08762/PS` |
+| Lubangakene Derrick | `25/U/0837`|
+| Ssempijja Ibrahim | `25/U/0859` |
+| Namuleme Stacy Elizabeth | `25/U/08768/PS` |
+| Asingwire Praise Hannah | `25/U/08696/PS` |
+| Ashaba Erick | `25/U/08693/PS` |
+| Arinda Deogratius Kevin | |
+
 ## 1. Weekly Summary
 
 >We had to meetings, one physical and an online one to decide on thee project that was idea and had a wider coverage of the modules that we were assigned to.
@@ -32,7 +48,9 @@ The member summaries are based on individual reports where available. Gilbert's 
 ### Gilbert (team lead):
 
 **Assigned responsibility:** Project coordination, integration and CMake
-**Source:** Week 1 team notes; no separate individual Week 1 report was identified.
+**Member:** Asimwe Gilbert
+**Registration number:** `25/U/08694/PS`
+**Source:** Week 1 team notes.
 
 #### Completed
 
@@ -47,7 +65,7 @@ The member summaries are based on individual reports where available. Gilbert's 
 #### Challenges / Blockers
 
 - The team notes say the group was still learning CMake and had limited time after changing project assignments.
-- This is a summary of lead work recorded in the team notes, not a separately submitted personal report.
+- This is a summary of lead work recorded in the team notes.
 
 ### Ibrahim:
 
@@ -145,7 +163,7 @@ The member summaries are based on individual reports where available. Gilbert's 
 
 #### AI Use
 
-- No AI-use statement is included in this individual report.
+- No AI-use statement was included in this individual report.
 
 ### Delvin:
 
@@ -165,7 +183,7 @@ The member summaries are based on individual reports where available. Gilbert's 
 
 #### AI Use
 
-- No AI-use statement is included in this individual report.
+- No AI-use statement was included in this individual report.
 
 ### Derrick:
 
@@ -186,7 +204,7 @@ The member summaries are based on individual reports where available. Gilbert's 
 
 #### AI Use
 
-- The report includes suggested ChatGPT disclosure text.
+- The report suggested ChatGPT disclosure text.
 
 ### Praise:
 
@@ -207,7 +225,7 @@ The member summaries are based on individual reports where available. Gilbert's 
 
 #### AI Use
 
-- No AI-use statement is included in this individual report.
+- No AI-use statement was included in this individual report.
 
 ### Stacy:
 
@@ -227,7 +245,7 @@ The member summaries are based on individual reports where available. Gilbert's 
 
 #### AI Use
 
-- No AI-use statement is included in this individual report.
+- No AI-use statement was included in the individual report.
 
 ### Erick:
 
@@ -250,7 +268,6 @@ The member summaries are based on individual reports where available. Gilbert's 
 
 - **Tool:** ChatGPT
 - **Purpose:** Clarify requirements and dependencies, troubleshoot the CMake/MinGW setup, and assist with test design.
-- **Verification:** Erick's report says AI suggestions were reviewed before use.
 
 ## 4. Decisions Made This Week
 

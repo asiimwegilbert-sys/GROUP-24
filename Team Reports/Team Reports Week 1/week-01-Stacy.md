@@ -1,5 +1,7 @@
 Individual Member Report: Matrix Decompositions
 Week 01 report by Stacy on Lead, Matrix decompositions (LU, Cholesky, QR, Gram-Schmidt)
+Member: Namuleme Stacy Elizabeth
+Registration number: 25/U/08768/PS
 
 Summary
 This week I defined the design of the matrix decompositions module for the Satellite Trajectory Numerical Computing Library and documented it. The note covers the purpose, methods, API, error handling, numerical assumptions, dependencies and test plan.

@@ -32,7 +32,7 @@ The following are the member reports for their assigned modules, summarised from
 ### Gilbert (team lead):
 
 **Assigned responsibility:** Integration, CMake and team coordination
-**Source:** Week 2 team report; no separate individual Week 2 report was identified.
+**Source:** Week 2 team report.
 
 #### Completed
 
@@ -47,8 +47,6 @@ The following are the member reports for their assigned modules, summarised from
 #### Challenges / Blockers
 
 - The Week 2 review found incompatibilities between some member work and the integrated project, including solver module types that did not match the library API and tests not yet registered with CMake.
-
-This section summarizes the team record and is not a separately submitted Gilbert report.
 
 ### Delvin:
 
@@ -170,7 +168,7 @@ This section summarizes the team record and is not a separately submitted Gilber
 
 #### AI Use
 
-- No AI-use statement is included in this individual report.
+- No AI-use statement was included in this individual report.
 
 ### Praise:
 

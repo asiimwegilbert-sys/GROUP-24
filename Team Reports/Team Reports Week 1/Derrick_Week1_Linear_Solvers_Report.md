@@ -1,5 +1,8 @@
 # Week 1 — Derrick Linear Solvers Module
 
+**Full name:** Lubangakene Derrick
+**Registration number:** `25/U/0837`
+
 ## Member
 
 Derrick

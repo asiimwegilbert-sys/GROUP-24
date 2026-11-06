@@ -1,3 +1,6 @@
+**Member:** Ssempijja Ibrahim
+**Registration number (as supplied):** `25/U/0859`
+
 What I Worked On This Week
 For our first week, I focused on mapping out the initial design for the 
 Matrix module. Most of my time went into sketching the Matrix API, 

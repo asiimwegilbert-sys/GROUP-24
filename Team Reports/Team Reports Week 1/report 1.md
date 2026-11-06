@@ -1,5 +1,8 @@
 # Report on sat::num::Vector Class Progress
 
+**Member:** Ainebyoona Delvin
+**Registration number:** `25/U/08680/PS`
+
 ## Purpose in Project
 The `sat::num::Vector` class is a foundational component for the Satellite Trajectory Numerical Computing Library. It provides a clean abstraction for handling mathematical vectors, which are essential in numerical simulations, trajectory calculations, and linear algebra operations.
 
@@ -55,8 +58,6 @@ const double& operator[](std::size_t index) const; - Provides indexed access to 
 
     Conclusion
 The sat::num::Vector class establishes a robust base for numerical computing in the project. It balances simplicity with extensibility, ensuring that future trajectory and satellite computations can be built on a reliable vector abstraction.
-
-
 
 
 

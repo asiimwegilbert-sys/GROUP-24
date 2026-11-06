@@ -3,6 +3,20 @@
 > Report for the team lead, Gilbert after review and edit. Member summaries come from the individual reports in
 > `Team Reports/Team Reports Week 1/` and the team's existing Week 1 notes.
 
+## Team roster
+
+| Member | Registration number |
+|---|---|
+| Asimwe Gilbert | `25/U/08694/PS` |
+| Ainebyoona Delvin | `25/U/08680/PS` |
+| Nakibinge Jeremiah | `25/U/08762/PS` |
+| Lubangakene Derrick | `25/U/0837` |
+| Ssempijja Ibrahim | `25/U/0859` |
+| Namuleme Stacy Elizabeth | `25/U/08768/PS` |
+| Asingwire Praise Hannah | `25/U/08696/PS` |
+| Ashaba Erick | `25/U/08693/PS` |
+| Arinda Deogratius Kevin |  |
+
 ## Completed
 - Created the initial library scaffold.
 - Assigning tasks to group members and taking initial investigations about the project.
