@@ -2,7 +2,7 @@ Week 5 Final Validation Report
 Name: Nakibinge Jeremiah
 Component: Numerical Integration Module - Verification & Error Analysis
 
-### 1. Functional Overview & Integration with Erick's Module
+### 1. Functional Overview & Integration with Erick's (my colleague) Module
 For Week 5, the numerical integration template classes were successfully cross-verified against the satellite propagation path profiles managed by Erick. By passing the orbital differential equations directly through our abstract parent class pointer (`TrajectorySolver<double>*`), we verified seamless integration with the wider project subsystem components.
 
 ### 2. Comparative Accuracy Analysis: RK2 vs. RK4
