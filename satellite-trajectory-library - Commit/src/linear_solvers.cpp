@@ -1,6 +1,6 @@
 // Explicit instantiations for the commonly used double type.
 // Template definitions remain in the public header for other numeric types.
-#include "sat_trajectory/linear_solvers.hpp"
+#include "satellite_trajectory/linear_solvers.hpp"
 namespace sat_trajectory {
 template class ForwardSubstitutionSolver<double>;
 template class BackSubstitutionSolver<double>;

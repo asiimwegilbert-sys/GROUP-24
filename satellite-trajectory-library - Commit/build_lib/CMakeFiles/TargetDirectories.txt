@@ -1,0 +1,7 @@
+C:/Users/HP/OneDrive/Desktop/Group 24 Project/GROUP-24/satellite-trajectory-library - Commit/build_lib/CMakeFiles/satellite_trajectory.dir
+C:/Users/HP/OneDrive/Desktop/Group 24 Project/GROUP-24/satellite-trajectory-library - Commit/build_lib/CMakeFiles/interpolation_example.dir
+C:/Users/HP/OneDrive/Desktop/Group 24 Project/GROUP-24/satellite-trajectory-library - Commit/build_lib/CMakeFiles/integration_example.dir
+C:/Users/HP/OneDrive/Desktop/Group 24 Project/GROUP-24/satellite-trajectory-library - Commit/build_lib/CMakeFiles/linear_algebra_example.dir
+C:/Users/HP/OneDrive/Desktop/Group 24 Project/GROUP-24/satellite-trajectory-library - Commit/build_lib/CMakeFiles/satellite_trajectory_example.dir
+C:/Users/HP/OneDrive/Desktop/Group 24 Project/GROUP-24/satellite-trajectory-library - Commit/build_lib/CMakeFiles/edit_cache.dir
+C:/Users/HP/OneDrive/Desktop/Group 24 Project/GROUP-24/satellite-trajectory-library - Commit/build_lib/CMakeFiles/rebuild_cache.dir
