@@ -106,5 +106,10 @@ Matrix operator*(double scalar, const Matrix& m) {
     Matrix result(m.rows(), m.columns());
     for (std::size_t i = 0; i < m.rows(); ++i) {
         for (std::size_t j = 0; j < m.columns(); ++j) {
-            result(i, j) = scalar * m(i, j); }}
-    return result;}
+            result(i, j) = scalar * m(i, j);
+        }
+    }
+    return result;
+}
+
+} // namespace sat::num

@@ -185,3 +185,5 @@ IterationResult power_iteration(const Matrix& A, const Vector& x_initial, const 
     result.solution = x;
     return result;
 }
+
+} // namespace sat::num

@@ -30,10 +30,19 @@ The program uses the following methods to track the satellite trajhectory, predi
 Lagrange interpolation; Newton interpolation; polynomial interpolation; Jacobi; Gauss-Seidel; RK2; RK4; Gaussian quadrature; least-squares polynomial fitting; Romberg integration; Gaussian elimination; LU; Cholesky; QR; Gram-Schmidt; matrix inversion; determinant; power iteration; eigenvalue computation; least-squares solution.
 
 ## Build
+The project is configured to build with tests enabled by default.
+
 ```bash
 cmake -S . -B build
 cmake --build build
 ctest --test-dir build --output-on-failure
+```
+
+If you want to build only the library and examples without tests:
+
+```bash
+cmake -S . -B build_no_tests -DBUILD_TESTS=OFF -DBUILD_EXAMPLES=ON
+cmake --build build_no_tests
 ```
 
 ## Structure
