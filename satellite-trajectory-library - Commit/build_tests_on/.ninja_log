@@ -1,0 +1,20 @@
+# ninja log v6
+95	3310	8156640740588180	CMakeFiles/satellite_trajectory.dir/src/Matrix3.cpp.obj	6fbf7e2480d95aa6
+112	3461	8156640740756580	CMakeFiles/satellite_trajectory.dir/src/interpolation.cpp.obj	8ce05570b0369bfb
+211	3481	8156640741749431	CMakeFiles/satellite_trajectory.dir/src/least_squares.cpp.obj	a33d42b5172bac9e
+132	3745	8156640740958733	CMakeFiles/satellite_trajectory.dir/src/integration.cpp.obj	dda3e92846c691ed
+194	3774	8156640741570552	CMakeFiles/satellite_trajectory.dir/src/decompositions.cpp.obj	f8b269b2004314ab
+175	4315	8156640741381010	CMakeFiles/satellite_trajectory.dir/src/linear_solvers.cpp.obj	cc531561671308e3
+153	4684	8156640741164626	CMakeFiles/satellite_trajectory.dir/src/iterative_solvers.cpp.obj	1105e789ef20b944
+76	4987	8156640740394621	CMakeFiles/satellite_trajectory.dir/src/vector.cpp.obj	5bc3d64d9013f071
+231	5170	8156640741936667	CMakeFiles/satellite_trajectory.dir/src/eigenvalues.cpp.obj	fafd16054d33d6e3
+270	5832	8156640742335245	CMakeFiles/satellite_trajectory.dir/src/trajectory_solver.cpp.obj	de3a2cce31d03351
+3317	8279	8156640772833581	CMakeFiles/interpolation_example.dir/examples/interpolation_example.cpp.obj	11173f141901587c
+3746	8373	8156640777090445	CMakeFiles/satellite_trajectory_example.dir/examples/satellite_trajectory_example.cpp.obj	962211e23a03b72b
+3482	8694	8156640774453349	CMakeFiles/linear_algebra_example.dir/examples/linear_algebra_example.cpp.obj	a36e33758c0271cd
+5832	8974	8156640797950218	libsatellite_trajectory.a	9476b5b1d507348c
+4987	9148	8156640789505659	CMakeFiles/test_decompositions.dir/tests/test_decompositions.cpp.obj	f3b77a469b0ef8ca
+3461	9393	8156640774247615	CMakeFiles/integration_example.dir/examples/integration_example.cpp.obj	98cb00bbbff204d9
+5171	9659	8156640791343681	CMakeFiles/test_eigenvalues.dir/tests/test_eigenvalues.cpp.obj	2de66f9a3bf36530
+3775	10139	8156640777379031	CMakeFiles/test_matrix.dir/tests/test_matrix.cpp.obj	485c769b3f349340
+4685	11138	8156640786488811	CMakeFiles/test_linear_solvers.dir/tests/test_linear_solvers.cpp.obj	5b78842619346187
