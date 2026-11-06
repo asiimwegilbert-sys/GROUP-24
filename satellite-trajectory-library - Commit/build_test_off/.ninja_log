@@ -1,0 +1,20 @@
+# ninja log v6
+99	3250	8156640068111431	CMakeFiles/satellite_trajectory.dir/src/vector.cpp.obj	5bc3d64d9013f071
+148	3415	8156640068597220	CMakeFiles/satellite_trajectory.dir/src/interpolation.cpp.obj	8ce05570b0369bfb
+125	3627	8156640068367199	CMakeFiles/satellite_trajectory.dir/src/Matrix3.cpp.obj	6fbf7e2480d95aa6
+213	4260	8156640069241329	CMakeFiles/satellite_trajectory.dir/src/iterative_solvers.cpp.obj	1105e789ef20b944
+367	4396	8156640070778776	CMakeFiles/satellite_trajectory.dir/src/least_squares.cpp.obj	a33d42b5172bac9e
+190	4882	8156640069020948	CMakeFiles/satellite_trajectory.dir/src/integration.cpp.obj	dda3e92846c691ed
+252	5188	8156640069628618	CMakeFiles/satellite_trajectory.dir/src/linear_solvers.cpp.obj	cc531561671308e3
+390	5448	8156640071013110	CMakeFiles/satellite_trajectory.dir/src/eigenvalues.cpp.obj	fafd16054d33d6e3
+290	5450	8156640070016229	CMakeFiles/satellite_trajectory.dir/src/decompositions.cpp.obj	f8b269b2004314ab
+457	6286	8156640071674272	CMakeFiles/satellite_trajectory.dir/src/trajectory_solver.cpp.obj	de3a2cce31d03351
+6288	7095	8156640129981240	libsatellite_trajectory.a	9476b5b1d507348c
+4261	8013	8156640109716670	CMakeFiles/satellite_trajectory_example.dir/examples/satellite_trajectory_example.cpp.obj	962211e23a03b72b
+3628	8080	8156640103400992	CMakeFiles/linear_algebra_example.dir/examples/linear_algebra_example.cpp.obj	a36e33758c0271cd
+3261	8801	8156640099720968	CMakeFiles/interpolation_example.dir/examples/interpolation_example.cpp.obj	11173f141901587c
+3416	8911	8156640101272356	CMakeFiles/integration_example.dir/examples/integration_example.cpp.obj	98cb00bbbff204d9
+8014	9243	8156640147246956	satellite_trajectory_example.exe	ae41ea38994d5daf
+8081	9304	8156640147923282	linear_algebra_example.exe	f3b98a9465212f00
+8803	9418	8156640155144083	interpolation_example.exe	20a64b3965fe48d8
+8911	9538	8156640156220013	integration_example.exe	73a4d3a3d2e33bf4

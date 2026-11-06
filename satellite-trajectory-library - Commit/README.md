@@ -45,6 +45,41 @@ cmake -S . -B build_no_tests -DBUILD_TESTS=OFF -DBUILD_EXAMPLES=ON
 cmake --build build_no_tests
 ```
 
+## Orbit demo
+Build and run the console demo:
+
+```powershell
+cmake -S . -B build
+cmake --build build --config Debug
+.\build\satellite_trajectory_example.exe
+```
+
+The demo prints an ASCII orbit view and selected position/altitude samples. To
+generate the standalone SVG directly from C++ (no Python needed), run:
+
+```powershell
+.\build\satellite_trajectory_example.exe --svg data\orbit_trajectory.svg
+```
+
+Open the SVG in a browser to view the orbit plot. You can also generate both
+the SVG and CSV in one run:
+
+```powershell
+.\build\satellite_trajectory_example.exe --svg data\orbit_trajectory.svg --csv data\orbit_trajectory.csv
+```
+
+The optional `examples\plot_trajectory.py` script can still create an SVG from
+the simulation output if you prefer the Python workflow.
+
+For an animated browser demo with play/pause, reset, simulation-speed, and
+orbital-drag controls, open `examples\orbit_live_demo.html` in a browser. It
+runs locally without a web server or external packages. The live page performs
+RK4 propagation in the browser using the same two-body gravity and exponential
+atmospheric-drag model with adaptive step sizing and stops when the satellite
+reaches Earth's surface. Its orbit altitude is visually exaggerated, and its
+drag multiplier is an educational visualization aid rather than a calibrated
+flight prediction.
+
 ## Structure
 - `include/`: public interfaces
 - `src/`: implementations

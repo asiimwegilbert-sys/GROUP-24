@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="760" viewBox="0 0 1000 760">
+<defs>
+  <radialGradient id="earth" cx="35%" cy="30%">
+    <stop offset="0%" stop-color="#5ab5ff"/>
+    <stop offset="100%" stop-color="#123b82"/>
+  </radialGradient>
+  <linearGradient id="background" x2="0" y2="1">
+    <stop stop-color="#071426"/>
+    <stop offset="100%" stop-color="#101e36"/>
+  </linearGradient>
+</defs>
+<rect width="100%" height="100%" fill="url(#background)" rx="24"/>
+<text x="90" y="48" fill="#f3f7ff" font-family="Segoe UI, sans-serif" font-size="26" font-weight="700">Satellite orbit simulation</text>
+<text x="90" y="75" fill="#a8bdd8" font-family="Segoe UI, sans-serif" font-size="15">RK4 two-body propagation - 99 samples - 98.00 minutes</text>
+<g stroke="#22344d" stroke-width="1">
+  <line x1="500.00" y1="90.00" x2="500.00" y2="670.00"/>
+  <line x1="90.00" y1="380.00" x2="910.00" y2="380.00"/>
+  <circle cx="500.00" cy="380.00" r="145.00" fill="none"/>
+  <circle cx="500.00" cy="380.00" r="290.00" fill="none"/>
+</g>
+<circle cx="500.00" cy="380.00" r="229.77" fill="url(#earth)" stroke="#82c7ff" stroke-width="2"/>
+<path d="M 752.17 380.00 L 751.65 363.70 L 750.07 347.47 L 747.44 331.37 L 743.78 315.48 L 739.10 299.86 L 733.42 284.57 L 726.77 269.69 L 719.16 255.26 L 710.64 241.35 L 701.24 228.03 L 690.99 215.34 L 679.95 203.34 L 668.16 192.08 L 655.66 181.60 L 642.51 171.96 L 628.77 163.18 L 614.48 155.31 L 599.72 148.38 L 584.54 142.42 L 569.01 137.45 L 553.19 133.50 L 537.14 130.58 L 520.94 128.70 L 504.66 127.87 L 488.35 128.10 L 472.09 129.38 L 455.95 131.70 L 439.99 135.07 L 424.29 139.46 L 408.90 144.86 L 393.89 151.24 L 379.33 158.57 L 365.27 166.84 L 351.77 175.99 L 338.90 186.00 L 326.69 196.82 L 315.22 208.40 L 304.51 220.70 L 294.62 233.67 L 285.59 247.25 L 277.46 261.39 L 270.26 276.02 L 264.02 291.09 L 258.77 306.53 L 254.52 322.27 L 251.30 338.26 L 249.13 354.42 L 248.00 370.69 L 247.92 387.00 L 248.90 403.28 L 250.93 419.46 L 254.00 435.47 L 258.10 451.26 L 263.21 466.74 L 269.32 481.87 L 276.38 496.56 L 284.38 510.77 L 293.29 524.44 L 303.06 537.50 L 313.65 549.90 L 325.02 561.59 L 337.12 572.52 L 349.91 582.64 L 363.32 591.92 L 377.30 600.31 L 391.80 607.78 L 406.75 614.30 L 422.08 619.83 L 437.75 624.37 L 453.67 627.88 L 469.79 630.36 L 486.04 631.79 L 502.34 632.16 L 518.64 631.48 L 534.85 629.75 L 550.92 626.98 L 566.78 623.17 L 582.36 618.35 L 597.59 612.52 L 612.42 605.73 L 626.77 597.99 L 640.60 589.34 L 653.83 579.82 L 666.43 569.46 L 678.32 558.30 L 689.48 546.41 L 699.83 533.81 L 709.36 520.57 L 718.01 506.75 L 725.74 492.39 L 732.54 477.56 L 738.36 462.33 L 743.18 446.75 L 746.98 430.89 L 749.76 414.82 L 751.49 398.61 L 752.16 382.31 L 751.79 366.01" fill="none" stroke="#45e0bd" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="752.17" cy="380.00" r="7" fill="#fff" stroke="#45e0bd" stroke-width="3"/>
+<circle cx="751.79" cy="366.01" r="7" fill="#ffb454" stroke="#fff" stroke-width="2"/>
+<text x="90" y="722" fill="#b9c9dd" font-family="Segoe UI, sans-serif" font-size="14">Earth radius: 6378.14 km - X/Y projection (km)</text>
+<g font-family="Segoe UI, sans-serif" font-size="14">
+  <circle cx="740" cy="46" r="6" fill="#fff"/><text x="755" y="51" fill="#dbe7f6">Start</text>
+  <circle cx="825" cy="46" r="6" fill="#ffb454"/><text x="840" y="51" fill="#dbe7f6">End</text>
+  <line x1="888" y1="46" x2="912" y2="46" stroke="#45e0bd" stroke-width="3"/><text x="920" y="51" fill="#dbe7f6">Orbit</text>
+</g>
+</svg>
