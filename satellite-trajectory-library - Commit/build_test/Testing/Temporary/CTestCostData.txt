@@ -1,0 +1,7 @@
+matrix_tests 2 0.00961665
+linear_solvers_tests 2 0.00790235
+eigenvalues_tests 2 0.0087182
+integration_tests 2 0.0087111
+trajectory_tests 2 0.00805335
+interpolation_legacy_tests 2 0.0080798
+---

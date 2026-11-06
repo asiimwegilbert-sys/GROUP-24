@@ -1,7 +1,7 @@
 # Week 1 Progress Report
 
-> DRAFT for the team lead (Gilbert) to review and edit. The member summaries below are taken from the
-> individual reports in `Team Reports/Team Reports Week 1/` and the team's existing Week 1 notes.
+> Report for the team lead, Gilbert after review and edit. Member summaries come from the individual reports in
+> `Team Reports/Team Reports Week 2/` and the team's existing Week 1 notes.
 
 ## Completed
 - Created the initial library scaffold.

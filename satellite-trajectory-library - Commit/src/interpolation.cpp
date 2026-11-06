@@ -1,6 +1,6 @@
 // src/interpolation.cpp
 
-#include "sat_trajectory/interpolation.hpp"
+#include "satellite_trajectory/interpolation.hpp"
 #include <stdexcept>   // for std::invalid_argument
 using std::vector;
 
@@ -89,4 +89,14 @@ vector<double> polynomialFit(const vector<double>& x,
     vector<double> p;                         // p[k] is the coefficient of x^k
     p.push_back(c[n - 1]);
 
-    for (int i = n - 2;
+    for (int i = n - 2; i >= 0; i--) {
+        vector<double> next(p.size() + 1, 0.0);
+        for (size_t k = 0; k < p.size(); k++) {
+            next[k + 1] += p[k];          // p * x
+            next[k]     -= p[k] * x[i];   // p * (-x[i])
+        }
+        next[0] += c[i];                  // + c[i]
+        p = next;
+    }
+    return p;
+}

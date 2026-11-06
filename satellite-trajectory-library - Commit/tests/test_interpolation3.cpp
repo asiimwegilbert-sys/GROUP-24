@@ -14,7 +14,7 @@
 #include <stdexcept>
 #include <string>
 #include <vector>
-#include "sat_trajectory/interpolation.hpp"
+#include "satellite_trajectory/interpolation.hpp"
 using std::vector; using std::string;
 class TestResult {
 private:
