@@ -1,0 +1,19 @@
+WEEK 1 REPORT
+
+NAME:ARINDA DEOGRATIUS KEVIN
+ROLE: Interpolation methods (lead)
+WEEK TARGET: Understand my role and the interpolation methods before starting the code.
+
+Tasks Completed
+
+This week I did research only. I did not write any code. I studied the interpolation methods I am responsible for so that I understand what my module must do in the group project:
+
+1. Linear interpolation: estimating a value between two known points by drawing a straight line through them. This is the simplest case and the starting point for the other methods.
+2. Lagrange interpolation: building the curve through all known points as a sum of each y-value multiplied by a weight that depends on the query point.
+3. Newton interpolation: building the same curve using divided-difference coefficients, which can be calculated once and reused, and which make it easy to add a new point.
+4. Polynomial interpolation:finding the single polynomial of degree n-1 that passes through n points. I learned that Lagrange and Newton are two ways of writing this same polynomial, so their answers must agree.
+I also worked out what my role covers: the files `interpolation.hpp` and `interpolation.cpp`, the interpolation tests, and individual evidence for Lagrange, Newton and polynomial interpolation. I also noted how interpolation connects to the satellite project: estimating a satellite's position between the time steps computed by the solver.
+
+In progress
+Turning my research into a plan for the interpolation tests and the functions my module needs.
+
