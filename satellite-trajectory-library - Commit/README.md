@@ -45,6 +45,27 @@ cmake -S . -B build_no_tests -DBUILD_TESTS=OFF -DBUILD_EXAMPLES=ON
 cmake --build build_no_tests
 ```
 
+## Orbit demo
+Build and run the console demo:
+
+```powershell
+cmake -S . -B build
+cmake --build build --config Debug
+.\build\satellite_trajectory_example.exe
+```
+
+The demo prints an ASCII orbit view and selected position/altitude samples. To
+also generate a standalone SVG plot from the C++ RK4 trajectory, run:
+
+```powershell
+python .\examples\plot_trajectory.py
+```
+
+The script writes `data\orbit_trajectory.svg` and its source
+`data\orbit_trajectory.csv`. Open the SVG in a browser to view the orbit plot.
+The plot script uses only the Python standard library; no plotting package is
+required.
+
 ## Structure
 - `include/`: public interfaces
 - `src/`: implementations
