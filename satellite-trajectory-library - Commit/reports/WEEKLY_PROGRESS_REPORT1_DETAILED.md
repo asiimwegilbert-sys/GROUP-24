@@ -1,4 +1,4 @@
-# Week __ Progress Report
+# Week 1 Progress Report
 
 **First Submision:**
 **Project:** Satellite Trajectory Numerical Computing Library  
@@ -16,15 +16,15 @@
 
 | Member | Assigned module | Completed this week | In progress | Blocker | Commit/PR link |
 |---|---|---|---|---|---|
-| Asher | Integration/CMake | CMake, Report integration | Integration of the commits and review | |  |
-| Delvin | Vector | Report |  | | |
-| Ibrahim | Matrix | report | | | |
-| Derrick | Linear solvers | Report | | | |
-| Stacy | Decompositions | Report | | | |
-| Praise | Iterative solvers | Report | | | |
-| Deogratious | Interpolation | Report | | | |
-| Jeremiah | Integration/RK methods | Report | | | |
-| Erick | Least squares/eigenvalues/satellite trajectory | Report | | | |
+| Gilbert | Integration/CMake | Initial scaffold, CMake file, member assignments, plan and workflow | Integrate member work and review | Team was still learning the CMake workflow | - |
+| Delvin | Vector | Designed `Vector` constructors, storage, access, norm and operator API | Implement and test the agreed API | - | - |
+| Ibrahim | Matrix | Proposed row-major storage, API, dimension rules and validation cases | Implement and test the Matrix API | Dependent on the team scaffold and build setup | commit `5645c3c` |
+| Derrick | Linear solvers | Prepared initial forward/back substitution design and size/diagonal checks | Add Gaussian elimination and partial pivoting | Initial implementation used a separate C++23 named-module setup | `feature/derrick-linear-solvers` |
+| Stacy | Decompositions | Documented LU, Cholesky, modified Gram-Schmidt and Householder QR designs, APIs and test plan | Implement and test the decomposition methods | Depends on the Matrix API | `feature/stacy-decompositions` |
+| Praise | Iterative solvers | Report describes the solver result type and a Jacobi implementation with size and diagonal checks | Plan Gauss-Seidel and power iteration | No specific blocker reported | - |
+| Deogratius | Interpolation | Researched linear, Lagrange, Newton and polynomial interpolation and its trajectory use | Turn research into function requirements and a test plan | No code was written this week, per the report | - |
+| Jeremiah | Integration/RK methods | Designed header signatures for RK2, RK4, Gaussian quadrature and Romberg | Implement the numerical loops | No specific blocker reported | - |
+| Erick | Least squares/eigenvalues/satellite trajectory | Implemented and tested orbital-period calculation; reports 8 registered tests passed | Resolve module dependencies and the vector-state RK interface | Decomposition/solver and integration APIs still developing | PR #8 |
 
 ## 3. Individual Member Reports
 The folowing are the copies of some of the reports the group members did about their assigned modules
@@ -102,20 +102,22 @@ The folowing are the copies of some of the reports the group members did about t
 
 > No AI tools were used this week.
 
-### Deogracious:
+### Deogratius:
 
-**Assigned responsibility:** Integration
+**Assigned responsibility:** Interpolation methods
 **Branch:** ``  
-**Commits:** `https://github.com/asiimwegilbert-sys/GROUP-24/commit/3fefcdf8c2a53f34afe3342602642286cfd455e0`  
+**Report:** `Team Reports/Team Reports Week 1/Deo_week1_report`  
 **Reviewer(s):** Gilbert, Delvin.
 
 #### Completed
 
-- Report
+- Researched linear, Lagrange, Newton, and polynomial interpolation.
+- Mapped the interpolation files and described how interpolation can estimate satellite positions between solver time steps.
+- The report explicitly says no code was written during Week 1.
 
 #### In Progress
 
-- I am responsible for the interpolation module, which lets the library estimate values between known data points. In the satellite context, this means estimating a satellite's position at times the RK4 propagator did not directly compute
+- Turning the research into a function and test plan.
 
 #### Challenges / Blockers
 
@@ -147,7 +149,12 @@ The folowing are the copies of some of the reports the group members did about t
 
 #### Completed
 
-- Report
+- Designed the `sat::num::Vector` API, including default, size and initializer-list constructors; size, bounds-checked element access and norm; and the planned addition, subtraction, scalar multiplication and dot-product operations.
+- Proposed `std::vector<double>` storage and documented the header structure and public interface.
+
+#### In Progress
+
+- Implement the designed API and add tests.
 
 #### AI Use
 
@@ -162,36 +169,43 @@ The folowing are the copies of some of the reports the group members did about t
 
 ### Derrick:
 
-**Assigned responsibility:** 
+**Assigned responsibility:** Linear solvers
 **Branch:** ``  
 **Commits:** ``  
 **Reviewer(s):** Gilbert, Ibrahim.
 
 #### Completed
 
-- Report
+- Prepared the initial linear-solver design for systems `A x = b`, including forward and back substitution.
+- Documented square-matrix and right-hand-side size requirements, plus checks for zero or very small diagonal values.
+- The report describes an initial module version; no Week 1 build/test result is included.
+
+#### In Progress
+
+- Add Gaussian elimination and partial pivoting.
 
 #### AI Use
 
- 
-
-- **Tool:** None
-- **Purpose:** NOne
-- **Reason it was used:** None
-- **What the team verified or changed:** None
-
-> No AI tools were used this week.
+- **Tool:** ChatGPT
+- **Purpose:** Organize and explain the Week 1 linear-solvers report.
+- **Verification:** Derrick's report says he reviewed and edited suggestions to match the work completed.
 
 ### Praise:
 
-**Assigned responsibility:** 
+**Assigned responsibility:** Iterative solvers
 **Branch:** ``  
 **Commits:** ``  
 **Reviewer(s):** Gilbert, Ibrahim, Delvin.
 
 #### Completed
 
-- Report
+- Designed a header/source split and a result structure containing the solution, iteration count, convergence status and residual.
+- The individual report describes implementing Jacobi with separate old/new iterates, matrix/vector size validation and zero-diagonal checks.
+- The report says the solver was connected to the project's test setup; it does not provide specific test commands or outputs.
+
+#### In Progress
+
+- Gauss-Seidel and power iteration were included in the design plan; the Week 1 report does not claim they were implemented.
 
 #### AI Use
 
@@ -206,14 +220,19 @@ The folowing are the copies of some of the reports the group members did about t
 
 ### Stacy:
 
-**Assigned responsibility:** 
+**Assigned responsibility:** Matrix decompositions
 **Branch:** ``  
 **Commits:** ``  
 **Reviewer(s):** Gilbert, Ibrahim, Delvin.
 
 #### Completed
 
-- Report
+- Documented the module design, API/result types, numerical assumptions, error handling and test plan for LU with partial pivoting, Cholesky, Householder QR and modified Gram-Schmidt.
+- The report's checklist marks normal, edge-case and invalid-input testing, relevant test runs and a clean build as not yet completed.
+
+#### In Progress
+
+- Implement and test the decomposition methods after agreeing interfaces with the Matrix and solver owners.
 
 #### AI Use
 
@@ -228,14 +247,26 @@ The folowing are the copies of some of the reports the group members did about t
 
 ### Erick:
 
-**Assigned responsibility:** 
+**Assigned responsibility:** Least squares, eigenvalues and satellite trajectory
 **Branch:** ``  
 **Commits:** ``  
 **Reviewer(s):** Gilbert, Ibrahim, Delvin.
 
 #### Completed
 
-- Report
+- Implemented the orbital-period calculation with checks for positive semi-major axis and gravitational parameter.
+- Added three trajectory tests; the report says CMake/MinGW were configured and all 8 registered tests passed.
+- Reviewed module dependencies and identified the mismatch between scalar RK interfaces and a satellite state containing position and velocity vectors.
+
+#### In Progress
+
+- Design least-squares and eigenvalue approaches and agree on the RK interface for trajectory propagation.
+
+#### AI Use
+
+- **Tool:** ChatGPT
+- **Purpose:** Clarify requirements and dependencies, troubleshoot the CMake/MinGW setup, and assist with test design.
+- **Verification:** Erick's report says AI suggestions were reviewed before use.
 
 #### AI Use
 

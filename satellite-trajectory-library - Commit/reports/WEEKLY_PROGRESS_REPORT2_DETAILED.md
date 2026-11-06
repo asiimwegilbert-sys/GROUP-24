@@ -11,7 +11,7 @@
 
 This week the group worked on making the library foundation usable. Delvin implemented the core Vector members, and Ibrahim the Matrix operations. Derrick organised Gaussian elimination and back substitution into solver classes. Praise reported the Gauss-Seidel method with option and result structs, Deogratius wrote the first interpolation tests, Jeremiah added input validation for the RK solvers, and Erick prepared least-squares test cases.
 The main problems found were that the Week 2 solver uses its own module types and cannot be called from the main library, that the interpolation tests assume function names the library does not have, and that Gaussian elimination in the main library is still a TODO.
-No Week 2 report was received from Gilbert or Stacy.
+An individual Week 2 report is present for Stacy; it records that decomposition implementation and verified tests had not yet begun. No separate Gilbert individual Week 2 report is identified; his integration work is summarized from the team report.
 
 ## 2. Team Status Overview
 
@@ -21,7 +21,7 @@ No Week 2 report was received from Gilbert or Stacy.
 | Delvin | Vector | `size()`, bounds-checked `operator[]`, `norm()`; tested | - | - | - |
 | Ibrahim | Matrix | Sizes, zero-based access, transpose, `+`, `-`, `*`, scalar `*`; error checks | - | - | commit 5645c3c |
 | Derrick | Linear solvers | `GaussianSolver` and `BackSubstitutionSolver` classes with options struct; tests written | - | Needs the C++23 named-module build to run | suggested `feature/derrick-week2-class-based-solvers` |
-| Stacy | Decompositions | No individual report received | - | - | - |
+| Stacy | Decompositions | Reviewed LU decomposition with pivot tracking, Matrix interfaces, validation rules, and reconstruction tests | Implement LU and validate pivot-adjusted reconstruction | Implementation and algorithm tests had not begun, according to her report | - |
 | Praise | Iterative solvers | Gauss-Seidel reported implemented; options and result structs | - | Not in the integrated source tree | - |
 | Deogratius | Interpolation | `tests/test_interpolation.cpp`, 2 tests, 2/2 passed against a reference implementation | Run against the real implementation | API names; waiting on CMake | - |
 | Jeremiah | Integration/RK methods | Input check helper, zero warnings | Align with the main wrapper | - | - |
@@ -132,7 +132,29 @@ General and weekly progress report in details.
 
 ### Stacy:
 
-No individual report received.
+**Assigned responsibility:** Matrix decompositions  
+**Report:** `Team Reports/Team Reports Week 2/week_02_Stacy.md`
+
+#### Completed
+
+- Reviewed the planned LU decomposition and the need to retain row-permutation information when partial pivoting is used.
+- Identified input validation and edge cases to test, including singular matrices, matrices requiring row swaps, and invalid dimensions.
+
+#### In Progress
+
+- Confirming the agreed public signatures and project conventions before implementation.
+
+#### Challenges / Blockers
+
+- The report explicitly states that implementation had not started and no LU behavior or test results had yet been verified.
+
+#### Next Week
+
+- Implement LU with pivot tracking and test whether the factors reconstruct the matrix under the selected permutation convention.
+
+#### AI Use
+
+- No AI-use statement is included in this individual report.
 
 ### Praise:
 
@@ -278,7 +300,7 @@ No individual report received.
 | Interpolation tests assume names (`lagrangeInterpolate`, `newtonEvaluate`, ...) that differ from the library | Deogratius | Tests cannot build against the library | Agree and use one naming style |
 | Gauss-Seidel reported implemented but is a TODO in `src/iterative_solvers.cpp` (copy of 24 Oct) | Praise | Feature missing from the integrated build | Push and merge the implementation |
 | Interpolation tests waiting for the CMake setup | Gilbert | Tests are not run with the project | Add the tests to CMake |
-| No Week 2 report from and Stacy | Stacy | Incomplete submission | Submit before the deadline |
+| No separate Gilbert individual Week 2 report is identified; Stacy's submitted report records design work only | Gilbert, Stacy | Lead activity is summarized from team records; decomposition implementation remains pending | Confirm lead evidence and continue LU implementation/testing |
 
 ## 6. Next Week's Shared Goals
 
@@ -289,4 +311,4 @@ No individual report received.
 
 ## 7. Conclusion
 
-Week 2 gave the group a usable Vector and Matrix and first versions of the solver, interpolation tests and RK checks. The next step is integration: the solver, the interpolation API and Gauss-Seidel are not yet connected to the main `sat::num` library. Stacy have not submitted individual reports.
+Week 2 gave the group a usable Vector and Matrix and first versions of the solver, interpolation tests and RK checks. Stacy's individual report is present and documents decomposition planning; it does not report an implementation or verified tests. The next step is integration: the solver, interpolation API and Gauss-Seidel are not yet connected to the main `sat::num` library.

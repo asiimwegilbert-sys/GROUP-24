@@ -10,7 +10,7 @@
 | Delvin | Vector | Core members: `size()`, bounds-checked `operator[]`, `norm()`; tested size, safe access with exceptions, and norms of velocity vectors |
 | Ibrahim | Matrix | Row and column sizes, zero-based access, transpose, `+`, `-`, `*` and scalar `*`; dimension and index checks; data kept private as row-major `std::vector<double>` |
 | Derrick | Linear solvers | Classes `GaussianSolver` (elimination with partial pivoting) and `BackSubstitutionSolver`; private `options_`, public `SolverOptions` with `pivot_tolerance`; C++23 |
-| Stacy | Decompositions | No Week 2 report received yet |
+| Stacy | Decompositions | Reported that implementation had not begun; reviewed LU with pivot tracking, Matrix interfaces, validation requirements, and planned reconstruction tests |
 | Praise | Iterative solvers | Reported Gauss-Seidel implemented; `IterationOptions` and `IterationResult` structs with public members; size and zero-diagonal checks; stops at the tolerance |
 | Deogratius | Interpolation | `tests/test_interpolation.cpp` (2 tests: known cubic, bad input throws); 2 of 2 passed against a temporary reference implementation |
 | Jeremiah | Integration (RK) | Input-check helper `validate_simulation_inputs` (empty state, non-positive `dt`); compiles with zero warnings |
@@ -21,6 +21,7 @@
 - Running Deogratius's tests against the real `interpolation.hpp/.cpp` once merged.
 - Aligning the integration checks with the main project wrapper (Jeremiah).
 - Eigenvalue dependencies under review (Erick).
+- LU decomposition implementation and tests (Stacy).
 
 ## Challenges/Blockers
 - The Week 2 Gaussian elimination uses its own C++20 module types, not `sat::num::Matrix` and `Vector`, so the main library cannot call it. The canonical `gaussian_elimination()` in `src/linear_solvers.cpp` is still a TODO (Erick). Least squares is waiting on it.
@@ -39,5 +40,4 @@
 - Members' own AI use is declared in their individual reports (for example, Erick used ChatGPT).
 
 ## Reports received
-Delvin, Ibrahim, Derrick, Praise, Deogratius, Jeremiah, Erick, Stacy.
-Not yet received: None.
+Individual reports are present for Delvin, Ibrahim, Derrick, Praise, Deogratius, Jeremiah, Erick, and Stacy. Stacy's Week 2 report documents design and next steps, and explicitly says implementation and verified tests had not begun. No separate Gilbert individual Week 2 report is identified; his integration work is summarized from team records.

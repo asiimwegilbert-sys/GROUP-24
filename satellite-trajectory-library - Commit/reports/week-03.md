@@ -11,9 +11,9 @@
 | Delvin | Vector | Declared operator overloads for vector `+`, `-`, scalar `*` and `dot`; placeholder bodies throw `std::logic_error`; pseudocode drafted |
 | Ibrahim | Matrix | Implemented the `Matrix` class (three constructors, `rows`, `columns`, checked access, `transpose`, `identity`) and the operators `+`, `-`, matrix `*` and scalar `*`; `std::invalid_argument` and `std::out_of_range` errors; `tests/test_matrix.cpp` with 41 checks |
 | Derrick | Linear solvers | Residual validation (`calculateResidual`, `residualNorm`, `isSolutionAccurate`); abstract base class `LinearSolver` with pure virtual `solve`; `GaussianSolver` and `BackSubstitutionSolver` derived from it; polymorphism tested through `std::unique_ptr<LinearSolver>` |
-| Stacy | Decompositions | No Week 3 report received yet |
-| Praise | Iterative solvers | No Week 3 report received yet |
-| Deogratius | Interpolation | No Week 3 report received yet. `test_interpolation3.cpp` (classes `TestResult` and `InterpolationTester`) is in the repository root. |
+| Stacy | Decompositions | Reported the design and validation requirements for LU, Cholesky, Householder QR, and modified Gram-Schmidt; numerical correctness and full-project compatibility remained unverified in her report |
+| Praise | Iterative solvers | Week 3 report describes power iteration and `IterationOptions`/`IterationResult`; the report claims code was added, but the reviewed repository did not confirm an implementation |
+| Deogratius | Interpolation | Updated the interpolation tests to use `TestResult` and `InterpolationTester` classes in `test_interpolation3.cpp`; no project-integrated test result was reported |
 | Jeremiah | Integration (RK) | Three-level inheritance: `BaseSolver` (input validation) -> `NumericalIntegrator` (virtual `compute_step`) -> `MidpointSolver` (overrides it for RK2); runtime polymorphism shown through a base-class pointer |
 | Erick | Least squares, eigenvalues, trajectory | Defined the satellite state as 3D position and velocity; added propagation input checks (state sizes, positive time step, steps and gravitational parameter) with tests; kept and verified the orbital period function |
 
@@ -42,5 +42,4 @@
 - Members' own AI use is declared in their individual reports (for example, Erick used ChatGPT).
 
 ## Reports received
-Delvin, Ibrahim, Derrick, Jeremiah, Erick. 
-Not yet received: Stacy, Praise, Deogratius.
+Individual reports are present for Delvin, Ibrahim, Derrick, Stacy, Praise, Deogratius, Jeremiah, and Erick. Gilbert's separate individual report/integration note is not identified. Praise's report describes power iteration, but its implementation was not verified in the reviewed repository; this summary distinguishes the report's claim from merged, tested code.

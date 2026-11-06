@@ -11,7 +11,7 @@
 
 Week 4 was meant to finish interpolation, integration, fitting and eigenvalues. Jeremiah finished RK4, Gaussian quadrature and Romberg as two class families, and Erick connected the RK2/RK4 steps to a two-body satellite propagation. Ibrahim added Matrix * Vector with 10 new tests, Delvin reported the vector operators, Derrick added iterative refinement, and Deogratius updated the interpolation header.
 A review of the repository on 2 November found that the project did not build from `main` (test file names with spaces, two matrix files compiled together, module-style solver files in a C++17 build) and that several required methods were still `TODO`: Gaussian elimination, determinant, inverse, Gauss-Seidel, power iteration, the interpolation functions, least squares and eigenvalues. The lead's patch fixes the build and fills these in.
-No Week 4 report was received from Gilbert, Stacy or Praise.
+No separate Week 4 individual report from Gilbert is identified. Individual Week 4 reports are present for Stacy and Praise; their statements and the repository review are summarized below.
 
 ## 2. Team Status Overview
 
@@ -21,8 +21,8 @@ No Week 4 report was received from Gilbert, Stacy or Praise.
 | Delvin | Vector | Reports vector `+`, `-`, scalar `*`, dot implemented and checked | - | Operators were not yet in `src/vector.cpp` | - |
 | Ibrahim | Matrix | `Matrix * Vector` plus 10 tests | Build and `ctest` on his machine | His computer is out of service | - |
 | Derrick | Linear solvers | Iterative refinement; `RefinementSolver` derived class | - | Solver classes are not in the repository code | - |
-| Stacy | Decompositions | No Week 4 report. Cholesky and QR code committed 26 Oct | - | - | PR #46, #53 |
-| Praise | Iterative solvers | No Week 4 report | - | Gauss-Seidel and power iteration not in any branch | - |
+| Stacy | Decompositions | Two Week 4 reports are present. `week-04-Stacy.md` says focused decomposition tests compiled and passed; `Stacy-week-04.md` describes the stabilization checks and asks for final integrated validation | Verify the current release candidate and obtain review | The two reports differ in how they describe completed versus pending verification | PR #46, #53 |
+| Praise | Iterative solvers | Week 4 report states Jacobi, Gauss-Seidel, and power iteration were finalized and tested for convergence and invalid inputs | Reconcile the report's completion claim with repository evidence | The 2 Nov repository review did not find Gauss-Seidel and power iteration in the available source/branches | - |
 | Deogratius | Interpolation | Updated `interpolation.hpp` with the four functions | - | Implementation only on an unmerged branch, and incomplete | `arindadeogratius-interpolation` |
 | Jeremiah | Integration/RK methods | `ClassicalRK4Solver`, `GaussLegendreSolver`, `RombergSolver`; templates | - | - | PR #52 (merged) |
 | Erick | Least squares, eigenvalues, satellite trajectory | Two-body model; `propagate_rk2()`, `propagate_rk4()` | Circular-orbit accuracy tests | Least squares and eigenvalues still `TODO` | PR #51 (merged) |
@@ -144,11 +144,15 @@ Repository evidence of the lead's work is in `GILBERT_LEAD_EVIDENCE_AND_OUTLINE.
 
 ### Stacy:
 
-No Week 4 report received. Repository: `Implement Cholesky and QR decomposition functions` (26 Oct, PR #46) and the merge of PR #53 on 2 Nov, which contains Erick's compile fixes.
+Two Week 4 reports are present: `Team Reports/Team Reports Week 4/week-04-Stacy.md` and `Stacy-week-04.md`.
+
+- `week-04-Stacy.md` describes LU with pivoting, Cholesky, Householder QR, and modified Gram-Schmidt, including validation and tests. It says focused decomposition tests were compiled and passed, while noting that the full-project build was blocked by an unrelated `State` compilation issue in `src/integration.cpp`.
+- `Stacy-week-04.md` describes the stabilization and integration checklist, including reconstruction identities, orthogonality, invalid inputs, tolerance checks, and teammate review. It frames final testing on the current release candidate as next work.
+- Repository history also records Cholesky and QR work in PR #46 and compile fixes in PR #53. These reports therefore exist; their different descriptions of verification should be reconciled before using either as a definitive test record.
 
 ### Praise:
 
-No Week 4 report received. Gauss-Seidel and power iteration are not in `main` or any branch.
+`Team Reports/Team Reports Week 4/Praise_Week_4_iterativereport.md` is present. It states that Jacobi, Gauss-Seidel, and power iteration were finalized, tested for expected convergence and edge cases, and aligned with the shared `IterationOptions` and `IterationResult` structures. It also describes a class-layout diagram uploaded to the documentation folder and refers to a pull request awaiting approval. The report does not include exact test commands or outputs. The 2 November repository review did not find Gauss-Seidel and power iteration in the reviewed source/branches, so the claimed completion was not confirmed by that repository check.
 
 ### Deogratius:
 
@@ -278,7 +282,7 @@ No Week 4 report received. Gauss-Seidel and power iteration are not in `main` or
 |---|---|---|---|
 | `main` does not configure or build: 4 test files have spaces in their names but CMake expects underscores; `matrix.cpp` and `Matrix3.cpp` are both compiled; `Matrix3.cpp` is missing a brace; module files need C++20 | Gilbert, Ibrahim, Derrick | Nobody can build or run the tests | Apply the lead's patch, pull, and run a clean build |
 | Required methods not on `main`: Gaussian elimination, determinant, inverse (Derrick); Gauss-Seidel, power iteration (Praise); interpolation (Deogratius, unmerged and incomplete); least squares, eigenvalues (Erick); vector operators (Delvin) | Each owner | Methods required by the assignment are missing | Owners read the patch versions, correct them, and re-commit under their own names |
-| Reports still missing: Gilbert (all weeks, individual), Stacy W4, Praise W4 and W3 not merged, Week 5 report | Gilbert, Stacy, Praise | Incomplete submission | Submit before Thursday 5 Nov |
+| Reports still missing at this review: Gilbert's individual Week 4 report and the Week 5 team report; Stacy and Praise Week 4 reports are present | Gilbert | Missing lead evidence and upcoming team report | Add the lead's evidence and complete the Week 5 report |
 | Derrick's classes (`LinearSolver`, `RefinementSolver`) are described in reports but are not in the repository code | Derrick | Reports and code disagree | Add the classes to the C++17 library or correct the reports |
 | GitHub account `Tushabepaul` has 3 commits and is not in the team list | Gilbert | Unclear contributor | Confirm whose account it is |
 | Praise's Week 3 report has leftover `[cite: 8]` markers and no AI-use declaration | Praise | Report accuracy | Clean up and add the declaration |
@@ -288,7 +292,7 @@ No Week 4 report received. Gauss-Seidel and power iteration are not in `main` or
 1. Pull the latest `main`, apply the lead's patch, and confirm a clean build and `ctest` on a second machine.
 2. Each member reads the patch version of their module, corrects it where needed and commits it under their own name.
 3. Write the README, final report and presentation in the group's own words; keep every AI-use declaration accurate.
-4. Submit the missing reports (Gilbert, Stacy, Praise) and the Week 5 report.
+4. Confirm Gilbert's individual Week 4 evidence and complete the Week 5 report; reconcile the verification claims in Stacy's two Week 4 reports and Praise's report with repository/test evidence.
 5. Final package, GitHub check and submission checklist by Thursday 5 November (Gilbert).
 
 ## 7. Conclusion
