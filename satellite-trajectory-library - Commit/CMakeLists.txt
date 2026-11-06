@@ -37,13 +37,19 @@ endif()
 # Build tests
 if(BUILD_TESTS)
   enable_testing()
-
-  foreach(name IN ITEMS
-      matrix
-      linear_solvers
-      eigenvalues
-      integration
-      trajectory
+  foreach(name 
+  matrix 
+  vector_foundations_week_1 
+  core_functionality_week_2 
+  decompositions 
+  eigenvalues 
+  integration 
+  interpolation 
+  least_squares 
+  operator_overloads_week_3 
+  operator_overloads_week_4 
+  solvers 
+  trajectory
   )
     add_executable(test_${name} tests/test_${name}.cpp)
     target_link_libraries(test_${name} PRIVATE satellite_trajectory)
