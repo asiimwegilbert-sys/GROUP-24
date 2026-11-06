@@ -6,7 +6,7 @@
 #include <iostream>
 #include <stdexcept>
 #include <vector>
-#include "sat_trajectory/interpolation.hpp"
+#include "satellite_trajectory/interpolation.hpp"
 
 using namespace std;
 

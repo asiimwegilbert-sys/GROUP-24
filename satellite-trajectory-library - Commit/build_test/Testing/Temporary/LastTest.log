@@ -1,0 +1,145 @@
+Start testing: Nov 05 21:24 E. Africa Standard Time
+----------------------------------------------------------
+1/6 Testing: matrix_tests
+1/6 Test: matrix_tests
+Command: "C:/Users/HP/OneDrive/Desktop/Group 24 Project/GROUP-24/satellite-trajectory-library - Commit/build_test/test_matrix.exe"
+Directory: C:/Users/HP/OneDrive/Desktop/Group 24 Project/GROUP-24/satellite-trajectory-library - Commit/build_test
+"matrix_tests" start time: Nov 05 21:24 E. Africa Standard Time
+Output:
+----------------------------------------------------------
+PASS: default matrix is 0x0
+PASS: size of 2x3 matrix
+PASS: new matrix is filled with zeros
+PASS: fill value is used
+PASS: nested list gives 2x3
+PASS: values are stored row by row, zero-based
+PASS: elements can be changed
+PASS: identity matrix
+PASS: transpose swaps the size
+PASS: transpose values
+PASS: transposing twice gives the original
+PASS: addition
+PASS: subtraction
+PASS: product size is (2x3)*(3x2) = 2x2
+PASS: product values
+PASS: A * I = A
+PASS: I * A = A
+PASS: A*B is not always B*A
+PASS: number * matrix
+PASS: 0.5 * matrix
+PASS: original unchanged after operations
+PASS: 1x1 from nested list
+PASS: 1x1 multiplication
+PASS: 1x1 transpose
+PASS: row * column = dot product (32)
+PASS: column * row gives 3x3
+PASS: last valid index
+PASS: adding or multiplying by zeros
+PASS: scalar 0 gives zero matrix
+PASS: const matrix can be read
+PASS: 0 rows is rejected
+PASS: 0 columns is rejected
+PASS: identity(0) is rejected
+PASS: rows of different length are rejected
+PASS: empty row is rejected
+PASS: row index too large is rejected
+PASS: column index too large is rejected
+PASS: const access also checks indices
+PASS: adding different sizes is rejected
+PASS: subtracting different sizes is rejected
+PASS: (2x3)*(2x3) is rejected
+
+All tests passed.
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"matrix_tests" end time: Nov 05 21:24 E. Africa Standard Time
+"matrix_tests" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/6 Testing: linear_solvers_tests
+2/6 Test: linear_solvers_tests
+Command: "C:/Users/HP/OneDrive/Desktop/Group 24 Project/GROUP-24/satellite-trajectory-library - Commit/build_test/test_linear_solvers.exe"
+Directory: C:/Users/HP/OneDrive/Desktop/Group 24 Project/GROUP-24/satellite-trajectory-library - Commit/build_test
+"linear_solvers_tests" start time: Nov 05 21:24 E. Africa Standard Time
+Output:
+----------------------------------------------------------
+Passed: Gaussian elimination with partial pivoting
+Passed: Iterative refinement
+All linear solver tests passed.
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"linear_solvers_tests" end time: Nov 05 21:24 E. Africa Standard Time
+"linear_solvers_tests" time elapsed: 00:00:00
+----------------------------------------------------------
+
+3/6 Testing: eigenvalues_tests
+3/6 Test: eigenvalues_tests
+Command: "C:/Users/HP/OneDrive/Desktop/Group 24 Project/GROUP-24/satellite-trajectory-library - Commit/build_test/test_eigenvalues.exe"
+Directory: C:/Users/HP/OneDrive/Desktop/Group 24 Project/GROUP-24/satellite-trajectory-library - Commit/build_test
+"eigenvalues_tests" start time: Nov 05 21:24 E. Africa Standard Time
+Output:
+----------------------------------------------------------
+Eigenvalue tests passed
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"eigenvalues_tests" end time: Nov 05 21:24 E. Africa Standard Time
+"eigenvalues_tests" time elapsed: 00:00:00
+----------------------------------------------------------
+
+4/6 Testing: integration_tests
+4/6 Test: integration_tests
+Command: "C:/Users/HP/OneDrive/Desktop/Group 24 Project/GROUP-24/satellite-trajectory-library - Commit/build_test/test_integration.exe"
+Directory: C:/Users/HP/OneDrive/Desktop/Group 24 Project/GROUP-24/satellite-trajectory-library - Commit/build_test
+"integration_tests" start time: Nov 05 21:24 E. Africa Standard Time
+Output:
+----------------------------------------------------------
+[TESTING RUNTIME] Starting Numerical Module Validation...
+[SUCCESS LOG] Test passed! Position changed safely from 1000 to 999.951m.
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"integration_tests" end time: Nov 05 21:24 E. Africa Standard Time
+"integration_tests" time elapsed: 00:00:00
+----------------------------------------------------------
+
+5/6 Testing: trajectory_tests
+5/6 Test: trajectory_tests
+Command: "C:/Users/HP/OneDrive/Desktop/Group 24 Project/GROUP-24/satellite-trajectory-library - Commit/build_test/test_trajectory.exe"
+Directory: C:/Users/HP/OneDrive/Desktop/Group 24 Project/GROUP-24/satellite-trajectory-library - Commit/build_test
+"trajectory_tests" start time: Nov 05 21:24 E. Africa Standard Time
+Output:
+----------------------------------------------------------
+Trajectory validation tests passed
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"trajectory_tests" end time: Nov 05 21:24 E. Africa Standard Time
+"trajectory_tests" time elapsed: 00:00:00
+----------------------------------------------------------
+
+6/6 Testing: interpolation_legacy_tests
+6/6 Test: interpolation_legacy_tests
+Command: "C:/Users/HP/OneDrive/Desktop/Group 24 Project/GROUP-24/satellite-trajectory-library - Commit/build_test/test_interpolation_legacy.exe"
+Directory: C:/Users/HP/OneDrive/Desktop/Group 24 Project/GROUP-24/satellite-trajectory-library - Commit/build_test
+"interpolation_legacy_tests" start time: Nov 05 21:24 E. Africa Standard Time
+Output:
+----------------------------------------------------------
+PASS: known cubic
+PASS: bad input throws
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"interpolation_legacy_tests" end time: Nov 05 21:24 E. Africa Standard Time
+"interpolation_legacy_tests" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Nov 05 21:24 E. Africa Standard Time
